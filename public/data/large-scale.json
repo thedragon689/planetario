@@ -1,0 +1,90 @@
+{
+  "superclusters": [
+    {
+      "id": "laniakea",
+      "name": "Superammasso di Laniakea",
+      "type": "Superammasso",
+      "distance": "~520 milioni di anni luce",
+      "description": "La nostra casa cosmica a grande scala: un superammasso di centinaia di migliaia di galassie, inclusa la Via Lattea.",
+      "position": [0, 120, -800],
+      "radius": 180,
+      "facts": [
+        "Contiene la Via Lattea, il Gruppo Locale e il Grande Attraente",
+        "Estensione ~520 milioni di anni luce",
+        "Nome hawaiano: 'cielo immenso'"
+      ],
+      "sources": ["https://it.wikipedia.org/wiki/Laniakea"]
+    },
+    {
+      "id": "shapley",
+      "name": "Superammasso di Shapley",
+      "type": "Superammasso",
+      "distance": "~650 milioni di anni luce",
+      "description": "Uno dei superammassi più massicci noti, con centinaia di ammassi di galassie.",
+      "position": [420, 80, -1200],
+      "radius": 220,
+      "facts": [
+        "Scoperto da Harlow Shapley negli anni 1930",
+        "Uno dei più grandi concentratori di massa nell'universo vicino"
+      ]
+    },
+    {
+      "id": "sloan-wall",
+      "name": "Grande Muro di Sloan",
+      "type": "Struttura a parete",
+      "distance": "~1 miliardo di anni luce",
+      "description": "Una delle più grandi strutture note: una parete di galassie lunga oltre un miliardo di anni luce.",
+      "position": [-300, -60, -1500],
+      "radius": 280,
+      "facts": [
+        "Rilevato dal Sloan Digital Sky Survey",
+        "Esempio di struttura filamentare a scala cosmica"
+      ]
+    }
+  ],
+  "voids": [
+    {
+      "id": "bootes-void",
+      "name": "Vuoto di Boötes",
+      "type": "Vuoto cosmico",
+      "distance": "~700 milioni di anni luce",
+      "description": "Una delle più grandi regioni vuote dell'universo, con pochissime galassie rispetto alla media cosmica.",
+      "position": [200, 200, -1100],
+      "radius": 250,
+      "facts": [
+        "Diametro ~330 milioni di anni luce",
+        "Scoperto da Robert Kirshner nel 1981",
+        "Contiene solo poche decine di galassie isolate"
+      ]
+    }
+  ],
+  "filaments": [
+    {
+      "id": "cosmic-web",
+      "name": "Rete cosmica (filamenti)",
+      "type": "Filamento cosmico",
+      "description": "La struttura a 'spugna' dell'universo: filamenti di materia oscura e galassie che collegano ammassi e superammassi.",
+      "points": [
+        [-400, 0, -600], [-200, 40, -700], [0, 20, -800], [200, -30, -900],
+        [400, 10, -1000], [300, 80, -1200], [100, 60, -1300], [-100, 40, -1400],
+        [-300, 0, -1500], [0, -50, -1600], [250, -80, -1700]
+      ],
+      "facts": [
+        "Formata dalla gravità su scale di centinaia di milioni di anni luce",
+        "I vuoti cosmici sono le 'bolle' tra i filamenti"
+      ]
+    }
+  ],
+  "cmb": {
+    "id": "cmb",
+    "name": "Radiazione cosmica di fondo (CMB)",
+    "type": "Radiazione primordiale",
+    "description": "L'eco del Big Bang: radiazione emessa ~380.000 anni dopo l'origine dell'universo, mappata da WMAP e Planck.",
+    "facts": [
+      "Temperatura media 2,725 K",
+      "Prima luce dell'universo osservabile",
+      "Le fluttuazioni sulla mappa sono i semi delle strutture attuali"
+    ],
+    "sources": ["https://it.wikipedia.org/wiki/Radiazione_cosmica_di_fondo"]
+  }
+}

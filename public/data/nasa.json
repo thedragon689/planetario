@@ -1,0 +1,82 @@
+{
+  "api": {
+    "name": "NASA Image and Video Library API",
+    "root": "https://images-api.nasa.gov",
+    "docs": "https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf",
+    "endpoints": {
+      "search": "/search",
+      "asset": "/asset/{nasa_id}",
+      "metadata": "/metadata/{nasa_id}",
+      "captions": "/captions/{nasa_id}",
+      "album": "/album/{album_name}"
+    },
+    "parameters": {
+      "q": "Ricerca testuale libera",
+      "media_type": "image, video, audio (separati da virgola)",
+      "center": "Codice centro NASA (JPL, GSFC, JSC, ...)",
+      "year_start": "Anno inizio (YYYY)",
+      "year_end": "Anno fine (YYYY)",
+      "page": "Numero pagina (default 1)",
+      "page_size": "Risultati per pagina (max 100)"
+    }
+  },
+  "missions": [
+    {
+      "name": "Voyager 1",
+      "launch": "1977",
+      "status": "Attiva — Spazio interstellare",
+      "distance": "24+ miliardi di km dalla Terra",
+      "description": "La sonda umana più distante, ha attraversato l'eliopausa nel 2012 ed è ora nello spazio interstellare.",
+      "nasa_query": "Voyager 1 spacecraft"
+    },
+    {
+      "name": "James Webb Space Telescope",
+      "launch": "2021",
+      "status": "Attiva — Punto L2",
+      "distance": "1,5 milioni di km dalla Terra",
+      "description": "Il telescopio spaziale più potente mai costruito, osserva l'universo primordiale nell'infrarosso.",
+      "nasa_query": "James Webb Space Telescope"
+    },
+    {
+      "name": "Parker Solar Probe",
+      "launch": "2018",
+      "status": "Attiva — Orbita solare",
+      "distance": "7,9 milioni di km dal Sole (perihelio)",
+      "description": "La sonda più veloce e più vicina al Sole mai lanciata, studia la corona solare e il vento solare.",
+      "nasa_query": "Parker Solar Probe"
+    }
+  ],
+  "phenomena": [
+    {
+      "name": "Onda Gravitazionale",
+      "detected": "2015 (LIGO)",
+      "source": "Fusione di due buchi neri",
+      "description": "Ripple nello spaziotempo predette da Einstein nel 1916, osservate per la prima volta un secolo dopo.",
+      "nasa_query": "gravitational wave LIGO"
+    },
+    {
+      "name": "Buco Nero M87*",
+      "imaged": "2019 (Event Horizon Telescope)",
+      "mass": "6,5 miliardi di M☉",
+      "description": "La prima immagine diretta di un buco nero, catturata dalla collaborazione Event Horizon Telescope.",
+      "nasa_query": "M87 black hole Event Horizon Telescope"
+    }
+  ],
+  "resources": [
+    {
+      "name": "NASA Image and Video Library",
+      "url": "https://images.nasa.gov/",
+      "description": "Archivio ufficiale di immagini e video NASA ad alta risoluzione"
+    },
+    {
+      "name": "NASA Images API",
+      "url": "https://images-api.nasa.gov",
+      "description": "API REST per ricerca programmatica di media NASA"
+    },
+    {
+      "name": "NASA Eyes on the Solar System",
+      "url": "https://eyes.nasa.gov/",
+      "description": "Visualizzatore 3D interattivo del Sistema Solare in tempo reale"
+    }
+  ]
+}

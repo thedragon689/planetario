@@ -1,0 +1,233 @@
+{
+  "catalog": {
+    "version": "1.0",
+    "sources": ["NASA JPL Small-Body Database", "IAU Minor Planet Center"],
+    "notes": "Orbite schematiche nel Sistema Solare; scale visuali non metriche."
+  },
+  "asteroids": [
+    {
+      "id": "ceres",
+      "name": "Ceres",
+      "type": "Pianeta nano / asteroide",
+      "radius": 0.08,
+      "diameter": "939 km",
+      "mass": "9,38 × 10²⁰ kg",
+      "distanceFromSun": 22,
+      "orbitSpeed": 0.38,
+      "orbitalPeriod": "4,6 anni",
+      "description": "Il più grande oggetto della cintura principale degli asteroidi; classificato pianeta nano dalla IAU.",
+      "facts": [
+        "Esplorato dalla sonda Dawn (2015)",
+        "Possiede un monte di 22 km di altezza (Ahuna Mons)",
+        "Contiene acqua congelata sotto la superficie"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/ceres/"]
+    },
+    {
+      "id": "vesta",
+      "name": "Vesta",
+      "type": "Asteroide",
+      "radius": 0.065,
+      "diameter": "525 km",
+      "mass": "2,59 × 10²⁰ kg",
+      "distanceFromSun": 21,
+      "orbitSpeed": 0.42,
+      "orbitalPeriod": "3,6 anni",
+      "description": "Secondo asteroide per massa nella cintura principale, con crosta differenziata simile a un mondo terrestre.",
+      "facts": [
+        "Visibile ad occhio nudo in cieli molto bui",
+        "Meteoriti HED provengono da Vesta",
+        "Crateri giganti da impatti antichi"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/vesta/"]
+    },
+    {
+      "id": "pallas",
+      "name": "Palla",
+      "type": "Asteroide",
+      "radius": 0.058,
+      "diameter": "512 km",
+      "mass": "2,04 × 10²⁰ kg",
+      "distanceFromSun": 23,
+      "orbitSpeed": 0.35,
+      "orbitalPeriod": "4,6 anni",
+      "inclination": 0.35,
+      "description": "Terzo asteroide per massa, con orbita molto inclinata rispetto all'eclittica.",
+      "facts": [
+        "Scoperto da Heinrich Olbers nel 1802",
+        "Orbita inclinata di ~34°",
+        "Superficie probabilmente ricca di silicati"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/pallas/"]
+    },
+    {
+      "id": "hygiea",
+      "name": "Igea",
+      "type": "Asteroide / candidato pianeta nano",
+      "radius": 0.055,
+      "diameter": "434 km",
+      "mass": "8,67 × 10¹⁹ kg",
+      "distanceFromSun": 24,
+      "orbitSpeed": 0.32,
+      "orbitalPeriod": "5,6 anni",
+      "description": "Quarto asteroide per massa; candidato a forma sferica quasi equilibrata.",
+      "facts": [
+        "Scoperta nel 1849",
+        "Orbita esterna della cintura principale",
+        "Possibile forma quasi sferica"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/"]
+    }
+  ],
+  "comets": [
+    {
+      "id": "halley",
+      "name": "Cometa di Halley",
+      "type": "Cometa periodica",
+      "radius": 0.05,
+      "diameter": "Nucleo ~11 × 5 km",
+      "distanceFromSun": 28,
+      "orbitSpeed": 0.55,
+      "orbitalPeriod": "75,3 anni",
+      "inclination": 0.58,
+      "eccentricity": 0.97,
+      "description": "La cometa periodica più famosa, visibile dalla Terra ogni ~75 anni; ultimo passaggio nel 1986.",
+      "facts": [
+        "Osservata già nel 240 a.C.",
+        "Sonda Giotto l'ha fotografata nel 1986",
+        "Nucleo ghiacciato con coda di gas e polveri"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/asteroids-comets-and-meteors/comets/1p-halley/"]
+    },
+    {
+      "id": "hale-bopp",
+      "name": "Hale-Bopp",
+      "type": "Cometa",
+      "radius": 0.06,
+      "diameter": "Nucleo ~60 km",
+      "distanceFromSun": 42,
+      "orbitSpeed": 0.18,
+      "orbitalPeriod": "~2.533 anni",
+      "inclination": 0.45,
+      "eccentricity": 0.995,
+      "description": "Cometa straordinariamente luminosa nel 1997, con nucleo insolitamente grande.",
+      "facts": [
+        "Visibile ad occhio nudo per 18 mesi",
+        "Uno dei nuclei cometari più grandi osservati",
+        "Periodo orbitale di oltre 2.500 anni"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/asteroids-comets-and-meteors/comets/c-1995-o1-hale-bopp/"]
+    },
+    {
+      "id": "encke",
+      "name": "Encke",
+      "type": "Cometa periodica",
+      "radius": 0.04,
+      "diameter": "Nucleo ~4,8 km",
+      "distanceFromSun": 18,
+      "orbitSpeed": 0.72,
+      "orbitalPeriod": "3,3 anni",
+      "inclination": 0.22,
+      "eccentricity": 0.85,
+      "description": "Cometa periodica con l'orbita più breve conosciuta (~3,3 anni), scoperta nel 1786.",
+      "facts": [
+        "Periodo orbitale più corto tra le comete note",
+        "Perde massa rapidamente ad ogni passaggio",
+        "Associata al complesso Tauridi"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/asteroids-comets-and-meteors/comets/2p-encke/"]
+    }
+  ],
+  "kuiper": [
+    {
+      "id": "pluto-kuiper",
+      "name": "Plutone (Kuiper)",
+      "type": "Pianeta nano",
+      "radius": 0.09,
+      "diameter": "2.376 km",
+      "mass": "1,30 × 10²² kg",
+      "distanceFromSun": 98,
+      "orbitSpeed": 0.08,
+      "orbitalPeriod": "248 anni",
+      "inclination": 0.12,
+      "description": "Il più grande oggetto noto della cintura di Kuiper, con orbita inclinata ed eccentrica.",
+      "facts": [
+        "Sistema binario con Charon",
+        "Visita della sonda New Horizons (2015)",
+        "Cuore pianura glaciale Tombaugh Regio"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/planets/dwarf-planets/pluto/"]
+    },
+    {
+      "id": "eris",
+      "name": "Eris",
+      "type": "Pianeta nano",
+      "radius": 0.088,
+      "diameter": "2.326 km",
+      "mass": "1,66 × 10²² kg",
+      "distanceFromSun": 102,
+      "orbitSpeed": 0.07,
+      "orbitalPeriod": "558 anni",
+      "inclination": 0.28,
+      "description": "Pianeta nano scoperto nel 2005, più massiccio di Plutone; la sua scoperta accelerò la ridefinizione planetaria.",
+      "facts": [
+        "Ha una luna, Dysnomia",
+        "Superficie molto riflettente (ghiaccio)",
+        "Ha portato al dibattito sulla definizione di pianeta"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/planets/dwarf-planets/eris/"]
+    },
+    {
+      "id": "makemake",
+      "name": "Makemake",
+      "type": "Pianeta nano",
+      "radius": 0.07,
+      "diameter": "~1.430 km",
+      "mass": "~3 × 10²¹ kg",
+      "distanceFromSun": 95,
+      "orbitSpeed": 0.085,
+      "orbitalPeriod": "306 anni",
+      "inclination": 0.2,
+      "description": "Pianeta nano classico della fascia di Kuiper, scoperto nel 2005.",
+      "facts": [
+        "Superficie di metano congelato",
+        "Privo di atmosfera significativa",
+        "Ha una piccola luna (S/2015 136472)"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/planets/dwarf-planets/makemake/"]
+    },
+    {
+      "id": "haumea",
+      "name": "Haumea",
+      "type": "Pianeta nano",
+      "radius": 0.065,
+      "diameter": "~1.960 × 996 km (ellissoide)",
+      "mass": "4,01 × 10²¹ kg",
+      "distanceFromSun": 92,
+      "orbitSpeed": 0.09,
+      "orbitalPeriod": "285 anni",
+      "inclination": 0.38,
+      "description": "Pianeta nano con forma allungata per la rapida rotazione (~4 ore) e anello circumplanetario.",
+      "facts": [
+        "Ruota in circa 4 ore",
+        "Possiede un anello e due lune (Hiʻiaka e Namaka)",
+        "Superficie di ghiaccio cristallino"
+      ],
+      "sources": ["https://solarsystem.nasa.gov/planets/dwarf-planets/haumea/"]
+    }
+  ],
+  "oort": {
+    "id": "oort-cloud",
+    "name": "Nube di Oort",
+    "type": "Regione cometaria",
+    "distance": "2.000–100.000 UA",
+    "description": "Guscio sferico ipotetico di comete e detriti ghiacciati che circonda il Sistema Solare, fonte delle comete a lungo periodo.",
+    "facts": [
+      "Non osservata direttamente; inferita dalle orbite cometarie",
+      "Potrebbe contenere trilioni di nuclei cometari",
+      "Estremità esterna ~1/3 del anno luce dal Sole",
+      "Residuo della formazione planetaria"
+    ],
+    "sources": ["https://solarsystem.nasa.gov/solar-system/oort-cloud/overview/"]
+  }
+}

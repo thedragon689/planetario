@@ -1,0 +1,20 @@
+{
+  "app.title": "3D Planetarium",
+  "nav.explore": "Explore",
+  "nav.profile": "Profile",
+  "nav.collectibles": "Collectibles",
+  "nav.drake": "Drake equation",
+  "nav.cinema": "Cinema mode",
+  "nav.starry": "Starry night",
+  "nav.feedback": "Feedback",
+  "mode.explorer": "Explorer",
+  "mode.student": "Student",
+  "mode.researcher": "Researcher",
+  "coords.ra": "RA",
+  "coords.dec": "Dec",
+  "coords.alt": "Alt",
+  "coords.az": "Az",
+  "telemetry.optin": "Anonymous telemetry (opt-in)",
+  "voice.listening": "Listening for voice commands…",
+  "break.reminder": "You have been exploring for 20 minutes. Take a break!"
+}

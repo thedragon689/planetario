@@ -1,0 +1,1244 @@
+{
+  "entries": [
+    {
+      "term": "Aberrazione della luce",
+      "definition": "Deviazione apparente della luce dovuta al moto del telescopio.",
+      "simple": "Come guardare fuori dal finestrino di un treno in corsa."
+    },
+    {
+      "term": "Albedo",
+      "definition": "Frazione di luce solare riflessa da un corpo celeste.",
+      "simple": "Quanto è \"luminoso\" un pianeta visto dal Sole."
+    },
+    {
+      "term": "Alfa Centauri",
+      "definition": "Sistema stellare più vicino al Sole, a 4,37 anni luce.",
+      "simple": "Il vicino di casa cosmico."
+    },
+    {
+      "term": "Andromeda",
+      "definition": "Galassia a spirale più vicina, in collisione futura con la Via Lattea.",
+      "simple": "La nostra galassica vicina."
+    },
+    {
+      "term": "Annihilazione",
+      "definition": "Processo in cui materia e antimateria si annullano liberando energia.",
+      "simple": "Quando particelle opposte si cancellano."
+    },
+    {
+      "term": "Apogeo",
+      "definition": "Punto più lontano della Luna dalla Terra nella sua orbita.",
+      "simple": "La Luna al massimo della distanza."
+    },
+    {
+      "term": "Apoastro",
+      "definition": "Punto più lontano di un oggetto dalla stella attorno a cui orbita.",
+      "simple": "Il punto più lontano di un'orbita."
+    },
+    {
+      "term": "Arcsecondo",
+      "definition": "Unità angolare: 1/3600 di grado.",
+      "simple": "Una frazione minuscola di grado."
+    },
+    {
+      "term": "Asteroide",
+      "definition": "Corpo roccioso orbitante intorno al Sole, più piccolo di un pianeta.",
+      "simple": "Una roccia nello spazio."
+    },
+    {
+      "term": "Astrolabio",
+      "definition": "Strumento storico per misurare posizioni celesti.",
+      "simple": "Un antico GPS del cielo."
+    },
+    {
+      "term": "Astrofisica",
+      "definition": "Studio fisico dei fenomeni astronomici.",
+      "simple": "La fisica applicata alle stelle."
+    },
+    {
+      "term": "Atmosfera",
+      "definition": "Strato gassoso che avvolge un pianeta.",
+      "simple": "L'aria o i gas intorno a un mondo."
+    },
+    {
+      "term": "Aurora boreale",
+      "definition": "Luce polarizzata da particelle solari nell'atmosfera terrestre.",
+      "simple": "Le luci colorate ai poli."
+    },
+    {
+      "term": "Barione",
+      "definition": "Particella composta da quark, come protoni e neutroni.",
+      "simple": "Materia \"normale\" dell'universo."
+    },
+    {
+      "term": "Big Bang",
+      "definition": "Modello dell'origine dell'universo da uno stato caldo e denso.",
+      "simple": "L'inizio di tutto."
+    },
+    {
+      "term": "Binaria eclissante",
+      "definition": "Sistema di due stelle che si eclissano reciprocamente.",
+      "simple": "Due stelle che si coprono a vicenda."
+    },
+    {
+      "term": "Biosignature",
+      "definition": "Segnale chimico che potrebbe indicare vita.",
+      "simple": "Un indizio di vita su un altro mondo."
+    },
+    {
+      "term": "Blazar",
+      "definition": "Quasar con jet puntato verso la Terra.",
+      "simple": "Un buco nero con un raggio laser cosmico verso di noi."
+    },
+    {
+      "term": "Brillamento solare",
+      "definition": "Esplosione improvvisa di energia sulla superficie solare.",
+      "simple": "Un lampo gigante sul Sole."
+    },
+    {
+      "term": "Buco nero",
+      "definition": "Regione dove la gravità impedisce persino alla luce di uscire.",
+      "simple": "Un pozzo gravitazionale da cui nulla scappa."
+    },
+    {
+      "term": "Campo magnetico",
+      "definition": "Regione influenzata da forze magnetiche.",
+      "simple": "Come un grande magnete nello spazio."
+    },
+    {
+      "term": "Cangiante",
+      "definition": "Stella la cui luminosità varia periodicamente.",
+      "simple": "Una stella che pulsa di luce."
+    },
+    {
+      "term": "Cintura di asteroidi",
+      "definition": "Regione tra Marte e Giove ricca di asteroidi.",
+      "simple": "Un anello di rocce tra i pianeti."
+    },
+    {
+      "term": "Cintura di Kuiper",
+      "definition": "Regione oltre Nettuno con corpi ghiacciati.",
+      "simple": "La periferia ghiacciata del Sistema Solare."
+    },
+    {
+      "term": "Cometa",
+      "definition": "Corpo ghiacciato che sviluppa coma e coda vicino al Sole.",
+      "simple": "Una palla di ghiaccio con coda luminosa."
+    },
+    {
+      "term": "Congiunzione",
+      "definition": "Avvicinamento apparente di due oggetti celesti nel cielo.",
+      "simple": "Due pianeti che sembrano vicini."
+    },
+    {
+      "term": "Costellazione",
+      "definition": "Area del cielo con un nome tradizionale.",
+      "simple": "Un disegno immaginario di stelle."
+    },
+    {
+      "term": "Cosmologia",
+      "definition": "Studio dell'origine e dell'evoluzione dell'universo.",
+      "simple": "La storia dell'intero cosmo."
+    },
+    {
+      "term": "Costante di Hubble",
+      "definition": "Rapporto tra velocità di allontanamento e distanza delle galassie.",
+      "simple": "Misura quanto velocemente si espande l'universo."
+    },
+    {
+      "term": "Cromosfera",
+      "definition": "Strato atmosferico sopra la fotosfera del Sole.",
+      "simple": "Una sottile corona rossa attorno al Sole."
+    },
+    {
+      "term": "Densità",
+      "definition": "Massa per unità di volume.",
+      "simple": "Quanto è \"compatto\" un oggetto."
+    },
+    {
+      "term": "Doppler",
+      "definition": "Spostamento di frequenza dovuto al moto relativo.",
+      "simple": "Il suono che cambia quando passa un'ambulanza."
+    },
+    {
+      "term": "Dwarf galaxy",
+      "definition": "Galassia di piccole dimensioni e bassa luminosità.",
+      "simple": "Una galassia piccola."
+    },
+    {
+      "term": "Eclisse",
+      "definition": "Oscuramento di un astro da parte di un altro.",
+      "simple": "Quando un corpo copre la luce di un altro."
+    },
+    {
+      "term": "Eclittica",
+      "definition": "Piano dell'orbita terrestre, riferimento per le orbite planetarie.",
+      "simple": "La \"pista\" dei pianeti nel cielo."
+    },
+    {
+      "term": "Energia oscura",
+      "definition": "Componente misteriosa che accelera l'espansione cosmica.",
+      "simple": "Qualcosa che spinge l'universo ad allargarsi."
+    },
+    {
+      "term": "Equatore celeste",
+      "definition": "Proiezione dell'equatore terrestre sul cielo.",
+      "simple": "La linea immaginaria al centro del cielo."
+    },
+    {
+      "term": "Ergosfera",
+      "definition": "Regione esterna di un buco nero rotante dove non si può restare fermi.",
+      "simple": "Zona dove lo spazio stesso è trascinato."
+    },
+    {
+      "term": "Esopianeta",
+      "definition": "Pianeta che orbita una stella diversa dal Sole.",
+      "simple": "Un mondo extrasolare."
+    },
+    {
+      "term": "Etilene glicole",
+      "definition": "Molecola organica rilevata in alcune nubi interstellari.",
+      "simple": "Un mattone chimico della vita."
+    },
+    {
+      "term": "Event Horizon Telescope",
+      "definition": "Rete di radiotelescopi che ha fotografato M87*.",
+      "simple": "Il telescopio che ha scattato la foto del buco nero."
+    },
+    {
+      "term": "Exoplanet transit",
+      "definition": "Passaggio di un esopianeta davanti alla sua stella.",
+      "simple": "Quando un pianeta oscura un po' la sua stella."
+    },
+    {
+      "term": "Fissione nucleare",
+      "definition": "Divisione di un nucleo atomico in frammenti più leggeri.",
+      "simple": "Come le centrali nucleari producono energia."
+    },
+    {
+      "term": "Fusione nucleare",
+      "definition": "Unione di nuclei leggeri in nuclei più pesanti.",
+      "simple": "Il motore delle stelle."
+    },
+    {
+      "term": "Galassia",
+      "definition": "Sistema enorme di stelle, gas e polveri.",
+      "simple": "Una città di miliardi di stelle."
+    },
+    {
+      "term": "Galassia attiva",
+      "definition": "Galassia con nucleo estremamente luminoso.",
+      "simple": "Una galassia con un cuore molto brillante."
+    },
+    {
+      "term": "Gas interstellare",
+      "definition": "Materia gassosa tra le stelle.",
+      "simple": "Il gas che riempie lo spazio tra le stelle."
+    },
+    {
+      "term": "Gigante rossa",
+      "definition": "Stella in fase evolutiva espansa e raffreddata.",
+      "simple": "Una stella vecchia e gonfia."
+    },
+    {
+      "term": "Gigante gassoso",
+      "definition": "Pianeta composto principalmente da idrogeno ed elio.",
+      "simple": "Un pianeta enorme senza superficie solida."
+    },
+    {
+      "term": "Globulo di Bok",
+      "definition": "Piccola nube densa, possibile culla stellare.",
+      "simple": "Una nuvola che potrebbe diventare una stella."
+    },
+    {
+      "term": "Gravità",
+      "definition": "Forza di attrazione tra masse.",
+      "simple": "Ciò che ci tiene con i piedi per terra."
+    },
+    {
+      "term": "Habitable zone",
+      "definition": "Intervallo di distanze dove l'acqua liquida è possibile.",
+      "simple": "La fascia \"giusta\" per la vita."
+    },
+    {
+      "term": "Hubble",
+      "definition": "Telescopio spaziale che ha rivoluzionato l'osservazione cosmica.",
+      "simple": "Un grande occhio nello spazio."
+    },
+    {
+      "term": "Idrogeno",
+      "definition": "Elemento più leggero e abbondante nell'universo.",
+      "simple": "Il combustibile delle stelle."
+    },
+    {
+      "term": "Inflazione cosmica",
+      "definition": "Espansione rapidissima nei primissimi istanti del Big Bang.",
+      "simple": "Un soffio gigante all'inizio dell'universo."
+    },
+    {
+      "term": "Interferometria",
+      "definition": "Tecnica che combina più telescopi per maggiore risoluzione.",
+      "simple": "Unire più occhi per vedere meglio."
+    },
+    {
+      "term": "Isobara",
+      "definition": "Linea di uguale pressione su una mappa.",
+      "simple": "Linee che collegano punti con stessa pressione."
+    },
+    {
+      "term": "JWST",
+      "definition": "James Webb Space Telescope, osserva nell'infrarosso.",
+      "simple": "Il telescopio che vede l'universo caldo."
+    },
+    {
+      "term": "Kuiper",
+      "definition": "Regione di corpi ghiacciati oltre Nettuno.",
+      "simple": "Il cortile ghiacciato del Sistema Solare."
+    },
+    {
+      "term": "Lente gravitazionale",
+      "definition": "Distorsione della luce da parte della gravità.",
+      "simple": "La gravità che piega la luce come una lente."
+    },
+    {
+      "term": "LIGO",
+      "definition": "Osservatorio che rileva onde gravitazionali.",
+      "simple": "Uno strumento che \"sente\" i buchi neri."
+    },
+    {
+      "term": "Luce",
+      "definition": "Radiazione elettromagnetica visibile.",
+      "simple": "Ciò che vediamo."
+    },
+    {
+      "term": "Luna",
+      "definition": "Unico satellite naturale della Terra.",
+      "simple": "Il nostro compagno notturno."
+    },
+    {
+      "term": "Magnetar",
+      "definition": "Stella di neutroni con campo magnetico estremo.",
+      "simple": "Una stella con un magnete gigantesco."
+    },
+    {
+      "term": "Magnitudine",
+      "definition": "Misura della luminosità apparente di un astro.",
+      "simple": "Quanto è brillante una stella."
+    },
+    {
+      "term": "Mare (lunare)",
+      "definition": "Pianura basaltica scura sulla Luna.",
+      "simple": "Le macchie scure sulla Luna."
+    },
+    {
+      "term": "Materia oscura",
+      "definition": "Materia invisibile che influenza la gravità galattica.",
+      "simple": "Qualcosa di invisibile che tiene insieme le galassie."
+    },
+    {
+      "term": "Meteora",
+      "definition": "Luce prodotta da un meteoride che entra in atmosfera.",
+      "simple": "Una stella cadente."
+    },
+    {
+      "term": "Meteorite",
+      "definition": "Frammento di asteroide o cometa giunto in superficie.",
+      "simple": "Una roccia spaziale arrivata sulla Terra."
+    },
+    {
+      "term": "Nana bianca",
+      "definition": "Resto compatto di una stella simile al Sole.",
+      "simple": "Il cuore spento di una stella media."
+    },
+    {
+      "term": "Nebulosa",
+      "definition": "Nube di gas e polveri nello spazio.",
+      "simple": "Una nuvola cosmica."
+    },
+    {
+      "term": "Neutrino",
+      "definition": "Particella quasi priva di massa e carica.",
+      "simple": "Una particella fantasma che attraversa tutto."
+    },
+    {
+      "term": "Neutron star",
+      "definition": "Stella compatta di neutroni, residuo di supernova.",
+      "simple": "Una stella schiacciata grande come una città."
+    },
+    {
+      "term": "Nucleo galattico",
+      "definition": "Centro della Via Lattea con alta densità stellare.",
+      "simple": "Il cuore della nostra galassia."
+    },
+    {
+      "term": "Oort",
+      "definition": "Nube sferica di comete alla periferia del Sistema Solare.",
+      "simple": "Il magazzine di comete lontanissimo."
+    },
+    {
+      "term": "Opposizione",
+      "definition": "Configurazione in cui un pianeta è opposto al Sole nel cielo.",
+      "simple": "Il momento migliore per osservare un pianeta."
+    },
+    {
+      "term": "Orbita",
+      "definition": "Traiettoria di un corpo attorno a un altro per effetto gravitazionale.",
+      "simple": "Il cammino di un pianeta intorno al Sole."
+    },
+    {
+      "term": "Orizzonte degli eventi",
+      "definition": "Confine oltre il quale nulla può uscire da un buco nero.",
+      "simple": "Il punto di non ritorno."
+    },
+    {
+      "term": "Parallasse",
+      "definition": "Spostamento apparente di una stella dovuto al moto della Terra.",
+      "simple": "Come sembra muoversi una stella se cambi punto di vista."
+    },
+    {
+      "term": "Parsec",
+      "definition": "Unità di distanza: ~3,26 anni luce.",
+      "simple": "Una misura usata dagli astronomi."
+    },
+    {
+      "term": "Perturbazione",
+      "definition": "Piccola deviazione orbitale dovuta alla gravità di altri corpi.",
+      "simple": "Un piccolo spintone gravitazionale."
+    },
+    {
+      "term": "Fotosfera",
+      "definition": "Strato visibile della superficie del Sole.",
+      "simple": "La \"superficie\" del Sole."
+    },
+    {
+      "term": "Planck",
+      "definition": "Missione che ha mappato la radiazione cosmica di fondo.",
+      "simple": "Il telescopio che ha fotografato il Big Bang."
+    },
+    {
+      "term": "Pianeta nano",
+      "definition": "Corpo celeste in orbita che non ha ripulito la propria orbita.",
+      "simple": "Un pianetino come Plutone."
+    },
+    {
+      "term": "Plasma",
+      "definition": "Stato della materia con elettroni liberi, comune nelle stelle.",
+      "simple": "Gas super caldo e ionizzato."
+    },
+    {
+      "term": "Pulsar",
+      "definition": "Stella di neutroni che emette fasci periodici di radio.",
+      "simple": "Un faro cosmico che lampeggia."
+    },
+    {
+      "term": "Quasar",
+      "definition": "Nucleo galattico attivo estremamente luminoso.",
+      "simple": "Una galassia con un cuore abbagliante."
+    },
+    {
+      "term": "Radiotelescopio",
+      "definition": "Strumento che rileva onde radio dallo spazio.",
+      "simple": "Un'antenna gigante per ascoltare il cosmo."
+    },
+    {
+      "term": "Redshift",
+      "definition": "Spostamento verso il rosso per allontanamento o espansione.",
+      "simple": "La luce che diventa più rossa."
+    },
+    {
+      "term": "Relatività generale",
+      "definition": "Teoria di Einstein sulla gravità e lo spaziotempo.",
+      "simple": "Come la massa curva lo spazio."
+    },
+    {
+      "term": "Risonanza orbitale",
+      "definition": "Quando periodi orbitali sono in rapporti semplici.",
+      "simple": "Quando orbite \"ballano\" insieme."
+    },
+    {
+      "term": "Roccia madre",
+      "definition": "Materiale refrattario che forma i pianeti tellurici.",
+      "simple": "I mattoni rocciosi dei pianeti."
+    },
+    {
+      "term": "Seyfert",
+      "definition": "Galassia con nucleo attivo di luminosità moderata.",
+      "simple": "Una galassia con un nucleo vivace."
+    },
+    {
+      "term": "Singolarità",
+      "definition": "Punto di densità infinita teorica in un buco nero.",
+      "simple": "Il centro impossibile di un buco nero."
+    },
+    {
+      "term": "Sistema solare",
+      "definition": "Il Sole e tutti i corpi legati gravitazionalmente.",
+      "simple": "Casa nostra cosmica."
+    },
+    {
+      "term": "Spettro",
+      "definition": "Distribuzione di intensità per lunghezza d'onda.",
+      "simple": "L'impronta digitale della luce."
+    },
+    {
+      "term": "Spettroscopia",
+      "definition": "Studio della composizione chimica tramite lo spettro.",
+      "simple": "Analizzare la luce per capire di cosa è fatto qualcosa."
+    },
+    {
+      "term": "Stella",
+      "definition": "Palla di plasma in equilibrio gravitazionale con fusione nucleare.",
+      "simple": "Una grande palla di gas che brilla."
+    },
+    {
+      "term": "Stella di neutroni",
+      "definition": "Resto ultra denso di una supernova massiccia.",
+      "simple": "Un cucchiaino di questa materia pesa miliardi di tonnellate."
+    },
+    {
+      "term": "Super Terra",
+      "definition": "Pianeta roccioso più massiccio della Terra.",
+      "simple": "Una Terra \"in versione XL\"."
+    },
+    {
+      "term": "Supernova",
+      "definition": "Esplosione terminale di una stella massiccia.",
+      "simple": "La fine spettacolare di una grande stella."
+    },
+    {
+      "term": "Telescopio",
+      "definition": "Strumento per raccogliere e focalizzare radiazione astronomica.",
+      "simple": "Uno strumento per vedere lontano."
+    },
+    {
+      "term": "Temperatura effettiva",
+      "definition": "Temperatura di una stella dedotta dalla sua emissione.",
+      "simple": "Quanto è calda una stella."
+    },
+    {
+      "term": "Terra",
+      "definition": "Terzo pianeta dal Sole, unico con vita conosciuta.",
+      "simple": "Il nostro mondo blu."
+    },
+    {
+      "term": "Tess",
+      "definition": "Telescopio spaziale per la ricerca di esopianeti.",
+      "simple": "Un cacciatore di mondi lontani."
+    },
+    {
+      "term": "Titano",
+      "definition": "Luna di Saturno con atmosfera densa e laghi di metano.",
+      "simple": "Un mondo con fiumi e laghi diversi dai nostri."
+    },
+    {
+      "term": "Transito",
+      "definition": "Passaggio di un corpo davanti a uno più luminoso.",
+      "simple": "Quando un pianeta passa davanti alla sua stella."
+    },
+    {
+      "term": "Universo osservabile",
+      "definition": "Porzione dell'universo da cui la luce ha avuto tempo di raggiungerci.",
+      "simple": "Tutto ciò che possiamo vedere."
+    },
+    {
+      "term": "Variabile Cefeide",
+      "definition": "Stella pulsante usata come metro cosmico.",
+      "simple": "Una stella che aiuta a misurare le distanze."
+    },
+    {
+      "term": "Velocità di fuga",
+      "definition": "Velocità minima per sfuggire alla gravità di un corpo.",
+      "simple": "Quanto veloce devi andare per scappare."
+    },
+    {
+      "term": "Via Lattea",
+      "definition": "Galassia a spirale che ospita il Sistema Solare.",
+      "simple": "La nostra galassia."
+    },
+    {
+      "term": "Vento solare",
+      "definition": "Flusso di particelle cariche emesso dal Sole.",
+      "simple": "Il soffio di particelle del Sole."
+    },
+    {
+      "term": "Wavelength",
+      "definition": "Distanza tra due creste consecutive di un'onda.",
+      "simple": "La \"lunghezza\" di un'onda di luce."
+    },
+    {
+      "term": "WMAP",
+      "definition": "Wilkinson Microwave Anisotropy Probe, mappò la CMB.",
+      "simple": "Un satellite che ha mappato il Big Bang."
+    },
+    {
+      "term": "Zona abitabile",
+      "definition": "Intervallo di distanze con possibile acqua liquida.",
+      "simple": "Dove un pianeta non è né troppo caldo né freddo."
+    },
+    {
+      "term": "Zenit",
+      "definition": "Punto del cielo direttamente sopra l'osservatore.",
+      "simple": "Il punto più alto del cielo."
+    },
+    {
+      "term": "Zodiaco",
+      "definition": "Fascia del cielo attraversata dal Sole e dai pianeti.",
+      "simple": "Le costellazioni del calendario astrologico."
+    },
+    {
+      "term": "Accrezione",
+      "definition": "Accumulo di materia su un oggetto per gravità.",
+      "simple": "Come cresce un buco nero mangiando gas."
+    },
+    {
+      "term": "Achondrite",
+      "definition": "Meteorite priva di condruli.",
+      "simple": "Una meteorite di roccia vulcanica spaziale."
+    },
+    {
+      "term": "Angolo di posizione",
+      "definition": "Angolo misurato in senso orario da un riferimento.",
+      "simple": "Come si indica la direzione di una stella."
+    },
+    {
+      "term": "Anno siderale",
+      "definition": "Tempo per tornare alla stessa posizione tra le stelle.",
+      "simple": "Un anno misurato rispetto alle stelle."
+    },
+    {
+      "term": "Anno tropico",
+      "definition": "Tempo tra due passaggi del Sole all'equinozio vernale.",
+      "simple": "L'anno delle stagioni."
+    },
+    {
+      "term": "Arco di luce zodiacale",
+      "definition": "Fascia luminosa lungo l'eclittica.",
+      "simple": "Una debole luce triangolare dopo il tramonto."
+    },
+    {
+      "term": "Asteroide near-Earth",
+      "definition": "Asteroide con orbita che lo avvicina alla Terra.",
+      "simple": "Una roccia che passa vicino alla Terra."
+    },
+    {
+      "term": "Astrochemia",
+      "definition": "Studio della chimica nello spazio.",
+      "simple": "Come si formano le molecole tra le stelle."
+    },
+    {
+      "term": "Barione acustico",
+      "definition": "Ondulazione di densità nel plasma primordiale.",
+      "simple": "Le \"onde sonore\" del giovane universo."
+    },
+    {
+      "term": "Blueshift",
+      "definition": "Spostamento verso il blu per avvicinamento.",
+      "simple": "La luce che diventa più blu."
+    },
+    {
+      "term": "Bolo metro",
+      "definition": "Strumento che misura il flusso totale di radiazione.",
+      "simple": "Misura tutta la luce, non solo quella visibile."
+    },
+    {
+      "term": "Brillamento gamma",
+      "definition": "Esplosione estremamente energetica nell'universo.",
+      "simple": "Il flash più potente che conosciamo."
+    },
+    {
+      "term": "Campo di Higgs",
+      "definition": "Campo che conferisce massa alle particelle elementari.",
+      "simple": "Il campo che dà peso alle cose."
+    },
+    {
+      "term": "Catena di Markarian",
+      "definition": "Gruppo di galassie interagenti.",
+      "simple": "Galassie che si toccano e si deformano."
+    },
+    {
+      "term": "CMB",
+      "definition": "Radiazione cosmica di fondo, eco del Big Bang.",
+      "simple": "La prima luce dell'universo."
+    },
+    {
+      "term": "Coma (cometaria)",
+      "definition": "Atmosfera temporanea di gas e polvere attorno a una cometa.",
+      "simple": "La nuvola attorno al nucleo di una cometa."
+    },
+    {
+      "term": "Corona solare",
+      "definition": "Strato esterno caldissimo dell'atmosfera solare.",
+      "simple": "L'alone che si vede durante un'eclissi totale."
+    },
+    {
+      "term": "Corrente di particelle",
+      "definition": "Flusso di particelle cariche emesso da un astro.",
+      "simple": "Un fiume di particelle nello spazio."
+    },
+    {
+      "term": "Cosmologia osservativa",
+      "definition": "Cosmologia basata su dati di osservazione.",
+      "simple": "Studiare l'universo misurando, non solo teorizzando."
+    },
+    {
+      "term": "Declinazione",
+      "definition": "Coordinata celeste equivalente alla latitudine.",
+      "simple": "Quanto è alto o basso un oggetto nel cielo."
+    },
+    {
+      "term": "Dischi di accrezione",
+      "definition": "Disco di materia che spirala verso un oggetto massiccio.",
+      "simple": "Il disco luminoso attorno a un buco nero."
+    },
+    {
+      "term": "Drake equation",
+      "definition": "Formula che stima il numero di civiltà comunicanti.",
+      "simple": "Una formula per stimare alieni."
+    },
+    {
+      "term": "Dynamo stellare",
+      "definition": "Meccanismo che genera il campo magnetico di una stella.",
+      "simple": "Come il Sole crea il suo magnete."
+    },
+    {
+      "term": "Eccentricità orbitale",
+      "definition": "Misura di quanto un'orbita è allungata.",
+      "simple": "Se un'orbita è un cerchio o un'ellisse schiacciata."
+    },
+    {
+      "term": "Effetto Doppler",
+      "definition": "Variazione di frequenza per moto relativo.",
+      "simple": "Il cambio di tono quando qualcosa si muove."
+    },
+    {
+      "term": "Elio",
+      "definition": "Elemento più abbondante nel Sole.",
+      "simple": "Il gas principale del Sole."
+    },
+    {
+      "term": "Ellisse",
+      "definition": "Traiettoria orbitale di molti corpi celesti.",
+      "simple": "Un'orbita ovale."
+    },
+    {
+      "term": "Energia di legame",
+      "definition": "Energia necessaria per separare un sistema.",
+      "simple": "Quanta energia serve per staccare qualcosa."
+    },
+    {
+      "term": "Equilibrio idrostatico",
+      "definition": "Bilancio tra gravità e pressione in una stella.",
+      "simple": "Come una stella non collassa su se stessa."
+    },
+    {
+      "term": "Era stellifera",
+      "definition": "Epoca in cui le stelle formano elementi pesanti.",
+      "simple": "L'epoca in cui nascono le stelle."
+    },
+    {
+      "term": "Esopianeta caldo Jupiter",
+      "definition": "Gigante gassoso molto vicino alla sua stella.",
+      "simple": "Un Giove bollente vicino alla stella."
+    },
+    {
+      "term": "Europa",
+      "definition": "Luna ghiacciata di Giove con oceano sotterraneo.",
+      "simple": "Un mondo ghiacciato con oceano nascosto."
+    },
+    {
+      "term": "Evento di tidal disruption",
+      "definition": "Distruzione di una stella da parte di un buco nero.",
+      "simple": "Quando un buco nero \"mangia\" una stella."
+    },
+    {
+      "term": "Fase lunare",
+      "definition": "Porzione illuminata della Luna visibile dalla Terra.",
+      "simple": "Le fasi: nuova, crescente, piena..."
+    },
+    {
+      "term": "Filamento cosmico",
+      "definition": "Struttura allungata di materia nell'universo.",
+      "simple": "I fili della rete cosmica."
+    },
+    {
+      "term": "Flare stellare",
+      "definition": "Esplosione di energia sulla superficie di una stella.",
+      "simple": "Un lampo su una stella."
+    },
+    {
+      "term": "Fornax",
+      "definition": "Ammasso di galassie nel Gruppo Locale.",
+      "simple": "Un gruppo di galassie vicine."
+    },
+    {
+      "term": "Fusione di galassie",
+      "definition": "Collisione e unione di due galassie.",
+      "simple": "Quando due galassie si scontrano."
+    },
+    {
+      "term": "Galassia irregolare",
+      "definition": "Galassia senza struttura spirale o ellittica definita.",
+      "simple": "Una galassia dalla forma caotica."
+    },
+    {
+      "term": "Galassia lenticolare",
+      "definition": "Galassia tra spirale e ellittica.",
+      "simple": "Una galassia \"a lente\"."
+    },
+    {
+      "term": "Gas molecolare",
+      "definition": "Gas in cui le molecole sopravvivono, culla di stelle.",
+      "simple": "Il gas freddo dove nascono le stelle."
+    },
+    {
+      "term": "Ghiaccio d'acqua",
+      "definition": "Acqua congelata comune su lune e comete.",
+      "simple": "Ghiaccio nello spazio."
+    },
+    {
+      "term": "Gran Modellounificato",
+      "definition": "Modello dell'evoluzione stellare.",
+      "simple": "La teoria della vita delle stelle."
+    },
+    {
+      "term": "Gruppo Locale",
+      "definition": "Ammasso di galassie che include Via Lattea e Andromeda.",
+      "simple": "Il nostro quartiere galattico."
+    },
+    {
+      "term": "Halo galattico",
+      "definition": "Regione esterna sferica di una galassia.",
+      "simple": "L'alone di stelle attorno alla galassia."
+    },
+    {
+      "term": "Heliopausa",
+      "definition": "Confine tra vento solare e medio interstellare.",
+      "simple": "Dove finisce l'influenza del Sole."
+    },
+    {
+      "term": "HR diagram",
+      "definition": "Diagramma che classifica le stelle per luminosità e temperatura.",
+      "simple": "La \"carta d'identità\" delle stelle."
+    },
+    {
+      "term": "Idrogeno molecolare",
+      "definition": "H2, componente principale delle nubi stellari.",
+      "simple": "Il gas che forma le stelle."
+    },
+    {
+      "term": "Inclinazione orbitale",
+      "definition": "Angolo tra il piano orbitale e un riferimento.",
+      "simple": "Quanto è \"inclinata\" un'orbita."
+    },
+    {
+      "term": "Interstellar medium",
+      "definition": "Materia tra le stelle: gas, polveri, raggi cosmici.",
+      "simple": "Lo spazio non è vuoto."
+    },
+    {
+      "term": "Irregolarità cosmica",
+      "definition": "Piccole fluttuazioni di densità nel giovane universo.",
+      "simple": "I semi delle galassie."
+    },
+    {
+      "term": "Isochrone",
+      "definition": "Curva di evoluzione stellare a parità di età.",
+      "simple": "Linee di età sul diagramma delle stelle."
+    },
+    {
+      "term": "Jet relativistico",
+      "definition": "Getto di plasma vicino alla velocità della luce.",
+      "simple": "Un raggio sparato da un buco nero."
+    },
+    {
+      "term": "Kepler",
+      "definition": "Telescopio che ha scoperto migliaia di esopianeti.",
+      "simple": "Il cacciatore di pianeti di NASA."
+    },
+    {
+      "term": "Laniakea",
+      "definition": "Superammasso che include la Via Lattea.",
+      "simple": "La nostra supercittà di galassie."
+    },
+    {
+      "term": "Legge di Hubble",
+      "definition": "Le galassie lontane si allontanano più velocemente.",
+      "simple": "L'universo si espande."
+    },
+    {
+      "term": "Lente gravitazionale forte",
+      "definition": "Lente che produce immagini multiple o anelli.",
+      "simple": "Quando la gravità fa miraggi cosmici."
+    },
+    {
+      "term": "Lente gravitazionale debole",
+      "definition": "Distorsione debole di galassie di fondo.",
+      "simple": "Una leggera deformazione delle galassie lontane."
+    },
+    {
+      "term": "Linea di emissione",
+      "definition": "Picco nello spettro da transizione atomica.",
+      "simple": "Una firma colorata della luce."
+    },
+    {
+      "term": "Luna gibbosa",
+      "definition": "Fase tra quarto e piena.",
+      "simple": "Quando la Luna è quasi piena."
+    },
+    {
+      "term": "Luminosità",
+      "definition": "Potenza totale emessa da una sorgente.",
+      "simple": "Quanta luce emette una stella."
+    },
+    {
+      "term": "Magellanic Clouds",
+      "definition": "Due galassie nane satelliti della Via Lattea.",
+      "simple": "Le nostre galassie compagne."
+    },
+    {
+      "term": "Magnetosfera",
+      "definition": "Regione dominata dal campo magnetico di un pianeta.",
+      "simple": "Lo scudo magnetico di un pianeta."
+    },
+    {
+      "term": "Main sequence",
+      "definition": "Sequenza principale nel diagramma HR, fase di fusione H.",
+      "simple": "La \"vita adulta\" di una stella."
+    },
+    {
+      "term": "Mare crisium",
+      "definition": "Grande bacino basaltico sulla Luna.",
+      "simple": "Un mare lunare."
+    },
+    {
+      "term": "Materia bariogenica",
+      "definition": "Materia composta da barioni, la nostra materia normale.",
+      "simple": "La materia di cui siamo fatti."
+    },
+    {
+      "term": "Metallicità",
+      "definition": "Abbondanza di elementi più pesanti dell'elio in una stella.",
+      "simple": "Quanto \"metallo\" contiene una stella."
+    },
+    {
+      "term": "Metodo delle transits",
+      "definition": "Scoperta di esopianeti misurando l'oscuramento stellare.",
+      "simple": "Trovare pianeti quando oscurano la stella."
+    },
+    {
+      "term": "Metodo della velocità radiale",
+      "definition": "Scoperta di esopianeti dal moto della stella.",
+      "simple": "La stella che oscilla per un pianeta."
+    },
+    {
+      "term": "Microgravità",
+      "definition": "Condizione di apparente assenza di peso in orbita.",
+      "simple": "La sensazione di fluttuare nello spazio."
+    },
+    {
+      "term": "Microlente gravitazionale",
+      "definition": "Lente causata da oggetti di massa stellare o planetaria.",
+      "simple": "Una lente improvvisa e piccola."
+    },
+    {
+      "term": "Molecola organica",
+      "definition": "Composto carbonioso, possibile base della vita.",
+      "simple": "Mattoni chimici della vita."
+    },
+    {
+      "term": "Nebulosa planetaria",
+      "definition": "Gas espulso da una stella simile al Sole in fine vita.",
+      "simple": "L'anello colorato di una stella morente."
+    },
+    {
+      "term": "Nebulosa a emissione",
+      "definition": "Nebulosa ionizzata che brilla con luce propria.",
+      "simple": "Una nebulosa che brilla da sola."
+    },
+    {
+      "term": "Nebulosa a riflessione",
+      "definition": "Nebulosa che riflette la luce di stelle vicine.",
+      "simple": "Una nuvola che riflette la luce."
+    },
+    {
+      "term": "Nucleosintesi",
+      "definition": "Formazione di nuclei atomici.",
+      "simple": "Come si forgiano gli elementi."
+    },
+    {
+      "term": "Osservatorio",
+      "definition": "Struttura o strumento dedicato all'osservazione astronomica.",
+      "simple": "Dove gli astronomi osservano il cielo."
+    },
+    {
+      "term": "Orbita geostazionaria",
+      "definition": "Orbita con periodo di 24 ore sopra l'equatore.",
+      "simple": "Dove stazionano molti satelliti."
+    },
+    {
+      "term": "Orbita di Lagrange",
+      "definition": "Punti di equilibrio gravitazionale tra due corpi.",
+      "simple": "Punti speciali nello spazio."
+    },
+    {
+      "term": "Parallasse stellare",
+      "definition": "Metodo per misurare distanze stellari vicine.",
+      "simple": "Misurare la distanza con il triangolo."
+    },
+    {
+      "term": "Perturbazione kepleriana",
+      "definition": "Deviazione orbitale secondo la meccanica celeste.",
+      "simple": "Piccole variazioni nelle orbite."
+    },
+    {
+      "term": "Photoevaporation",
+      "definition": "Evaporazione di atmosfera per radiazione stellare.",
+      "simple": "Il vento stellare che spazza l'atmosfera."
+    },
+    {
+      "term": "Piano galattico",
+      "definition": "Piano su cui giace il disco della Via Lattea.",
+      "simple": "Il disco piatto della nostra galassia."
+    },
+    {
+      "term": "Planetesimale",
+      "definition": "Corpo piccolo che partecipa alla formazione planetaria.",
+      "simple": "Un mattoncino di pianeta."
+    },
+    {
+      "term": "Plasma interstellare",
+      "definition": "Gas ionizzato tra le stelle.",
+      "simple": "Gas caldo e carico nello spazio."
+    },
+    {
+      "term": "Polarizzazione",
+      "definition": "Orientamento preferenziale delle onde elettromagnetiche.",
+      "simple": "Come vibra la luce."
+    },
+    {
+      "term": "Popolazione stellare I",
+      "definition": "Stelle giovani e ricche di metalli nel disco.",
+      "simple": "Stelle giovani della Via Lattea."
+    },
+    {
+      "term": "Popolazione stellare II",
+      "definition": "Stelle vecchie nell'alone, povere di metalli.",
+      "simple": "Stelle antiche."
+    },
+    {
+      "term": "Precessione",
+      "definition": "Lenta variazione dell'orientamento dell'asse di rotazione.",
+      "simple": "L'asse della Terra che \"disegna\" un cono."
+    },
+    {
+      "term": "Protogalassia",
+      "definition": "Precursore di una galassia nel giovane universo.",
+      "simple": "Una galassia neonata."
+    },
+    {
+      "term": "Protopianeta",
+      "definition": "Corpo in formazione che diventerà un pianeta.",
+      "simple": "Un pianeta in fase di costruzione."
+    },
+    {
+      "term": "Pulsar millisecondo",
+      "definition": "Pulsar che ruota centinaia di volte al secondo.",
+      "simple": "Un faro cosmico ultrarapido."
+    },
+    {
+      "term": "Quark",
+      "definition": "Particella elementare costituente di protoni e neutroni.",
+      "simple": "Un mattone della materia."
+    },
+    {
+      "term": "Radiazione ionizzante",
+      "definition": "Radiazione capace di rimuovere elettroni.",
+      "simple": "Radiazione pericolosa e energetica."
+    },
+    {
+      "term": "Raggio solare",
+      "definition": "Unità di distanza basata sul raggio del Sole.",
+      "simple": "Una misura in \"raggi solari\"."
+    },
+    {
+      "term": "Ramo orizzontale",
+      "definition": "Fase in cui una stella fonde l'elio nel nucleo.",
+      "simple": "Una fase della vita stellare."
+    },
+    {
+      "term": "Rifrazione atmosferica",
+      "definition": "Deviazione della luce nell'atmosfera terrestre.",
+      "simple": "Perché le stelle sembrano tremolare."
+    },
+    {
+      "term": "Risonanza spin-orbita",
+      "definition": "Allineamento tra rotazione e orbita per maree.",
+      "simple": "Perché la Luna mostra sempre la stessa faccia."
+    },
+    {
+      "term": "Rossby number",
+      "definition": "Numero adimensionale in dinamica dei fluidi rotanti.",
+      "simple": "Quanto conta la rotazione nei fluidi."
+    },
+    {
+      "term": "Rosseland mean opacity",
+      "definition": "Opacità media in astrofisica stellare.",
+      "simple": "Quanto è opaco il gas stellare."
+    },
+    {
+      "term": "Satellite naturale",
+      "definition": "Corpo che orbita un pianeta.",
+      "simple": "Una luna."
+    },
+    {
+      "term": "Scattering Rayleigh",
+      "definition": "Diffusione della luce da particelle piccole, cielo blu.",
+      "simple": "Perché il cielo è blu."
+    },
+    {
+      "term": "Seyfert 1",
+      "definition": "Galassia attiva con linee larghe nel nucleo.",
+      "simple": "Un tipo di galassia attiva."
+    },
+    {
+      "term": "Shell galaxy",
+      "definition": "Galassia con struttura a guscio.",
+      "simple": "Una galassia a cipolla."
+    },
+    {
+      "term": "Shock wave",
+      "definition": "Onda di compressione che si propaga nel mezzo.",
+      "simple": "Un'onda d'urto nello spazio."
+    },
+    {
+      "term": "Sidereo",
+      "definition": "Riferito alle stelle fisse di fondo.",
+      "simple": "Misurato rispetto alle stelle."
+    },
+    {
+      "term": "Singolarità gravitazionale",
+      "definition": "Punto di densità infinita teorica.",
+      "simple": "Il centro impossibile."
+    },
+    {
+      "term": "Sistema binario",
+      "definition": "Due stelle legate gravitazionalmente.",
+      "simple": "Due stelle che danzano insieme."
+    },
+    {
+      "term": "Sistema planetario",
+      "definition": "Insieme di pianeti attorno a una stella.",
+      "simple": "Una famiglia di pianeti."
+    },
+    {
+      "term": "Sole",
+      "definition": "Stella al centro del Sistema Solare.",
+      "simple": "La nostra stella."
+    },
+    {
+      "term": "Spettro continuo",
+      "definition": "Spettro senza linee discrete.",
+      "simple": "Un arcobaleno continuo di colori."
+    },
+    {
+      "term": "Spettroscopia ad alta risoluzione",
+      "definition": "Analisi spettrale molto dettagliata.",
+      "simple": "Vedere dettagli finissimi nella luce."
+    },
+    {
+      "term": "Stella T Tauri",
+      "definition": "Giovane stella in fase di contrazione pre-sequenza principale.",
+      "simple": "Una stella neonata."
+    },
+    {
+      "term": "Stella Wolf-Rayet",
+      "definition": "Stella massiccia con vento intenso e atmosfera espulsa.",
+      "simple": "Una stella che perde massa violentemente."
+    },
+    {
+      "term": "Stazione spaziale",
+      "definition": "Struttura abitata in orbita terrestre.",
+      "simple": "Casa degli astronauti in orbita."
+    },
+    {
+      "term": "Superammasso",
+      "definition": "Struttura cosmica di ammassi di galassie.",
+      "simple": "Una \"città\" di ammassi."
+    },
+    {
+      "term": "Superbolla",
+      "definition": "Cavità nel gas interstellare scavata da esplosioni stellari.",
+      "simple": "Una bolla gigante nello spazio."
+    },
+    {
+      "term": "Super Terra fredda",
+      "definition": "Esopianeta roccioso lontano dalla stella.",
+      "simple": "Una Terra gelida lontana."
+    },
+    {
+      "term": "Tidal locking",
+      "definition": "Sincronizzazione tra rotazione e rivoluzione per maree.",
+      "simple": "Perché Plutone e Caronte si guardano sempre."
+    },
+    {
+      "term": "Titolo di effemeridi",
+      "definition": "Posizione predetta di un astro a un dato istante.",
+      "simple": "Dove sarà un pianeta."
+    },
+    {
+      "term": "Transito di Venere",
+      "definition": "Passaggio di Venere davanti al disco solare.",
+      "simple": "Un raro spettacolo solare."
+    },
+    {
+      "term": "Tropopause",
+      "definition": "Confine tra troposfera e stratosfera terrestre.",
+      "simple": "Il \"tetto\" del nostro tempo."
+    },
+    {
+      "term": "Universo",
+      "definition": "Tutto ciò che esiste fisicamente.",
+      "simple": "Il tutto."
+    },
+    {
+      "term": "UV",
+      "definition": "Radiazione ultravioletta, oltre il violetto visibile.",
+      "simple": "Luce che non vediamo ma che abbronzia."
+    },
+    {
+      "term": "Velocità radiale",
+      "definition": "Componente di velocità lungo la linea di vista.",
+      "simple": "Se qualcosa si avvicina o allontana."
+    },
+    {
+      "term": "Via Lattea bar",
+      "definition": "Struttura a barra nel centro della Via Lattea.",
+      "simple": "Il centro a forma di barra della galassia."
+    },
+    {
+      "term": "Virgo Cluster",
+      "definition": "Ammasso di galassie nella costellazione della Vergine.",
+      "simple": "Un grande gruppo di galassie."
+    },
+    {
+      "term": "Vuoto cosmico",
+      "definition": "Regione con densità di galassie molto bassa.",
+      "simple": "Un deserto di galassie."
+    },
+    {
+      "term": "Wormhole",
+      "definition": "Tunnel ipotetico nello spaziotempo.",
+      "simple": "Un passaggio tra due punti lontani."
+    },
+    {
+      "term": "Zona di Goldilocks",
+      "definition": "Zona abitabile, né troppo calda né troppo fredda.",
+      "simple": "La fascia giusta per la vita."
+    },
+    {
+      "term": "Zona di Roche",
+      "definition": "Distanza entro cui un corpo è disgregato dalle maree.",
+      "simple": "Dove un pianeta si farebbe a pezzi."
+    }
+  ]
+}

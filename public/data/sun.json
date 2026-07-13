@@ -1,0 +1,19 @@
+{
+  "id": "sun",
+  "name": "Sole",
+  "radius": 5.5,
+  "visualRadius": 5.5,
+  "intensity": 6,
+  "lightDistance": 1200,
+  "shaderParams": {
+    "noiseScale": 3.5,
+    "plasmaSpeed": 0.35,
+    "glowIntensity": 1.4,
+    "distortion": 0.08,
+    "coreColor": "#fff8e0",
+    "midColor": "#ffaa44",
+    "coronaColor": "#ff5500",
+    "coronaScale": 2.5,
+    "haloScale": 3.2
+  }
+}

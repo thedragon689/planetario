@@ -1,0 +1,440 @@
+{
+  "catalog": {
+    "version": "1.0",
+    "sources": [
+      "NASA Exoplanet Archive",
+      "TESS",
+      "Kepler",
+      "JWST Early Release Science"
+    ],
+    "notes": "Sistemi esopianetari con orbite schematiche; dati osservativi dove disponibili."
+  },
+  "systems": [
+    {
+      "id": "trappist-1",
+      "name": "TRAPPIST-1",
+      "hostStar": {
+        "name": "TRAPPIST-1",
+        "spectral": "M8V",
+        "temperature": 2559
+      },
+      "distanceLy": 40.7,
+      "constellation": "Acquario",
+      "marker": {
+        "position": [-45, 12, 88],
+        "scale": 5.2
+      },
+      "habitableZone": {
+        "innerAu": 0.028,
+        "outerAu": 0.053
+      },
+      "description": "Sistema di sette pianeti terrestri attorno a una nana rossa ultrafredda, scoperto con il telescopio TRAPPIST in Cile.",
+      "planets": [
+        {
+          "id": "trappist-1b",
+          "name": "TRAPPIST-1 b",
+          "classification": "rocky",
+          "type": "Esopianeta roccioso",
+          "radiusEarth": 1.12,
+          "massEarth": 1.02,
+          "semiMajorAxisAu": 0.011,
+          "orbitalPeriodDays": 1.51,
+          "equilibriumTempK": 400,
+          "habitable": false,
+          "discoveryYear": 2016,
+          "discoveryMethod": "Transito",
+          "description": "Il pianeta più interno del sistema, fortemente irradiato dalla nana rossa.",
+          "facts": [
+            "Orbita a circa 1,7 milioni di km dalla stella",
+            "Probabilmente privo di atmosfera significativa"
+          ],
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6989/"]
+        },
+        {
+          "id": "trappist-1e",
+          "name": "TRAPPIST-1 e",
+          "classification": "rocky",
+          "type": "Esopianeta roccioso",
+          "radiusEarth": 0.92,
+          "massEarth": 0.62,
+          "semiMajorAxisAu": 0.029,
+          "orbitalPeriodDays": 6.1,
+          "equilibriumTempK": 251,
+          "habitable": true,
+          "habitabilityScore": 0.68,
+          "discoveryYear": 2017,
+          "discoveryMethod": "Transito",
+          "description": "Uno dei tre pianeti nella zona abitabile; dimensioni simili alla Terra con temperatura equilibrio moderata.",
+          "facts": [
+            "Riceve circa il 62% dell'energia solare che arriva alla Terra",
+            "Osservato ripetutamente da Spitzer e Kepler"
+          ],
+          "jwst": {
+            "atmosphere": "Nessuna atmosfera densa rilevata (2023)",
+            "spectroscopy": "JWST ha escluso un'atmosfera di idrogeno-elio estesa"
+          },
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6992/"]
+        },
+        {
+          "id": "trappist-1f",
+          "name": "TRAPPIST-1 f",
+          "classification": "super_earth",
+          "type": "Super-Terra",
+          "radiusEarth": 1.04,
+          "massEarth": 0.68,
+          "semiMajorAxisAu": 0.037,
+          "orbitalPeriodDays": 9.2,
+          "equilibriumTempK": 219,
+          "habitable": true,
+          "habitabilityScore": 0.72,
+          "discoveryYear": 2017,
+          "discoveryMethod": "Transito",
+          "description": "Super-Terra nella zona abitabile, potenzialmente con oceani di acqua liquida sulla superficie.",
+          "facts": [
+            "Potrebbe essere un mondo oceanico",
+            "Periodo orbitale di circa 9 giorni terrestri"
+          ],
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6993/"]
+        },
+        {
+          "id": "trappist-1g",
+          "name": "TRAPPIST-1 g",
+          "classification": "super_earth",
+          "type": "Super-Terra",
+          "radiusEarth": 1.13,
+          "massEarth": 1.34,
+          "semiMajorAxisAu": 0.048,
+          "orbitalPeriodDays": 12.4,
+          "equilibriumTempK": 198,
+          "habitable": true,
+          "habitabilityScore": 0.75,
+          "discoveryYear": 2017,
+          "discoveryMethod": "Transito",
+          "description": "Il più esterno dei tre pianeti abitabili, con raggio leggermente superiore alla Terra.",
+          "facts": [
+            "Considerato uno dei migliori candidati per studi JWST",
+            "Potrebbe ricevere maree significative dalla stella madre"
+          ],
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6994/"]
+        }
+      ]
+    },
+    {
+      "id": "proxima-centauri",
+      "name": "Proxima Centauri",
+      "hostStar": {
+        "name": "Proxima Centauri",
+        "spectral": "M5.5Ve",
+        "temperature": 3042
+      },
+      "distanceLy": 4.24,
+      "constellation": "Centauro",
+      "marker": {
+        "position": [18, -6, 22],
+        "scale": 4.8
+      },
+      "habitableZone": {
+        "innerAu": 0.037,
+        "outerAu": 0.076
+      },
+      "description": "La stella più vicina al Sole, compagna del sistema Alpha Centauri, con almeno un esopianeta confermato.",
+      "planets": [
+        {
+          "id": "proxima-b",
+          "name": "Proxima Centauri b",
+          "classification": "rocky",
+          "type": "Esopianeta roccioso",
+          "radiusEarth": 1.07,
+          "massEarth": 1.17,
+          "semiMajorAxisAu": 0.0485,
+          "orbitalPeriodDays": 11.2,
+          "equilibriumTempK": 234,
+          "habitable": true,
+          "habitabilityScore": 0.61,
+          "discoveryYear": 2016,
+          "discoveryMethod": "Velocità radiale",
+          "description": "Esopianeta roccioso nella zona abitabile della stella più vicina al Sole.",
+          "facts": [
+            "A soli 4,24 anni luce dalla Terra",
+            "Soggetto del programma Breakthrough Starshot",
+            "Potrebbe essere soggetto a flare stellari intensi"
+          ],
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/7135/"]
+        }
+      ]
+    },
+    {
+      "id": "kepler-452",
+      "name": "Kepler-452",
+      "hostStar": {
+        "name": "Kepler-452",
+        "spectral": "G2",
+        "temperature": 5757
+      },
+      "distanceLy": 1800,
+      "constellation": "Cigno",
+      "marker": {
+        "position": [120, 35, -60],
+        "scale": 6
+      },
+      "habitableZone": {
+        "innerAu": 0.85,
+        "outerAu": 1.4
+      },
+      "description": "Sistema attorno a una stella simile al Sole, famoso per il pianeta 'cugino della Terra'.",
+      "planets": [
+        {
+          "id": "kepler-452b",
+          "name": "Kepler-452 b",
+          "classification": "super_earth",
+          "type": "Super-Terra",
+          "radiusEarth": 1.63,
+          "massEarth": null,
+          "semiMajorAxisAu": 1.046,
+          "orbitalPeriodDays": 384.8,
+          "equilibriumTempK": 265,
+          "habitable": true,
+          "habitabilityScore": 0.83,
+          "discoveryYear": 2015,
+          "discoveryMethod": "Transito (Kepler)",
+          "description": "Spesso chiamato 'cugino della Terra': orbita una stella G2 a distanza simile a quella Terra-Sole.",
+          "facts": [
+            "Riceve circa il 10% in più di energia solare rispetto alla Terra",
+            "Ha circa 1,5 miliardi di anni in più del nostro pianeta",
+            "Scoperto dalla missione Kepler della NASA"
+          ],
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6497/"]
+        }
+      ]
+    },
+    {
+      "id": "51-pegasi",
+      "name": "51 Pegasi",
+      "hostStar": {
+        "name": "51 Pegasi",
+        "spectral": "G2IV",
+        "temperature": 5783
+      },
+      "distanceLy": 50.9,
+      "constellation": "Pegaso",
+      "marker": {
+        "position": [-30, 20, -55],
+        "scale": 5.5
+      },
+      "habitableZone": {
+        "innerAu": 0.95,
+        "outerAu": 1.55
+      },
+      "description": "Sistema della prima esopianeta scoperta attorno a una stella simile al Sole (Nobel 2019).",
+      "planets": [
+        {
+          "id": "51-pegasi-b",
+          "name": "51 Pegasi b (Dimidium)",
+          "classification": "hot_jupiter",
+          "type": "Gioviano caldo",
+          "radiusEarth": 14.2,
+          "massEarth": 150,
+          "semiMajorAxisAu": 0.052,
+          "orbitalPeriodDays": 4.23,
+          "equilibriumTempK": 1284,
+          "habitable": false,
+          "discoveryYear": 1995,
+          "discoveryMethod": "Velocità radiale",
+          "description": "Il primo esopianeta confermato attorno a una stella di sequenza principale, un gigante gassoso molto vicino alla stella.",
+          "facts": [
+            "Scoperto da Michel Mayor e Didier Queloz",
+            "Orbita a meno di 8 milioni di km dalla stella",
+            "Ha rivoluzionato la ricerca planetaria extrasolare"
+          ],
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6901/"]
+        }
+      ]
+    },
+    {
+      "id": "hd-189733",
+      "name": "HD 189733",
+      "hostStar": {
+        "name": "HD 189733 A",
+        "spectral": "K2V",
+        "temperature": 4939
+      },
+      "distanceLy": 64.5,
+      "constellation": "Volpetta",
+      "marker": {
+        "position": [55, -15, 40],
+        "scale": 5
+      },
+      "habitableZone": {
+        "innerAu": 0.55,
+        "outerAu": 0.9
+      },
+      "description": "Sistema binario con un gioviano caldo molto studiato, bersaglio chiave per la spettroscopia atmosferica.",
+      "planets": [
+        {
+          "id": "hd-189733b",
+          "name": "HD 189733 b",
+          "classification": "hot_jupiter",
+          "type": "Gioviano caldo",
+          "radiusEarth": 13.2,
+          "massEarth": 364,
+          "semiMajorAxisAu": 0.031,
+          "orbitalPeriodDays": 2.22,
+          "equilibriumTempK": 1117,
+          "habitable": false,
+          "discoveryYear": 2005,
+          "discoveryMethod": "Transito",
+          "description": "Gioviano caldo con atmosfera ricca di silicati; JWST e Hubble hanno mappato vapore acqueo e composizione.",
+          "facts": [
+            "Pioggia di vetro che soffia lateralmente a 8.700 km/h",
+            "Colore blu intenso dovuto a silicati in sospensione",
+            "Uno dei esopianeti meglio caratterizzati"
+          ],
+          "jwst": {
+            "atmosphere": "Vapore acqueo, anidride carbonica, monossido di carbonio",
+            "spectroscopy": "Spettroscopia trasmissiva con Hubble e JWST"
+          },
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6845/"]
+        }
+      ]
+    },
+    {
+      "id": "wasp-39",
+      "name": "WASP-39",
+      "hostStar": {
+        "name": "WASP-39",
+        "spectral": "G8",
+        "temperature": 5512
+      },
+      "distanceLy": 700,
+      "constellation": "Vergine",
+      "marker": {
+        "position": [-90, 8, -30],
+        "scale": 5.8
+      },
+      "habitableZone": {
+        "innerAu": 0.8,
+        "outerAu": 1.3
+      },
+      "description": "Sistema con un Saturno caldo, primo esopianeta dove JWST ha rilevato anidride carbonica nell'atmosfera.",
+      "planets": [
+        {
+          "id": "wasp-39b",
+          "name": "WASP-39 b",
+          "classification": "hot_jupiter",
+          "type": "Gioviano caldo",
+          "radiusEarth": 14.3,
+          "massEarth": 85,
+          "semiMajorAxisAu": 0.0486,
+          "orbitalPeriodDays": 4.06,
+          "equilibriumTempK": 1166,
+          "habitable": false,
+          "discoveryYear": 2011,
+          "discoveryMethod": "Transito",
+          "description": "Pianeta gassoso dove JWST ha fornito la prima detection di CO₂ in un'atmosfera extrasolare.",
+          "facts": [
+            "Prima rilevazione di CO₂ su un esopianeta (JWST, 2022)",
+            "Atmosfera con acqua, sodio e potassio",
+            "Bersaglio del programma Early Release Science di JWST"
+          ],
+          "jwst": {
+            "atmosphere": "Anidride carbonica, acqua, monossido di carbonio, biossido di zolfo",
+            "spectroscopy": "Spettroscopia trasmissiva ad alta risoluzione (NIRSpec)"
+          },
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6998/"]
+        }
+      ]
+    },
+    {
+      "id": "k2-18",
+      "name": "K2-18",
+      "hostStar": {
+        "name": "K2-18",
+        "spectral": "M2.5V",
+        "temperature": 3457
+      },
+      "distanceLy": 124,
+      "constellation": "Leone",
+      "marker": {
+        "position": [70, 18, -75],
+        "scale": 4.6
+      },
+      "habitableZone": {
+        "innerAu": 0.11,
+        "outerAu": 0.21
+      },
+      "description": "Nana rossa con un mini-Nettuno nella zona abitabile, candidato per biosignature nell'atmosfera.",
+      "planets": [
+        {
+          "id": "k2-18b",
+          "name": "K2-18 b",
+          "classification": "mini_neptune",
+          "type": "Mini-Nettuno",
+          "radiusEarth": 2.61,
+          "massEarth": 8.63,
+          "semiMajorAxisAu": 0.1429,
+          "orbitalPeriodDays": 32.9,
+          "equilibriumTempK": 265,
+          "habitable": true,
+          "habitabilityScore": 0.45,
+          "discoveryYear": 2015,
+          "discoveryMethod": "Transito (K2)",
+          "description": "Mini-Nettuno con atmosfera ricca di vapore acqueo; possibile rilevamento di dimetil solfuro (DMS).",
+          "facts": [
+            "Potrebbe avere un oceano sotto una atmosfera di idrogeno",
+            "JWST ha rilevato metano e possibile DMS (2023)",
+            "Non è un mondo roccioso ma un gigante gassoso ghiacciato"
+          ],
+          "jwst": {
+            "atmosphere": "Vapore acqueo, metano, anidride carbonica; possibile DMS",
+            "spectroscopy": "JWST NIRISS e NIRSpec (2023)"
+          },
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/6498/"]
+        }
+      ]
+    },
+    {
+      "id": "toi-700",
+      "name": "TOI-700",
+      "hostStar": {
+        "name": "TOI-700",
+        "spectral": "M2V",
+        "temperature": 3480
+      },
+      "distanceLy": 101.4,
+      "constellation": "Dorado",
+      "marker": {
+        "position": [-65, -10, 95],
+        "scale": 4.4
+      },
+      "habitableZone": {
+        "innerAu": 0.11,
+        "outerAu": 0.22
+      },
+      "description": "Sistema scoperto da TESS con un pianeta terrestre nella zona abitabile.",
+      "planets": [
+        {
+          "id": "toi-700d",
+          "name": "TOI-700 d",
+          "classification": "rocky",
+          "type": "Esopianeta roccioso",
+          "radiusEarth": 1.19,
+          "massEarth": 1.72,
+          "semiMajorAxisAu": 0.163,
+          "orbitalPeriodDays": 37.4,
+          "equilibriumTempK": 268,
+          "habitable": true,
+          "habitabilityScore": 0.64,
+          "discoveryYear": 2020,
+          "discoveryMethod": "Transito (TESS)",
+          "description": "Primo pianeta di dimensioni terrestri nella zona abitabile scoperto da TESS.",
+          "facts": [
+            "Riceve circa l'86% dell'energia solare della Terra",
+            "Potrebbe essere in rotazione sincrona con la stella",
+            "Scoperto da un team di scienziati civili con dati TESS"
+          ],
+          "sources": ["https://exoplanets.nasa.gov/exoplanet-catalog/7507/"]
+        }
+      ]
+    }
+  ]
+}

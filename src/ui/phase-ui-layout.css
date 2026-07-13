@@ -1,0 +1,328 @@
+/**
+ * Zone UI sicure — evita sovrapposizioni tra HUD, nav, controlli e pannelli.
+ * Importato per ultimo da layout.css.
+ */
+
+:root {
+  --ui-topbar-h: 3.25rem;
+  --ui-side-inset: 0.75rem;
+  --ui-bottom-inset: 0.75rem;
+  --ui-scene-nav-h: 4.75rem;
+  --ui-right-rail-w: 6.75rem;
+  --ui-left-rail-w: 20rem;
+  --ui-bottom-rail: calc(var(--ui-scene-nav-h) + var(--ui-bottom-inset) + 0.5rem);
+  --ui-top-rail: calc(var(--ui-topbar-h) + 0.35rem);
+}
+
+.layout-mobile {
+  --ui-scene-nav-h: 3.75rem;
+  --ui-right-rail-w: 3.5rem;
+  --ui-left-rail-w: 0.5rem;
+  --ui-bottom-inset: 0.5rem;
+}
+
+.layout-tablet {
+  --ui-left-rail-w: 14rem;
+  --ui-right-rail-w: 5.5rem;
+}
+
+/* —— Top: metriche compatte a destra —— */
+.hud {
+  top: var(--ui-topbar-h);
+  left: auto;
+  right: 0;
+  width: auto;
+  max-width: min(100vw - 12rem, 28rem);
+  padding: 0.35rem var(--ui-side-inset);
+  pointer-events: none;
+}
+
+.hud-top {
+  justify-content: flex-end;
+}
+
+.hud-metrics {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem 1rem;
+}
+
+.hud-coords {
+  display: none;
+}
+
+/* —— Colonna destra (minimappa + scala) —— */
+.cosmic-minimap {
+  top: calc(var(--ui-topbar-h) + 2.85rem);
+  right: var(--ui-side-inset);
+  z-index: calc(var(--z-hud) + 1);
+}
+
+.hud-compass {
+  top: calc(var(--ui-topbar-h) + 6.75rem);
+  right: var(--ui-side-inset);
+}
+
+.hud-scale-bar {
+  position: fixed;
+  bottom: calc(var(--ui-bottom-rail) + 4.25rem);
+  left: var(--ui-side-inset);
+  right: auto;
+  top: auto;
+  transform: none;
+  z-index: var(--z-hud);
+}
+
+/* —— Colonna sinistra —— */
+.coords-hud {
+  top: var(--ui-top-rail);
+  left: var(--ui-side-inset);
+  max-width: min(18rem, calc(100vw - var(--ui-right-rail-w) - 3rem));
+}
+
+.time-controls {
+  top: calc(var(--ui-top-rail) + 2.65rem);
+  left: var(--ui-side-inset);
+  max-width: min(320px, calc(100vw - var(--ui-right-rail-w) - 2.5rem));
+}
+
+html.sidebar-open .coords-hud,
+html.sidebar-open .time-controls {
+  left: min(calc(280px + var(--ui-side-inset)), calc(86vw + var(--ui-side-inset)));
+  max-width: min(16rem, calc(100vw - min(280px, 86vw) - var(--ui-right-rail-w) - 2rem));
+}
+
+html.sidebar-open .hud-scale-bar {
+  left: min(calc(280px + var(--ui-side-inset)), calc(86vw + var(--ui-side-inset)));
+}
+
+/* —— Barra inferiore: navigazione scena —— */
+.scene-nav {
+  position: fixed;
+  bottom: var(--ui-bottom-inset);
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "timeline timeline timeline"
+    "prev journey next";
+  align-items: center;
+  gap: 0.3rem 0.45rem;
+  max-width: min(860px, calc(100vw - var(--ui-left-rail-w) - var(--ui-right-rail-w) - 2 * var(--ui-side-inset)));
+  z-index: var(--z-nav);
+}
+
+.nav-timeline {
+  grid-area: timeline;
+  margin: 0 0.25rem;
+  height: 3px;
+}
+
+.nav-prev { grid-area: prev; margin-top: 0; }
+.nav-journey {
+  grid-area: journey;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.nav-next { grid-area: next; margin-top: 0; }
+
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% + 0.4rem);
+  top: auto;
+  max-height: min(26vh, 11rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.5rem 0.7rem;
+  border-radius: 12px;
+  background: rgba(3, 5, 10, 0.88);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+}
+
+.scene-nav .nav-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nav-hint {
+  font-size: 0.68rem;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.scene-wiki {
+  margin: 0;
+  padding: 0.55rem 0.65rem;
+  max-width: none;
+}
+
+.scene-wiki-text {
+  -webkit-line-clamp: 3;
+}
+
+/* —— Rail sinistra/destra sopra la nav —— */
+.companion-bar {
+  bottom: var(--ui-bottom-rail);
+  left: var(--ui-side-inset);
+  width: min(300px, calc(100vw - var(--ui-left-rail-w) - var(--ui-right-rail-w) - 3rem));
+  max-width: min(300px, calc(50vw - 4rem));
+}
+
+html.sidebar-open .companion-bar {
+  left: min(calc(280px + var(--ui-side-inset)), calc(86vw + var(--ui-side-inset)));
+  width: min(280px, calc(100vw - min(280px, 86vw) - var(--ui-right-rail-w) - 2rem));
+}
+
+.overlay-controls {
+  bottom: var(--ui-bottom-rail);
+  right: var(--ui-side-inset);
+  max-height: calc(100vh - var(--ui-topbar-h) - var(--ui-bottom-rail) - 1rem);
+}
+
+/* —— Toast sopra la nav —— */
+.toast-host {
+  bottom: calc(var(--ui-bottom-inset) + var(--ui-scene-nav-h) + 0.35rem);
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(420px, calc(100vw - 2rem));
+  z-index: calc(var(--z-overlay) + 2);
+}
+
+/* —— Chat: colonna centrale, non copre i controlli —— */
+.chat-widget {
+  right: calc(var(--ui-side-inset) + var(--ui-right-rail-w) + 0.35rem);
+  bottom: var(--ui-bottom-rail);
+  width: min(360px, calc(100vw - var(--ui-left-rail-w) - var(--ui-right-rail-w) - 2.5rem));
+  max-height: min(480px, calc(100vh - var(--ui-topbar-h) - var(--ui-bottom-rail) - 1rem));
+  z-index: var(--z-chat);
+}
+
+html.chat-open .companion-bar {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+html.chat-open .gesture-hint.visible {
+  opacity: 0;
+}
+
+/* —— Hint gesture sopra la nav —— */
+.gesture-hint {
+  bottom: calc(var(--ui-bottom-inset) + var(--ui-scene-nav-h) + 0.25rem);
+}
+
+/* —— Pannelli top-right: sotto minimappa —— */
+.v21-panel,
+.settings-panel,
+.bookmarks-panel {
+  top: calc(var(--ui-topbar-h) + 6.5rem);
+  right: var(--ui-side-inset);
+  max-height: calc(100vh - var(--ui-topbar-h) - 7.5rem);
+}
+
+/* —— Dev monitor —— */
+.dev-memory-monitor {
+  bottom: calc(var(--ui-bottom-inset) + var(--ui-scene-nav-h) + 0.15rem);
+  left: var(--ui-side-inset);
+}
+
+/* —— Mobile —— */
+.layout-mobile .hud {
+  max-width: calc(100vw - var(--ui-right-rail-w) - 1rem);
+}
+
+.layout-mobile .hud-metrics .metric:nth-child(n+4) {
+  display: none;
+}
+
+.layout-mobile .cosmic-minimap {
+  top: calc(var(--ui-topbar-h) + 2.35rem);
+  transform: scale(0.88);
+  transform-origin: top right;
+}
+
+.layout-mobile .hud-scale-bar {
+  display: none;
+}
+
+.layout-mobile .coords-hud {
+  top: calc(var(--ui-topbar-h) + 0.2rem);
+  left: 0.35rem;
+  font-size: 0.68rem;
+  padding: 0.25rem 0.45rem;
+}
+
+.layout-mobile .time-controls {
+  top: calc(var(--ui-topbar-h) + 2.1rem);
+  left: 0.35rem;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.72rem;
+}
+
+.layout-mobile .scene-nav {
+  max-width: calc(100vw - var(--ui-right-rail-w) - 0.75rem);
+  padding: 0.45rem 0.4rem 0.65rem;
+}
+
+.layout-mobile .scene-wiki,
+.layout-mobile .nav-shortcuts {
+  display: none;
+}
+
+.layout-mobile .nav-indicator {
+  max-height: 3.5rem;
+}
+
+.layout-mobile .companion-bar {
+  bottom: var(--ui-bottom-rail);
+  left: 0.35rem;
+  width: min(240px, calc(100vw - var(--ui-right-rail-w) - 1rem));
+  padding: 0.55rem 0.65rem;
+}
+
+.layout-mobile .companion-bar-text {
+  -webkit-line-clamp: 2;
+}
+
+html.sidebar-open.layout-mobile .companion-bar {
+  bottom: calc(var(--ui-bottom-rail) + 0.25rem);
+  width: min(260px, calc(100vw - var(--ui-right-rail-w) - 0.75rem));
+}
+
+.layout-mobile .overlay-controls {
+  bottom: var(--ui-bottom-rail);
+  right: 0.35rem;
+}
+
+.layout-mobile .chat-widget {
+  right: 0.35rem;
+  left: 0.35rem;
+  width: auto;
+  bottom: calc(var(--ui-bottom-rail) + 0.25rem);
+  max-height: min(52vh, calc(100vh - var(--ui-topbar-h) - var(--ui-bottom-rail) - 0.5rem));
+}
+
+.layout-mobile .toast-host {
+  bottom: calc(var(--ui-bottom-inset) + var(--ui-scene-nav-h) + 0.2rem);
+}
+
+@media (max-width: 480px) {
+  .nav-step-label,
+  .nav-step-scale {
+    display: none;
+  }
+
+  .nav-step.active .nav-step-label {
+    display: block;
+  }
+}

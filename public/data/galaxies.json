@@ -1,0 +1,2345 @@
+{
+  "catalog": {
+    "version": "1.8",
+    "groups": [
+      "local_group",
+      "nearby",
+      "virgo_cluster",
+      "fornax_cluster",
+      "distant",
+      "peculiar"
+    ],
+    "notes": "Posizioni schematiche con rapporti di distanza reali compressi (≈300 unità/Mly nel Gruppo Locale).",
+    "clusters": {
+      "virgo": {
+        "label": "Ammasso di Virgo",
+        "center": [
+          -4950,
+          45,
+          660
+        ],
+        "radius": 360,
+        "labelOffset": 280
+      },
+      "fornax": {
+        "label": "Ammasso di Fornax",
+        "center": [
+          5700,
+          -35,
+          -1140
+        ],
+        "radius": 190,
+        "labelOffset": 260
+      },
+      "local_group": {
+        "label": "Gruppo Locale",
+        "center": [
+          0,
+          0,
+          0
+        ],
+        "radius": 840,
+        "labelOffset": 320
+      }
+    }
+  },
+  "galaxies": [
+    {
+      "id": "milky_way",
+      "name": "Via Lattea",
+      "catalog": "Via Lattea",
+      "group": "local_group",
+      "type": "Galassia spirale barrata (SBbc)",
+      "radius": "52.850 anni luce",
+      "mass": "1,5 × 10¹² M☉",
+      "distance": "0 (siamo al suo interno)",
+      "distanceLy": 0,
+      "temperature": "N/A",
+      "orbitalPeriod": "~230 milioni di anni (rotazione galattica)",
+      "orbitalVelocity": "220 km/s (Sole)",
+      "description": "La nostra galassia natale, una spirale barrata con 100-400 miliardi di stelle. Il Sole si trova nel Braccio di Orione, a circa 26.000 anni luce dal centro galattico.",
+      "facts": [
+        "Buco nero supermassiccio Sagittarius A* (4 M☉)",
+        "4 bracci spirali principali",
+        "Disco visibile ~100.000 anni luce"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA19333/PIA19333~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ]
+    },
+    {
+      "id": "andromeda",
+      "name": "Andromeda (M31)",
+      "catalog": "M31 / NGC 224",
+      "group": "local_group",
+      "type": "Galassia spirale (SA(s)b)",
+      "radius": "110.000 anni luce",
+      "mass": "1,2 × 10¹² M☉",
+      "distance": "2,5 milioni di anni luce",
+      "distanceLy": 2500000,
+      "description": "La galassia più vicina di dimensioni simili alla Via Lattea. Oggetto più distante visibile ad occhio nudo.",
+      "facts": [
+        "Collisione con la Via Lattea tra 4-5 miliardi di anni",
+        "Buco nero da ~140 milioni M☉",
+        "Almeno 13 galassie satellite"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA25436/PIA25436~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/mission/hubble/science/science-highlights/andromeda/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          585,
+          18,
+          -465
+        ],
+        "scale": 26,
+        "color": "#8b72c4"
+      }
+    },
+    {
+      "id": "triangulum",
+      "name": "Triangulum (M33)",
+      "catalog": "M33 / NGC 598",
+      "group": "local_group",
+      "type": "Galassia spirale (SA(s)cd)",
+      "radius": "30.000 anni luce",
+      "mass": "4 × 10¹⁰ M☉",
+      "distance": "2,73 milioni di anni luce",
+      "distanceLy": 2730000,
+      "description": "Terza galassia per dimensioni nel Gruppo Locale, con intensa formazione stellare.",
+      "facts": [
+        "Spirale più distante visibile ad occhio nudo",
+        "Nebulosa NGC 604 tra le più grandi regioni H II",
+        "Possibile satellite di Andromeda"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA13515/PIA13515~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          -452,
+          -12,
+          682
+        ],
+        "scale": 16,
+        "color": "#4a9fc8"
+      }
+    },
+    {
+      "id": "large_magellanic_cloud",
+      "name": "Grande Nube di Magellano",
+      "catalog": "LMC",
+      "group": "local_group",
+      "type": "Galassia irregolare / spirale barrata distorta",
+      "radius": "14.000 anni luce",
+      "mass": "1 × 10¹⁰ M☉",
+      "distance": "163.000 anni luce",
+      "distanceLy": 163000,
+      "description": "Satellite della Via Lattea visibile dall'emisfero australe. Sito di SN 1987A, la supernova più vicina osservata con telescopi moderni.",
+      "facts": [
+        "Quarta galassia del Gruppo Locale per dimensioni",
+        "SN 1987A ha rivoluzionato la neutrino-astronomia",
+        "Contiene la Tarantola Nebula (30 Doradus)"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12201/PIA12201~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/mission/hubble/science/science-highlights/magellanic-clouds/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          -21,
+          -38,
+          -44
+        ],
+        "scale": 12,
+        "color": "#6eb0d4"
+      }
+    },
+    {
+      "id": "small_magellanic_cloud",
+      "name": "Piccola Nube di Magellano",
+      "catalog": "SMC",
+      "group": "local_group",
+      "type": "Galassia irregolare / nana",
+      "radius": "7.000 anni luce",
+      "mass": "3 × 10⁹ M☉",
+      "distance": "200.000 anni luce",
+      "distanceLy": 200000,
+      "description": "Compagna della LMC e satellite della Via Lattea, ricca di gas e giovani stelle.",
+      "facts": [
+        "Visibile ad occhio nudo dall'emisfero sud",
+        "In interazione gravitazionale con LMC",
+        "Importante laboratorio di formazione stellare"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA14400/PIA14400~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          -21,
+          -52,
+          -55
+        ],
+        "scale": 8,
+        "color": "#94c4e0"
+      }
+    },
+    {
+      "id": "ngc_6822",
+      "name": "Galassia di Barnard (NGC 6822)",
+      "catalog": "NGC 6822",
+      "group": "local_group",
+      "type": "Galassia irregolare nana",
+      "radius": "4.000 anni luce",
+      "mass": "1,3 × 10⁹ M☉",
+      "distance": "1,6 milioni di anni luce",
+      "distanceLy": 1600000,
+      "description": "Galassia nana irregolare scoperta da E. E. Barnard nel 1884, membro del Gruppo Locale.",
+      "facts": [
+        "Una delle galassie locali più antiche osservate",
+        "Bassa metallicità, simile alle prime galassie",
+        "Studiata da Hubble e Webb"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA16884/PIA16884~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          74,
+          -28,
+          127
+        ],
+        "scale": 7,
+        "color": "#b89870"
+      }
+    },
+    {
+      "id": "ic_10",
+      "name": "IC 10",
+      "catalog": "IC 10",
+      "group": "local_group",
+      "type": "Galassia irregolare stellifer",
+      "radius": "2.900 anni luce",
+      "mass": "3,3 × 10⁸ M☉",
+      "distance": "2,2 milioni di anni luce",
+      "distanceLy": 2200000,
+      "description": "Unica galassia irregolare del Gruppo Locale con intensa formazione stellare simile a starburst.",
+      "facts": [
+        "Nascosta dietro la banda di polvere galattica",
+        "Oltre 100 regioni H II catalogate",
+        "Possibile satellite di Andromeda"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          500,
+          60,
+          -370
+        ],
+        "scale": 6,
+        "color": "#dd9955"
+      }
+    },
+    {
+      "id": "wlm",
+      "name": "Wolf-Lundmark-Melotte",
+      "catalog": "WLM",
+      "group": "local_group",
+      "type": "Galassia irregolare isolata",
+      "radius": "4.500 anni luce",
+      "mass": "2,9 × 10⁸ M☉",
+      "distance": "3,0 milioni di anni luce",
+      "distanceLy": 3000000,
+      "description": "Galassia nana isolata alla periferia del Gruppo Locale, importante per la cosmologia locale.",
+      "facts": [
+        "Scoperta indipendentemente da tre astronomi nel 1906-1926",
+        "Tra le galassie più isolate del gruppo",
+        "Cielo profondo privo di inquinamento stellare vicino"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          -196,
+          8,
+          -199
+        ],
+        "scale": 6,
+        "color": "#7a8aaa"
+      }
+    },
+    {
+      "id": "ic_1613",
+      "name": "IC 1613",
+      "catalog": "IC 1613",
+      "group": "local_group",
+      "type": "Galassia irregolare nana",
+      "radius": "2.500 anni luce",
+      "mass": "2,6 × 10⁸ M☉",
+      "distance": "2,38 milioni di anni luce",
+      "distanceLy": 2380000,
+      "description": "Galassia nana del Gruppo Locale usata come standard candle per la distanza extragalattica.",
+      "facts": [
+        "Cepheid variabili misurate da Hubble",
+        "Metallicità molto bassa",
+        "Forma stellare attiva nonostante le piccole dimensioni"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          50,
+          42,
+          220
+        ],
+        "scale": 5.5,
+        "color": "#8899b8"
+      }
+    },
+    {
+      "id": "ngc_185",
+      "name": "NGC 185",
+      "catalog": "NGC 185",
+      "group": "local_group",
+      "type": "Galassia nana ellittica",
+      "radius": "1.800 anni luce",
+      "mass": "2,5 × 10⁸ M☉",
+      "distance": "2,08 milioni di anni luce",
+      "distanceLy": 2080000,
+      "description": "Satellite nana di Andromeda, compagna di NGC 147 nel sottogruppo di M31.",
+      "facts": [
+        "Contiene stelle giovani nonostante sia classificata ellittica",
+        "Orbita attorno ad Andromeda",
+        "Osservata da telescopi spaziali per popolazioni stellari"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          705,
+          36,
+          -540
+        ],
+        "scale": 5.5,
+        "color": "#a899cc"
+      }
+    },
+    {
+      "id": "ngc_147",
+      "name": "NGC 147",
+      "catalog": "NGC 147",
+      "group": "local_group",
+      "type": "Galassia nana sferoidale",
+      "radius": "1.400 anni luce",
+      "mass": "1,6 × 10⁸ M☉",
+      "distance": "2,53 milioni di anni luce",
+      "distanceLy": 2530000,
+      "description": "Galassia nana sferoidale legata gravitazionalmente ad Andromeda.",
+      "facts": [
+        "Priva di gas e formazione stellare recente",
+        "Popolazione stellare antica",
+        "Importante per studiare le galassie nane"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          740,
+          24,
+          -513
+        ],
+        "scale": 4.5,
+        "color": "#8877aa"
+      }
+    },
+    {
+      "id": "m110",
+      "name": "M110 (NGC 205)",
+      "catalog": "M110 / NGC 205",
+      "group": "local_group",
+      "type": "Galassia nana ellittica",
+      "radius": "4.600 anni luce",
+      "mass": "7,4 × 10⁹ M☉",
+      "distance": "2,69 milioni di anni luce",
+      "distanceLy": 2690000,
+      "description": "Satellite di Andromeda, una delle galassie più luminose del sottogruppo di M31.",
+      "facts": [
+        "Scoperta da Caroline Herschel",
+        "Contiene polvere e stelle giovani insolite per un'ellittica",
+        "Visibile in telescopi amatoriali vicino ad M31"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12006/PIA12006~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          523,
+          73,
+          -553
+        ],
+        "scale": 7.5,
+        "color": "#9988bb"
+      }
+    },
+    {
+      "id": "ngc_3109",
+      "name": "NGC 3109",
+      "catalog": "NGC 3109",
+      "group": "local_group",
+      "type": "Galassia irregolare",
+      "radius": "5.500 anni luce",
+      "mass": "6,5 × 10⁹ M☉",
+      "distance": "4,3 milioni di anni luce",
+      "distanceLy": 4300000,
+      "description": "Galassia a spirale irregolare alla periferia del Gruppo Locale, in interazione con l'Antenna Sextans.",
+      "facts": [
+        "Ricca di gas neutro",
+        "Possibile membro esterno del gruppo",
+        "Importante per la dinamica del gruppo locale esteso"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          -193,
+          -72,
+          341
+        ],
+        "scale": 6.5,
+        "color": "#6699cc"
+      }
+    },
+    {
+      "id": "fornax_dwarf",
+      "name": "Galassia Nana di Fornax",
+      "catalog": "Fornax dSph",
+      "group": "local_group",
+      "type": "Galassia nana sferoidale",
+      "radius": "1.000 anni luce",
+      "mass": "2 × 10⁷ M☉",
+      "distance": "460.000 anni luce",
+      "distanceLy": 460000,
+      "description": "Satellite della Via Lattea scoperta nel 1938, tra le galassie nane più luminose.",
+      "facts": [
+        "Cinque ammassi globulari associati",
+        "Studiata per materia oscura nelle nane",
+        "Visibile da emisfero australe"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          -9,
+          -95,
+          -40
+        ],
+        "scale": 4.5,
+        "color": "#777788"
+      }
+    },
+    {
+      "id": "sculptor_dwarf",
+      "name": "Galassia Nana di Scultore",
+      "catalog": "Sculptor dSph",
+      "group": "local_group",
+      "type": "Galassia nana sferoidale",
+      "radius": "900 anni luce",
+      "mass": "2,3 × 10⁷ M☉",
+      "distance": "290.000 anni luce",
+      "distanceLy": 290000,
+      "description": "Una delle prime galassie nane sferoidali scoperte, satellite della Via Lattea.",
+      "facts": [
+        "Scoperta da Harlow Shapley nel 1937",
+        "Tra le nane più vicine alla Via Lattea",
+        "Cielo profondo per studi di popolazioni III"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          13,
+          -88,
+          -81
+        ],
+        "scale": 4,
+        "color": "#666677"
+      }
+    },
+    {
+      "id": "sagittarius_dwarf",
+      "name": "Galassia Nana del Sagittario",
+      "catalog": "Sgr dSph",
+      "group": "local_group",
+      "type": "Galassia nana sferoidale / nucleo galattico",
+      "radius": "1.000 anni luce",
+      "mass": "4 × 10⁷ M☉",
+      "distance": "65.000 anni luce (dal centro VL)",
+      "distanceLy": 65000,
+      "description": "Satellite della Via Lattea in fase di disruption, scoperta nel 1994 dietro la banda di polvere.",
+      "facts": [
+        "Stelle disperse formano correnti nel alone galattico",
+        "La più vicina galassia satellitare nota",
+        "Evidenza di accrescimento sulla Via Lattea"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          2,
+          28,
+          -20
+        ],
+        "scale": 3.8,
+        "color": "#997755"
+      }
+    },
+    {
+      "id": "leo_a",
+      "name": "Leo A",
+      "catalog": "Leo A / DDO 69",
+      "group": "local_group",
+      "type": "Galassia irregolare nana",
+      "radius": "1.600 anni luce",
+      "mass": "4,2 × 10⁷ M☉",
+      "distance": "2,6 milioni di anni luce",
+      "distanceLy": 2600000,
+      "description": "Galassia nana isolata vicino al bordo del Gruppo Locale, con elevata frazione di gas.",
+      "facts": [
+        "Metallicità tra le più basse note",
+        "Formazione stellare episodica",
+        "Importante analogo di galassie primordiali"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          -157,
+          35,
+          192
+        ],
+        "scale": 5.5,
+        "color": "#77aa88"
+      }
+    },
+    {
+      "id": "leo_i",
+      "name": "Leo I",
+      "catalog": "Leo I dSph",
+      "group": "local_group",
+      "type": "Galassia nana sferoidale",
+      "radius": "600 anni luce",
+      "mass": "2 × 10⁷ M☉",
+      "distance": "820.000 anni luce",
+      "distanceLy": 820000,
+      "description": "Satellite della Via Lattea scoperta nel 1950, a soli 12° dal polo nord galattico.",
+      "facts": [
+        "Movimento relativo anomalo rispetto alla Via Lattea",
+        "Possibile interazione con l'alone di Materia Oscura",
+        "Tra le nane più distanti dalla VL"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "local_group"
+        ],
+        "position": [
+          44,
+          68,
+          -219
+        ],
+        "scale": 4,
+        "color": "#888899"
+      }
+    },
+    {
+      "id": "sombrero",
+      "name": "Sombrero (M104)",
+      "catalog": "M104 / NGC 4594",
+      "group": "nearby",
+      "type": "Galassia spirale / lenticolare",
+      "radius": "25.000 anni luce",
+      "mass": "8 × 10¹¹ M☉",
+      "distance": "31 milioni di anni luce",
+      "distanceLy": 31000000,
+      "description": "Iconica galassia a sombrero nel gruppo di Centaurus, con disco di polvere spettacolare.",
+      "facts": [
+        "Buco nero supermassiccio da ~1 miliardo M☉",
+        "Una delle galassie più fotografate da Hubble",
+        "Possibile confine tra spirale e lenticolare"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA16697/PIA16697~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/mission/hubble/science/science-highlights/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          -1583,
+          55,
+          -2303
+        ],
+        "scale": 14,
+        "color": "#d8c898"
+      }
+    },
+    {
+      "id": "whirlpool",
+      "name": "Vortice (M51)",
+      "catalog": "M51 / NGC 5194",
+      "group": "nearby",
+      "type": "Galassia spirale interagente",
+      "radius": "38.000 anni luce",
+      "mass": "1,6 × 10¹¹ M☉",
+      "distance": "27 milioni di anni luce",
+      "distanceLy": 27000000,
+      "description": "Classica galassia a spirale in interazione con NGC 5195, modello di dinamica delle spirali.",
+      "facts": [
+        "Prima galassia dove fu scoperta la spirale (Lord Rosse, 1845)",
+        "Bracci spirali alimentati da interazione",
+        "Forte formazione stellare nelle regioni di marea"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA19301/PIA19301~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          1234,
+          38,
+          2237
+        ],
+        "scale": 15,
+        "color": "#48b8e0"
+      }
+    },
+    {
+      "id": "pinwheel",
+      "name": "Mulinello (M101)",
+      "catalog": "M101 / NGC 5457",
+      "group": "nearby",
+      "type": "Galassia spirale a bracci aperti (SAB(rs)cd)",
+      "radius": "85.000 anni luce",
+      "mass": "1 × 10¹¹ M☉",
+      "distance": "21 milioni di anni luce",
+      "distanceLy": 21000000,
+      "description": "Grande galassia a spirale nel Gruppo di Ursa Major, circa il doppio della Via Lattea.",
+      "facts": [
+        "Oltre 100 regioni H II nel disco",
+        "SN 2011fe, supernova Ia ben studiata",
+        "Bracci grandemente distesi e simmetrici"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA15622/PIA15622~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          867,
+          -32,
+          1858
+        ],
+        "scale": 16,
+        "color": "#6eb8e8"
+      }
+    },
+    {
+      "id": "centaurus_a",
+      "name": "Centaurus A (NGC 5128)",
+      "catalog": "NGC 5128",
+      "group": "nearby",
+      "type": "Galassia ellittica / radio",
+      "radius": "60.000 anni luce",
+      "mass": "1,2 × 10¹² M☉",
+      "distance": "13 milioni di anni luce",
+      "distanceLy": 13000000,
+      "description": "Galassia ellittica con getto radio potente e banda di polvere, risultato di fusione galattica.",
+      "facts": [
+        "Una delle prime sorgenti radio scoperte",
+        "Buco nero da 55 milioni M☉",
+        "Getto relativistico visibile in multi-wavelength"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12235/PIA12235~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          -631,
+          -48,
+          -1086
+        ],
+        "scale": 15,
+        "color": "#ee7755"
+      }
+    },
+    {
+      "id": "bodes_m81",
+      "name": "Bode (M81)",
+      "catalog": "M81 / NGC 3031",
+      "group": "nearby",
+      "type": "Galassia spirale (SA(s)ab)",
+      "radius": "45.000 anni luce",
+      "mass": "1 × 10¹¹ M☉",
+      "distance": "12 milioni di anni luce",
+      "distanceLy": 12000000,
+      "description": "Dominante nel Gruppo di M81, con nucleo attivo e bracci spirali ordinati.",
+      "facts": [
+        "Interagisce con M82 (Cigar)",
+        "Nucleo attivo di tipo Seyfert",
+        "Visibile con binocolo"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA04294/PIA04294~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          636,
+          62,
+          856
+        ],
+        "scale": 13,
+        "color": "#99bbee"
+      }
+    },
+    {
+      "id": "cigar_m82",
+      "name": "Sigaro (M82)",
+      "catalog": "M82 / NGC 3034",
+      "group": "nearby",
+      "type": "Galassia irregolare starburst",
+      "radius": "20.000 anni luce",
+      "mass": "3 × 10¹⁰ M☉",
+      "distance": "12 milioni di anni luce",
+      "distanceLy": 12000000,
+      "description": "Galassia starburst deformata dall'interazione con M81, con getti di gas perpendicolari al disco.",
+      "facts": [
+        "Tasso di formazione stellare 10× superiore alla Via Lattea",
+        "Getti molecolari osservati in raggi X",
+        "Prossima supernova potenziale ben monitorata"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12188/PIA12188~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          672,
+          48,
+          840
+        ],
+        "scale": 9,
+        "color": "#ee5533"
+      }
+    },
+    {
+      "id": "m87",
+      "name": "M87 (Virgo A)",
+      "catalog": "M87 / NGC 4486",
+      "group": "virgo_cluster",
+      "type": "Galassia ellittica gigante",
+      "radius": "120.000 anni luce",
+      "mass": "2,4 × 10¹² M☉",
+      "distance": "53 milioni di anni luce",
+      "distanceLy": 53000000,
+      "description": "Galassia dominante dell'Ammasso di Virgo, famosa per il getto relativistico e la prima immagine di un buco nero (EHT, 2019).",
+      "facts": [
+        "Prima immagine di un buco nero (M87*)",
+        "Getto plasmatico di 5.000 anni luce",
+        "Oltre 12.000 ammassi globulari"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA23122/PIA23122~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/black-holes/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4893,
+          29,
+          453
+        ],
+        "scale": 22,
+        "color": "#c899dd"
+      }
+    },
+    {
+      "id": "m86",
+      "name": "M86 (NGC 4406)",
+      "catalog": "M86 / NGC 4406",
+      "group": "virgo_cluster",
+      "type": "Galassia lenticolare",
+      "radius": "68.000 anni luce",
+      "mass": "4 × 10¹¹ M☉",
+      "distance": "52 milioni di anni luce",
+      "distanceLy": 52000000,
+      "description": "Galassia lenticolare dell'Ammasso di Virgo, in Markarian's Chain, con movimento blueshift insolito.",
+      "facts": [
+        "Si avvicina alla Via Lattea nonostante l'espansione cosmica",
+        "Parte della Markarian's Chain",
+        "Ricca di ammassi globulari"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA15473/PIA15473~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4833,
+          66,
+          478
+        ],
+        "scale": 12,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "southern_pinwheel",
+      "name": "Mulinello del Sud (M83)",
+      "catalog": "M83 / NGC 5236",
+      "group": "nearby",
+      "type": "Galassia spirale barrata (SAB(s)c)",
+      "radius": "55.000 anni luce",
+      "mass": "5 × 10¹⁰ M☉",
+      "distance": "15 milioni di anni luce",
+      "distanceLy": 15000000,
+      "description": "Galassia a spirale barrata nel Gruppo di Centaurus, con elevata formazione stellare.",
+      "facts": [
+        "Oltre 3.000 ammassi stellari giovani catalogati",
+        "Quinta galassia più vicina con barra centrale",
+        "Forte emissione X dai resti di supernovae"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12817/PIA12817~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          -662,
+          -58,
+          -1294
+        ],
+        "scale": 13,
+        "color": "#55aadd"
+      }
+    },
+    {
+      "id": "sunflower",
+      "name": "Girasole (M63)",
+      "catalog": "M63 / NGC 5055",
+      "group": "nearby",
+      "type": "Galassia spirale (SA(rs)bc)",
+      "radius": "50.000 anni luce",
+      "mass": "3 × 10¹¹ M☉",
+      "distance": "29 milioni di anni luce",
+      "distanceLy": 29000000,
+      "description": "Spirale nel Gruppo di Canes Venatici, nota per i bracci esterni a forma di girasole.",
+      "facts": [
+        "Bracci esterni deboli e diffusi",
+        "Nucleo con emissione moderata",
+        "Popolare target astrofotografico"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA17506/PIA17506~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          943,
+          45,
+          2480
+        ],
+        "scale": 12,
+        "color": "#eedd77"
+      }
+    },
+    {
+      "id": "cartwheel",
+      "name": "Ruota di Carrello",
+      "catalog": "ESO 350-40",
+      "group": "peculiar",
+      "type": "Galassia anellare / ring",
+      "radius": "65.000 anni luce",
+      "mass": "2,9 × 10⁹ M☉",
+      "distance": "500 milioni di anni luce",
+      "distanceLy": 500000000,
+      "description": "Galassia ad anello formata da collisione ad alta velocità, osservata da Hubble e Webb.",
+      "facts": [
+        "Onda d'urto che attraversa il disco",
+        "Nucleo centrale quasi inalterato",
+        "Webb ha rivelato nuova formazione stellare nell'anello"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA14702/PIA14702~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          227,
+          -25,
+          -4486
+        ],
+        "scale": 18,
+        "color": "#ee88bb"
+      }
+    },
+    {
+      "id": "antennae",
+      "name": "Antenne (NGC 4038/4039)",
+      "catalog": "NGC 4038/4039",
+      "group": "peculiar",
+      "type": "Galassie in fusione",
+      "radius": "120.000 anni luce (sistema)",
+      "mass": "2 × 10¹¹ M☉",
+      "distance": "45 milioni di anni luce",
+      "distanceLy": 45000000,
+      "description": "Coppia di galassie in fusione con code di marea spettacolari, prototipo di interazione galattica.",
+      "facts": [
+        "Code di stelle e gas estese per 350.000 anni luce",
+        "Intensa formazione stellare nelle regioni centrali",
+        "Modello per l'evoluzione futura di M31-VL"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12002/PIA12002~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          -3140,
+          -42,
+          2965
+        ],
+        "scale": 15,
+        "color": "#ee9944"
+      }
+    },
+    {
+      "id": "hoags_object",
+      "name": "Oggetto di Hoag",
+      "catalog": "PGC 54559",
+      "group": "peculiar",
+      "type": "Galassia ad anello",
+      "radius": "40.000 anni luce",
+      "mass": "7 × 10¹⁰ M☉",
+      "distance": "600 milioni di anni luce",
+      "distanceLy": 600000000,
+      "description": "Misteriosa galassia con nucleo giallo e anello blu di giovani stelle quasi perfettamente separati.",
+      "facts": [
+        "Struttura ad anello quasi simmetrica",
+        "Origine ancora dibattuta (fusione o instabilità barionica)",
+        "Rara tra le galassie note"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA04228/PIA04228~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          4436,
+          72,
+          2921
+        ],
+        "scale": 13,
+        "color": "#ddccff"
+      }
+    },
+    {
+      "id": "ngc_1300",
+      "name": "NGC 1300",
+      "catalog": "NGC 1300",
+      "group": "nearby",
+      "type": "Galassia spirale barrata",
+      "radius": "55.000 anni luce",
+      "mass": "7 × 10¹⁰ M☉",
+      "distance": "61 milioni di anni luce",
+      "distanceLy": 61000000,
+      "description": "Esemplare di galassia a spirale barrata con bracci ben definiti e struttura simmetrica.",
+      "facts": [
+        "Barra centrale che alimenta i bracci",
+        "Nessun bulge dominante",
+        "Osservata in dettaglio da Hubble"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA07904/PIA07904~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          -4202,
+          52,
+          -4719
+        ],
+        "scale": 11,
+        "color": "#77bbee"
+      }
+    },
+    {
+      "id": "ic_1101",
+      "name": "IC 1101",
+      "catalog": "IC 1101",
+      "group": "distant",
+      "type": "Galassia ellittica supergigante",
+      "radius": "2,1 milioni di anni luce",
+      "mass": "~100 × 10¹² M☉",
+      "distance": "1,04 miliardi di anni luce",
+      "distanceLy": 1040000000,
+      "description": "Una delle galassie più grandi conosciute, al centro dell'Ammasso Abell 2029.",
+      "facts": [
+        "Diametro ~2 milioni di anni luce",
+        "Contiene trilioni di stelle",
+        "Risultato di fusioni multiple nel corso di miliardi di anni"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          1263,
+          85,
+          -9999
+        ],
+        "scale": 20,
+        "color": "#bbaadd"
+      }
+    },
+    {
+      "id": "tadpole",
+      "name": "Girino (UGC 10214)",
+      "catalog": "Arp 188",
+      "group": "peculiar",
+      "type": "Galassia distorta / merger",
+      "radius": "90.000 anni luce",
+      "mass": "1,5 × 10¹¹ M☉",
+      "distance": "420 milioni di anni luce",
+      "distanceLy": 420000000,
+      "description": "Galassia con coda di marea lunghissima formata da interazione gravitazionale.",
+      "facts": [
+        "Coda di 280.000 anni luce",
+        "Immagine iconica del Deep Field Hubble",
+        "Nucleo compatto con bracci distorti"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA14731/PIA14731~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          -3973,
+          38,
+          -1986
+        ],
+        "scale": 14,
+        "color": "#88ccee"
+      }
+    },
+    {
+      "id": "stephans_quintet",
+      "name": "Quintetto di Stephan",
+      "catalog": "HCG 92",
+      "group": "peculiar",
+      "type": "Gruppo compatto di galassie",
+      "radius": "80.000 anni luce (gruppo)",
+      "mass": "Variabile",
+      "distance": "290 milioni di anni luce",
+      "distanceLy": 290000000,
+      "description": "Gruppo di cinque galassie in interazione, tra le prime osservate da James Webb.",
+      "facts": [
+        "NGC 7318B attraversa il gruppo a 2 milioni km/h",
+        "Shock waves visibili tra le galassie",
+        "Prima immagine Webb rilasciata al pubblico"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA25434/PIA25434~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/mission/webb/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          2026,
+          -55,
+          1702
+        ],
+        "scale": 13,
+        "color": "#cc99ee"
+      }
+    },
+    {
+      "id": "black_eye",
+      "name": "Occhio Nero (M64)",
+      "catalog": "M64 / NGC 4826",
+      "group": "nearby",
+      "type": "Galassia spirale (SA(rs)ab)",
+      "radius": "28.000 anni luce",
+      "mass": "4 × 10¹⁰ M☉",
+      "distance": "17 milioni di anni luce",
+      "distanceLy": 17000000,
+      "description": "Spirale nel Gruppo di Coma Berenices, con banda oscura di polvere che oscura il nucleo.",
+      "facts": [
+        "Gas interno ruota in senso opposto agli esterni",
+        "Possibile fusione passata",
+        "Visibile con telescopi medi"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA15422/PIA15422~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          571,
+          -68,
+          1896
+        ],
+        "scale": 11,
+        "color": "#443355"
+      }
+    },
+    {
+      "id": "m49",
+      "name": "M49 (NGC 4472)",
+      "catalog": "M49 / NGC 4472",
+      "group": "virgo_cluster",
+      "type": "Galassia ellittica brillante",
+      "radius": "78.000 anni luce",
+      "mass": "5,6 × 10¹¹ M☉",
+      "distance": "56 milioni di anni luce",
+      "distanceLy": 56000000,
+      "description": "La galassia ellittica più luminosa dell'Ammasso di Virgo, dominata da un alone esteso di ammassi globulari.",
+      "facts": [
+        "Oltre 6.000 ammassi globulari",
+        "Sede di un buco nero supermassiccio",
+        "Prima galassia del cluster scoperta (1771)"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA15473/PIA15473~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4783,
+          66,
+          520
+        ],
+        "scale": 13,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m84",
+      "name": "M84 (NGC 4374)",
+      "catalog": "M84 / NGC 4374",
+      "group": "virgo_cluster",
+      "type": "Galassia lenticolare / ellittica",
+      "radius": "60.000 anni luce",
+      "mass": "3 × 10¹¹ M☉",
+      "distance": "60 milioni di anni luce",
+      "distanceLy": 60000000,
+      "description": "Membro della Markarian's Chain nell'Ammasso di Virgo, con getti relativistici dal nucleo.",
+      "facts": [
+        "Parte della catena di Markarian",
+        "Nucleo attivo con emissione radio",
+        "Interagisce con M86 nel mezzo intracluster"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA15473/PIA15473~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4748,
+          32,
+          574
+        ],
+        "scale": 11,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m88",
+      "name": "M88 (NGC 4501)",
+      "catalog": "M88 / NGC 4501",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale (SAB(rs)b)",
+      "radius": "68.000 anni luce",
+      "mass": "8 × 10¹⁰ M☉",
+      "distance": "47 milioni di anni luce",
+      "distanceLy": 47000000,
+      "description": "Spirale ben ordinata dell'Ammasso di Virgo con bracci stretti e nucleo attivo di tipo Seyfert.",
+      "facts": [
+        "Bracci spirali molto regolari",
+        "Nucleo attivo Seyfert 2",
+        "Una delle spirali più luminose del cluster"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4731,
+          5,
+          636
+        ],
+        "scale": 10,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m89",
+      "name": "M89 (NGC 4552)",
+      "catalog": "M89 / NGC 4552",
+      "group": "virgo_cluster",
+      "type": "Galassia ellittica",
+      "radius": "40.000 anni luce",
+      "mass": "5 × 10¹¹ M☉",
+      "distance": "50 milioni di anni luce",
+      "distanceLy": 50000000,
+      "description": "Ellittica compatta dell'Ammasso di Virgo, quasi sferica e priva di strutture a disco.",
+      "facts": [
+        "Forma quasi perfettamente sferica",
+        "Ricca di ammassi globulari",
+        "Possibile buco nero da 500 milioni M☉"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4734,
+          20,
+          700
+        ],
+        "scale": 9,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m90",
+      "name": "M90 (NGC 4569)",
+      "catalog": "M90 / NGC 4569",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale (SAB(rs)ab)",
+      "radius": "75.000 anni luce",
+      "mass": "1,2 × 10¹¹ M☉",
+      "distance": "58 milioni di anni luce",
+      "distanceLy": 58000000,
+      "description": "Spirale dell'Ammasso di Virgo con bracci asimmetrici, probabilmente per interazione con il mezzo intracluster.",
+      "facts": [
+        "Gas striato dal ram pressure",
+        "Una delle galassie più luminose del cluster",
+        "Bracci leggermente distorti"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4755,
+          65,
+          760
+        ],
+        "scale": 11,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m100",
+      "name": "M100 (NGC 4321)",
+      "catalog": "M100 / NGC 4321",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale barrata (SAB(s)bc)",
+      "radius": "55.000 anni luce",
+      "mass": "1,6 × 10¹¹ M☉",
+      "distance": "55 milioni di anni luce",
+      "distanceLy": 55000000,
+      "description": "Spirale barrata dell'Ammasso di Virgo, nota come \"Pinwheel of Virgo\", con intensa formazione stellare.",
+      "facts": [
+        "Oltre 100 regioni H II nel disco",
+        "Barra centrale ben definita",
+        "Sito di supernovae ben studiate (SN 2006X)"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA15473/PIA15473~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4794,
+          96,
+          812
+        ],
+        "scale": 12,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m98",
+      "name": "M98 (NGC 4192)",
+      "catalog": "M98 / NGC 4192",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale (SAB(s)ab)",
+      "radius": "70.000 anni luce",
+      "mass": "7,6 × 10¹⁰ M☉",
+      "distance": "44 milioni di anni luce",
+      "distanceLy": 44000000,
+      "description": "Spirale dell'Ammasso di Virgo vista quasi di profilo, con bracci parzialmente distorti.",
+      "facts": [
+        "Inclinazione ~77° rispetto alla linea di vista",
+        "Parte del sottogruppo M49",
+        "Gas esteso nel mezzo intracluster"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4847,
+          83,
+          850
+        ],
+        "scale": 10,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m99",
+      "name": "M99 (NGC 4254)",
+      "catalog": "M99 / NGC 4254",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale (SA(s)c)",
+      "radius": "50.000 anni luce",
+      "mass": "5 × 10¹⁰ M☉",
+      "distance": "50 milioni di anni luce",
+      "distanceLy": 50000000,
+      "description": "Spirale ad un braccio dominante nell'Ammasso di Virgo, asimmetrica e ricca di gas.",
+      "facts": [
+        "Braccio spirale estremamente esteso",
+        "Asimmetria dovuta a interazioni passate",
+        "Forte emissione Hα"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4909,
+          43,
+          871
+        ],
+        "scale": 10,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m61",
+      "name": "M61 (NGC 4303)",
+      "catalog": "M61 / NGC 4303",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale barrata starburst",
+      "radius": "50.000 anni luce",
+      "mass": "1 × 10¹¹ M☉",
+      "distance": "52 milioni di anni luce",
+      "distanceLy": 52000000,
+      "description": "Spirale barrata dell'Ammasso di Virgo con nucleo starburst e anello molecolare centrale.",
+      "facts": [
+        "Oltre 300 supernovae catalogate storicamente",
+        "Nucleo con barra e anello di starburst",
+        "Visibile con telescopi amatoriali"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4975,
+          22,
+          873
+        ],
+        "scale": 10,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m58",
+      "name": "M58 (NGC 4579)",
+      "catalog": "M58 / NGC 4579",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale barrata (SAB(rs)b)",
+      "radius": "50.000 anni luce",
+      "mass": "4 × 10¹⁰ M☉",
+      "distance": "62 milioni di anni luce",
+      "distanceLy": 62000000,
+      "description": "Spirale barrata dell'Ammasso di Virgo con nucleo attivo e debole barra centrale.",
+      "facts": [
+        "Nucleo Seyfert 2",
+        "Bracci relativamente compatti",
+        "Una delle prime galassie del catalogo Messier"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5094,
+          52,
+          982
+        ],
+        "scale": 9,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m59",
+      "name": "M59 (NGC 4621)",
+      "catalog": "M59 / NGC 4621",
+      "group": "virgo_cluster",
+      "type": "Galassia ellittica",
+      "radius": "45.000 anni luce",
+      "mass": "2 × 10¹¹ M☉",
+      "distance": "60 milioni di anni luce",
+      "distanceLy": 60000000,
+      "description": "Ellittica dell'Ammasso di Virgo con struttura a due componenti e nucleo compatto.",
+      "facts": [
+        "Possibile disco interno di stelle",
+        "Interagisce con M60 nel sottogruppo",
+        "Ricca di ammassi globulari"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5185,
+          90,
+          926
+        ],
+        "scale": 8.5,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "m60",
+      "name": "M60 (NGC 4649)",
+      "catalog": "M60 / NGC 4649",
+      "group": "virgo_cluster",
+      "type": "Galassia ellittica gigante",
+      "radius": "65.000 anni luce",
+      "mass": "1 × 10¹² M☉",
+      "distance": "55 milioni di anni luce",
+      "distanceLy": 55000000,
+      "description": "Ellittica gigante dell'Ammasso di Virgo in interazione con la spirale NGC 4647.",
+      "facts": [
+        "Buco nero da 4,5 miliardi M☉",
+        "Compagna NGC 4647 visibile nelle immagini",
+        "Oltre 5.000 ammassi globulari"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA15473/PIA15473~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5255,
+          99,
+          847
+        ],
+        "scale": 11,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "ngc_4526",
+      "name": "NGC 4526",
+      "catalog": "NGC 4526",
+      "group": "virgo_cluster",
+      "type": "Galassia lenticolare",
+      "radius": "50.000 anni luce",
+      "mass": "3 × 10¹¹ M☉",
+      "distance": "55 milioni di anni luce",
+      "distanceLy": 55000000,
+      "description": "Lenticolare dell'Ammasso di Virgo vista di profilo, con disco di polvere spettacolare.",
+      "facts": [
+        "Disco di polvere ben visibile",
+        "Buco nero da 450 milioni M☉",
+        "Parte del sottogruppo M60"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5298,
+          64,
+          751
+        ],
+        "scale": 8.5,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "eyes_galaxies",
+      "name": "Occhi di Markarian (NGC 4438/4435)",
+      "catalog": "NGC 4438 / NGC 4435",
+      "group": "virgo_cluster",
+      "type": "Coppia di galassie interagenti",
+      "radius": "35.000 anni luce (ciascuna)",
+      "mass": "1 × 10¹¹ M☉ (sistema)",
+      "distance": "52 milioni di anni luce",
+      "distanceLy": 52000000,
+      "description": "Coppia nell'Ammasso di Virgo nota come \"Markarian's Eyes\", in interazione gravitazionale.",
+      "facts": [
+        "Parte della Markarian's Chain",
+        "NGC 4438 mostra gas distorto e starburst",
+        "NGC 4435 è una lenticolare compatta"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA15473/PIA15473~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5310,
+          16,
+          647
+        ],
+        "scale": 9,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "ngc_1316",
+      "name": "Fornax A (NGC 1316)",
+      "catalog": "NGC 1316",
+      "group": "fornax_cluster",
+      "type": "Galassia ellittica / radio",
+      "radius": "65.000 anni luce",
+      "mass": "4 × 10¹¹ M☉",
+      "distance": "62 milioni di anni luce",
+      "distanceLy": 62000000,
+      "description": "Galassia dominante dell'Ammasso di Fornax, potente sorgente radio con lobi estesi.",
+      "facts": [
+        "Risultato di fusioni multiple",
+        "Lobi radio estesi per milioni di anni luce",
+        "Ricca di ammassi globulari"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12235/PIA12235~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "fornax",
+        "position": [
+          5875,
+          -3,
+          -1140
+        ],
+        "scale": 11,
+        "color": "#ee8866"
+      }
+    },
+    {
+      "id": "ngc_1365",
+      "name": "NGC 1365 (Grande Galassia Barrata)",
+      "catalog": "NGC 1365",
+      "group": "fornax_cluster",
+      "type": "Galassia spirale barrata (SBb(s)b)",
+      "radius": "65.000 anni luce",
+      "mass": "2 × 10¹¹ M☉",
+      "distance": "56 milioni di anni luce",
+      "distanceLy": 56000000,
+      "description": "Spirale barrata spettacolare nell'Ammasso di Fornax, con barra e bracci ben definiti.",
+      "facts": [
+        "Barra centrale di 33.000 anni luce",
+        "Nucleo attivo Seyfert",
+        "Una delle galassie barrate più fotografate"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12817/PIA12817~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "fornax",
+        "position": [
+          5809,
+          -54,
+          -1005
+        ],
+        "scale": 12,
+        "color": "#55aadd"
+      }
+    },
+    {
+      "id": "ngc_1399",
+      "name": "NGC 1399",
+      "catalog": "NGC 1399",
+      "group": "fornax_cluster",
+      "type": "Galassia ellittica gigante (BCG)",
+      "radius": "70.000 anni luce",
+      "mass": "5 × 10¹¹ M☉",
+      "distance": "65 milioni di anni luce",
+      "distanceLy": 65000000,
+      "description": "Galassia centrale dell'Ammasso di Fornax, ellittica brillante con alone esteso.",
+      "facts": [
+        "Brightest Cluster Galaxy (BCG)",
+        "Oltre 6.000 ammassi globulari",
+        "Gas caldo nel mezzo intracluster"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "fornax",
+        "position": [
+          5700,
+          -35,
+          -1140
+        ],
+        "scale": 13,
+        "color": "#bb9988"
+      }
+    },
+    {
+      "id": "ngc_1404",
+      "name": "NGC 1404",
+      "catalog": "NGC 1404",
+      "group": "fornax_cluster",
+      "type": "Galassia ellittica",
+      "radius": "35.000 anni luce",
+      "mass": "1,5 × 10¹¹ M☉",
+      "distance": "62 milioni di anni luce",
+      "distanceLy": 62000000,
+      "description": "Ellittica compatta dell'Ammasso di Fornax, vicina a NGC 1399 e in interazione con il mezzo intracluster.",
+      "facts": [
+        "Gas striato dal ram pressure",
+        "Compagna visiva di NGC 1399",
+        "Popolazione stellare antica"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "fornax",
+        "position": [
+          5661,
+          8,
+          -972
+        ],
+        "scale": 9,
+        "color": "#998877"
+      }
+    },
+    {
+      "id": "ngc_1427a",
+      "name": "NGC 1427A",
+      "catalog": "NGC 1427A",
+      "group": "fornax_cluster",
+      "type": "Galassia irregolare nana",
+      "radius": "3.000 anni luce",
+      "mass": "1 × 10⁸ M☉",
+      "distance": "62 milioni di anni luce",
+      "distanceLy": 62000000,
+      "description": "Galassia nana irregolare dell'Ammasso di Fornax, in rapida formazione stellare mentre cade verso il centro del cluster.",
+      "facts": [
+        "Unica galassia irregolare del cluster",
+        "Formazione stellare intensa sul lato rivolto al centro",
+        "Destinata a essere distrutta dal cluster"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "fornax",
+        "position": [
+          5542,
+          -58,
+          -1065
+        ],
+        "scale": 5.5,
+        "color": "#7799bb"
+      }
+    },
+    {
+      "id": "ngc_4565",
+      "name": "Galassia Ago (NGC 4565)",
+      "catalog": "NGC 4565",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale (edge-on)",
+      "radius": "65.000 anni luce",
+      "mass": "3 × 10¹¹ M☉",
+      "distance": "42 milioni di anni luce",
+      "distanceLy": 42000000,
+      "description": "Spirale vista di profilo nell'Ammasso di Virgo, famosa per il bulge e la banda di polvere.",
+      "facts": [
+        "Una delle galassie edge-on più fotografate",
+        "Possibile barra centrale nascosta",
+        "Parte del sottogruppo di M91"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5290,
+          -2,
+          544
+        ],
+        "scale": 11,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "ngc_4636",
+      "name": "NGC 4636",
+      "catalog": "NGC 4636",
+      "group": "virgo_cluster",
+      "type": "Galassia ellittica",
+      "radius": "55.000 anni luce",
+      "mass": "4 × 10¹¹ M☉",
+      "distance": "53 milioni di anni luce",
+      "distanceLy": 53000000,
+      "description": "Ellittica dell'Ammasso di Virgo con getti relativistici e X-ray luminosi.",
+      "facts": [
+        "Ricca di ammassi globulari",
+        "Nucleo attivo con emissione radio",
+        "Gas caldo nel mezzo intracluster"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5240,
+          23,
+          451
+        ],
+        "scale": 10,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "ngc_4643",
+      "name": "NGC 4643",
+      "catalog": "NGC 4643",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale (SAB(rs)bc)",
+      "radius": "40.000 anni luce",
+      "mass": "2 × 10¹⁰ M☉",
+      "distance": "63 milioni di anni luce",
+      "distanceLy": 63000000,
+      "description": "Spirale compatta dell'Ammasso di Virgo con nucleo attivo Seyfert.",
+      "facts": [
+        "Nucleo Seyfert 2",
+        "Bracci relativamente corti",
+        "Studiata in multi-wavelength"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5164,
+          55,
+          377
+        ],
+        "scale": 9,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "ngc_4258",
+      "name": "M106 (NGC 4258)",
+      "catalog": "M106 / NGC 4258",
+      "group": "virgo_cluster",
+      "type": "Galassia spirale barrata (SAB(s)bc)",
+      "radius": "65.000 anni luce",
+      "mass": "4 × 10¹¹ M☉",
+      "distance": "23 milioni di anni luce",
+      "distanceLy": 23000000,
+      "description": "Spirale barrata vicina al perimetro dell'Ammasso di Virgo con maser di idrogeno nel nucleo.",
+      "facts": [
+        "Maser H₂O usato per misurare distanze cosmologiche",
+        "Anelli di starburst nel disco",
+        "Nucleo attivo Seyfert"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA04294/PIA04294~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -5069,
+          55,
+          328
+        ],
+        "scale": 11,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "ngc_4477",
+      "name": "NGC 4477",
+      "catalog": "NGC 4477",
+      "group": "virgo_cluster",
+      "type": "Galassia lenticolare",
+      "radius": "35.000 anni luce",
+      "mass": "1,5 × 10¹¹ M☉",
+      "distance": "55 milioni di anni luce",
+      "distanceLy": 55000000,
+      "description": "Lenticolare dell'Ammasso di Virgo con disco sottile e bulge prominente.",
+      "facts": [
+        "Povera di gas e formazione stellare",
+        "Popolazione stellare vecchia",
+        "Parte del sottogruppo di M49"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "virgo",
+        "position": [
+          -4963,
+          17,
+          309
+        ],
+        "scale": 8.5,
+        "color": "#a899bb"
+      }
+    },
+    {
+      "id": "ngc_1350",
+      "name": "NGC 1350",
+      "catalog": "NGC 1350",
+      "group": "fornax_cluster",
+      "type": "Galassia spirale (R'SAB(rs)ab)",
+      "radius": "55.000 anni luce",
+      "mass": "1,5 × 10¹¹ M☉",
+      "distance": "85 milioni di anni luce",
+      "distanceLy": 85000000,
+      "description": "Spirale anellata dell'Ammasso di Fornax con anello esterno ben definito.",
+      "facts": [
+        "Struttura ad anello nel disco",
+        "Bracci interni e anello esterno",
+        "Target popolare tra gli astrofotografi"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "fornax",
+        "position": [
+          5542,
+          -8,
+          -1215
+        ],
+        "scale": 10,
+        "color": "#77bbee"
+      }
+    },
+    {
+      "id": "ngc_1326",
+      "name": "NGC 1326",
+      "catalog": "NGC 1326",
+      "group": "fornax_cluster",
+      "type": "Galassia spirale barrata (SB(rs)bc)",
+      "radius": "45.000 anni luce",
+      "mass": "8 × 10¹⁰ M☉",
+      "distance": "53 milioni di anni luce",
+      "distanceLy": 53000000,
+      "description": "Spirale barrata dell'Ammasso di Fornax con barra e anello circumnucleare.",
+      "facts": [
+        "Barra centrale che alimenta il disco",
+        "Anello di polvere interno",
+        "Vicina a NGC 1316 nel cielo"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "fornax",
+        "position": [
+          5661,
+          -74,
+          -1308
+        ],
+        "scale": 10,
+        "color": "#6699cc"
+      }
+    },
+    {
+      "id": "ic_335",
+      "name": "IC 335",
+      "catalog": "IC 335",
+      "group": "fornax_cluster",
+      "type": "Galassia lenticolare",
+      "radius": "30.000 anni luce",
+      "mass": "5 × 10¹⁰ M☉",
+      "distance": "60 milioni di anni luce",
+      "distanceLy": 60000000,
+      "description": "Lenticolare compatta dell'Ammasso di Fornax, vista quasi di profilo.",
+      "facts": [
+        "Inclinazione elevata",
+        "Povera di gas interstellare",
+        "Membro periferico del cluster"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "cluster": "fornax",
+        "position": [
+          5809,
+          -12,
+          -1275
+        ],
+        "scale": 7.5,
+        "color": "#887766"
+      }
+    },
+    {
+      "id": "ngc_253",
+      "name": "Galassia dello Scultore (NGC 253)",
+      "catalog": "NGC 253",
+      "group": "nearby",
+      "type": "Galassia spirale starburst",
+      "radius": "45.000 anni luce",
+      "mass": "5 × 10¹⁰ M☉",
+      "distance": "11,4 milioni di anni luce",
+      "distanceLy": 11400000,
+      "description": "Spirale starburst nel Gruppo di Scultore, una delle galassie starburst più vicine.",
+      "facts": [
+        "Intensa formazione stellare nel disco",
+        "Visibile con telescopi amatoriali",
+        "Getti di gas osservati in X-ray"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA12817/PIA12817~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          -104,
+          22,
+          1032
+        ],
+        "scale": 13,
+        "color": "#ee9955"
+      }
+    },
+    {
+      "id": "ngc_300",
+      "name": "NGC 300",
+      "catalog": "NGC 300",
+      "group": "nearby",
+      "type": "Galassia spirale (SA(s)d)",
+      "radius": "35.000 anni luce",
+      "mass": "2,5 × 10¹⁰ M☉",
+      "distance": "6 milioni di anni luce",
+      "distanceLy": 6000000,
+      "description": "Spirale a bracci aperti nel Gruppo di Scultore, simile al Triangulum per morfologia.",
+      "facts": [
+        "Tra le galassie spirali più vicine",
+        "Cepheid variabili ben studiate",
+        "Bracci deboli e diffusi"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          -133,
+          -18,
+          587
+        ],
+        "scale": 11,
+        "color": "#77ccee"
+      }
+    },
+    {
+      "id": "ngc_6744",
+      "name": "NGC 6744",
+      "catalog": "NGC 6744",
+      "group": "distant",
+      "type": "Galassia spirale barrata (SBbc)",
+      "radius": "175.000 anni luce",
+      "mass": "1 × 10¹¹ M☉",
+      "distance": "30 milioni di anni luce",
+      "distanceLy": 30000000,
+      "description": "Spirale barrata nella costellazione del Pavone, considerata un analogo della Via Lattea.",
+      "facts": [
+        "Dimensioni simili alla Via Lattea",
+        "Bracci grandi e ben definiti",
+        "Visibile dall'emisfero australe"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          742,
+          -35,
+          2848
+        ],
+        "scale": 14,
+        "color": "#99bbdd"
+      }
+    },
+    {
+      "id": "ngc_2403",
+      "name": "NGC 2403",
+      "catalog": "NGC 2403",
+      "group": "nearby",
+      "type": "Galassia spirale (SAB(s)cd)",
+      "radius": "50.000 anni luce",
+      "mass": "3 × 10¹⁰ M☉",
+      "distance": "8 milioni di anni luce",
+      "distanceLy": 8000000,
+      "description": "Spirale nel Gruppo di M81, ricca di regioni H II e supernovae.",
+      "facts": [
+        "SN 2004dj osservata amatorialmente",
+        "Oltre 150 regioni H II",
+        "Bracci aperti e simmetrici"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/galaxies/"
+      ],
+      "marker": {
+        "scenes": [
+          "observable"
+        ],
+        "position": [
+          520,
+          28,
+          849
+        ],
+        "scale": 11,
+        "color": "#66aadd"
+      }
+    }
+  ]
+}

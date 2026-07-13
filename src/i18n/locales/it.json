@@ -1,0 +1,20 @@
+{
+  "app.title": "Planetario 3D",
+  "nav.explore": "Esplora",
+  "nav.profile": "Profilo",
+  "nav.collectibles": "Collezionabili",
+  "nav.drake": "Equazione di Drake",
+  "nav.cinema": "Modalità cinema",
+  "nav.starry": "Notte stellata",
+  "nav.feedback": "Feedback",
+  "mode.explorer": "Esploratore",
+  "mode.student": "Studente",
+  "mode.researcher": "Ricercatore",
+  "coords.ra": "AR",
+  "coords.dec": "Dec",
+  "coords.alt": "Alt",
+  "coords.az": "Az",
+  "telemetry.optin": "Telemetria anonima (opt-in)",
+  "voice.listening": "Ascolto comandi vocali…",
+  "break.reminder": "Hai esplorato per 20 minuti. Fai una pausa!"
+}

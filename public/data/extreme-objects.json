@@ -1,0 +1,211 @@
+{
+  "catalog": {
+    "version": "1.0",
+    "sources": [
+      "Event Horizon Telescope",
+      "LIGO/Virgo",
+      "NASA Chandra",
+      "ESA"
+    ],
+    "notes": "Oggetti estremi con rappresentazione schematica; scale non metriche."
+  },
+  "objects": [
+    {
+      "id": "sagittarius-a",
+      "name": "Sagittarius A*",
+      "category": "black_hole_supermassive",
+      "type": "Buco nero supermassiccio",
+      "mass": "4,15 × 10⁶ M☉",
+      "distance": "26.000 anni luce (centro galattico)",
+      "radius": "Orizzonte: ~12 milioni km",
+      "temperature": "Disco accrescimento: fino a 10¹⁰ K",
+      "description": "Il buco nero supermassiccio al centro della Via Lattea. Nel 2022 l'Event Horizon Telescope ha pubblicato la prima immagine della sua ombra.",
+      "facts": [
+        "Massa equivalente a 4 milioni di volte il Sole",
+        "Stelle vicine orbitano a oltre 6.000 km/s",
+        "L'ombra è circa 52 microarcsecondi nel cielo",
+        "Sorgente radio Sagittarius A* osservata dal 1974"
+      ],
+      "discoveryYear": 1974,
+      "discoveryMethod": "Radioastronomia",
+      "sources": [
+        "https://eventhorizontelescope.org/",
+        "https://science.nasa.gov/universe/black-holes/"
+      ],
+      "marker": {
+        "position": [0, 0, 0],
+        "scale": 14
+      },
+      "visual": {
+        "diskInner": 0.35,
+        "diskOuter": 1.0,
+        "jet": false,
+        "lensing": true,
+        "diskTilt": 0.55
+      }
+    },
+    {
+      "id": "m87-star",
+      "name": "M87*",
+      "category": "black_hole_supermassive",
+      "type": "Buco nero supermassiccio",
+      "mass": "6,5 × 10⁹ M☉",
+      "distance": "53,5 milioni anni luce",
+      "radius": "Orizzonte: ~19 miliardi km",
+      "temperature": "Getto relativistico: plasmi ad alta energia",
+      "description": "Buco nero supermassiccio nella galassia M87, prima ombra fotografata (2019). Possiede un getto relativistico di ~5.000 anni luce.",
+      "facts": [
+        "Prima immagine di un buco nero nella storia (EHT, 2019)",
+        "Il getto viaggia a frazioni significative della velocità della luce",
+        "Alimenta la galassia ellittica gigante M87",
+        "6,5 miliardi di masse solari"
+      ],
+      "discoveryYear": 2019,
+      "discoveryMethod": "Event Horizon Telescope",
+      "sources": [
+        "https://eventhorizontelescope.org/",
+        "https://science.nasa.gov/mission/hubble/science/science-highlights/hubble-black-holes/"
+      ],
+      "marker": {
+        "position": [180, 25, -140],
+        "scale": 18
+      },
+      "visual": {
+        "diskInner": 0.3,
+        "diskOuter": 1.1,
+        "jet": true,
+        "jetLength": 120,
+        "lensing": true,
+        "diskTilt": 0.35
+      }
+    },
+    {
+      "id": "cygnus-x1",
+      "name": "Cygnus X-1",
+      "category": "black_hole_stellar",
+      "type": "Buco nero stellare",
+      "mass": "21 M☉",
+      "distance": "6.100 anni luce",
+      "radius": "Orizzonte: ~62 km",
+      "temperature": "Disco: ~10⁷ K",
+      "description": "Primo candidato buco nero stellare ampiamente accettato, in sistema binario con una supergigante blu.",
+      "facts": [
+        "Scoperto come sorgente X nel 1964",
+        "Massa stimata oltre 21 masse solari",
+        "Accrezione da compagna HDE 226868",
+        "Emissione di raggi X dal disco interno"
+      ],
+      "discoveryYear": 1964,
+      "discoveryMethod": "Raggi X (Aerobee)",
+      "sources": [
+        "https://science.nasa.gov/universe/black-holes/"
+      ],
+      "marker": {
+        "position": [-95, 18, 70],
+        "scale": 6
+      },
+      "visual": {
+        "diskInner": 0.4,
+        "diskOuter": 0.95,
+        "jet": false,
+        "lensing": true,
+        "diskTilt": 0.7
+      }
+    },
+    {
+      "id": "gw150914",
+      "name": "GW150914",
+      "category": "black_hole_stellar",
+      "type": "Buco nero da fusione (binario)",
+      "mass": "62 M☉ (prodotto finale)",
+      "distance": "1,3 miliardi anni luce",
+      "radius": "Orizzonte: ~185 km",
+      "temperature": "Energia rilasciata in onde gravitazionali",
+      "description": "Prima detection diretta di onde gravitazionali (LIGO, 2015), prodotta dalla fusione di due buchi neri di ~36 e ~29 M☉.",
+      "facts": [
+        "Ha inaugurato l'astronomia gravitazionale",
+        "3 miliardi di masse solari convertite in energia gravitazionale",
+        "Rilevato da LIGO Hanford e Livingston",
+        "Nobel per Fisica 2017 a Weiss, Barish e Thorne"
+      ],
+      "discoveryYear": 2015,
+      "discoveryMethod": "Onde gravitazionali (LIGO)",
+      "sources": [
+        "https://www.ligo.org/science/GW150914"
+      ],
+      "marker": {
+        "position": [110, 45, -90],
+        "scale": 5.5
+      },
+      "visual": {
+        "diskInner": 0.45,
+        "diskOuter": 0.9,
+        "jet": false,
+        "lensing": true,
+        "diskTilt": 0.5,
+        "ringRipple": true
+      }
+    },
+    {
+      "id": "crab-pulsar",
+      "name": "Crab Pulsar",
+      "category": "pulsar",
+      "type": "Pulsar",
+      "mass": "~1,4 M☉",
+      "distance": "6.500 anni luce",
+      "radius": "~10 km",
+      "temperature": "Superficie: ~10⁶ K",
+      "description": "Stella di neutroni rotante al centro della Nebulosa del Granchio, residuo della supernova del 1054.",
+      "facts": [
+        "Ruota 30 volte al secondo",
+        "Emette fasci radio e raggi X come un faro cosmico",
+        "Età ~970 anni",
+        "Alimenta la nebulosa del Granchio con energia rotazionale"
+      ],
+      "discoveryYear": 1968,
+      "discoveryMethod": "Radio (Cambridge)",
+      "sources": [
+        "https://science.nasa.gov/mission/chandra/crab-pulsar/"
+      ],
+      "marker": {
+        "position": [55, -35, 85],
+        "scale": 4
+      },
+      "visual": {
+        "spinRate": 30,
+        "beamLength": 35
+      }
+    },
+    {
+      "id": "sgr-1935",
+      "name": "SGR 1935+2154",
+      "category": "magnetar",
+      "type": "Magnetar",
+      "mass": "~1,4 M☉",
+      "distance": "30.000 anni luce",
+      "radius": "~20 km",
+      "temperature": "Superficie: ~10⁶ K",
+      "description": "Magnetar nella Via Lattea, fonte di lampi di raggi X e del primo fast radio burst galattico associato a un magnetar.",
+      "facts": [
+        "Campo magnetico ~10¹⁵ gauss",
+        "FRB galattico osservato nel 2020",
+        "Erutta raggi X e gamma in outburst",
+        "Stella di neutroni con campo estremo"
+      ],
+      "discoveryYear": 2014,
+      "discoveryMethod": "Raggi gamma (Swift)",
+      "sources": [
+        "https://science.nasa.gov/universe/stars/neutron-stars/"
+      ],
+      "marker": {
+        "position": [-130, 12, -55],
+        "scale": 4.2
+      },
+      "visual": {
+        "spinRate": 3.2,
+        "beamLength": 40,
+        "fieldLines": true
+      }
+    }
+  ]
+}

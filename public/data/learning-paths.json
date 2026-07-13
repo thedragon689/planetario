@@ -1,0 +1,56 @@
+{
+  "paths": [
+    {
+      "id": "black-hole-journey",
+      "title": "Cos'è un buco nero?",
+      "level": "principiante",
+      "description": "Dal collasso stellare all'osservazione con EHT.",
+      "steps": [
+        { "id": "bh-1", "title": "Vita di una stella massiccia", "message": "Esplora una stella massiccia nella Via Lattea.", "scene": "milky_way", "objectId": "betelgeuse" },
+        { "id": "bh-2", "title": "Collasso gravitazionale", "message": "Cosa succede quando il combustibile nucleare finisce?", "scene": "extreme_objects", "objectId": "cygnus-x1" },
+        { "id": "bh-3", "title": "Orizzonte degli eventi", "message": "Visita Sagittarius A*, il buco nero al centro galattico.", "scene": "extreme_objects", "objectId": "sagittarius-a" },
+        { "id": "bh-4", "title": "Osservazione EHT", "message": "M87* fotografato dall'Event Horizon Telescope.", "scene": "extreme_objects", "objectId": "m87-star" },
+        { "id": "bh-5", "title": "Onde gravitazionali", "message": "GW150914: la prima fusione di buchi neri rilevata.", "scene": "extreme_objects", "objectId": "gw150914" }
+      ]
+    },
+    {
+      "id": "life-in-space",
+      "title": "La vita nello spazio",
+      "level": "intermedio",
+      "description": "Zone abitabili, atmosfere e biosignature.",
+      "steps": [
+        { "id": "life-1", "title": "La Terra modello", "message": "La nostra atmosfera e l'acqua liquida.", "scene": "earth", "objectId": "earth" },
+        { "id": "life-2", "title": "Zona Goldilocks", "message": "TRAPPIST-1 e: candidato nella zona abitabile.", "scene": "exoplanets", "objectId": "trappist-1e" },
+        { "id": "life-3", "title": "Proxima b", "message": "Il vicino extrasolare a 4,2 anni luce.", "scene": "exoplanets", "objectId": "proxima-b" },
+        { "id": "life-4", "title": "JWST e le atmosfere", "message": "WASP-39 b: dati spettroscopici JWST.", "scene": "exoplanets", "objectId": "wasp-39b" },
+        { "id": "life-5", "title": "Kepler-452 b", "message": "Il cugino della Terra.", "scene": "exoplanets", "objectId": "kepler-452b" }
+      ]
+    },
+    {
+      "id": "universe-expansion",
+      "title": "L'espansione dell'universo",
+      "level": "avanzato",
+      "description": "Dal Big Bang al futuro cosmico.",
+      "steps": [
+        { "id": "exp-1", "title": "Radiazione di fondo", "message": "Esplora l'universo osservabile e la CMB.", "scene": "observable", "objectId": "cmb" },
+        { "id": "exp-2", "title": "Struttura a larga scala", "message": "Superammasso di Laniakea.", "scene": "observable", "objectId": "laniakea" },
+        { "id": "exp-3", "title": "Redshift", "message": "Galassie lontane e allontanamento cosmico.", "scene": "observable", "objectId": "sombrero" },
+        { "id": "exp-4", "title": "Gruppo Locale", "message": "Andromeda si avvicina o noi ci avviciniamo?", "scene": "local_group", "objectId": "andromeda" },
+        { "id": "exp-5", "title": "Wormhole", "message": "Esplora il tunnel cosmico finale.", "scene": "wormhole" }
+      ]
+    },
+    {
+      "id": "space-missions",
+      "title": "Le missioni spaziali",
+      "level": "principiante",
+      "description": "Dalle sonde Voyager alle missioni attuali.",
+      "steps": [
+        { "id": "mis-1", "title": "Sistema Solare", "message": "Panoramica del nostro sistema.", "scene": "solar_system", "objectId": "sun" },
+        { "id": "mis-2", "title": "Voyager 1", "message": "La sonda più lontana dall'umanità.", "scene": "solar_system", "objectId": "voyager-1" },
+        { "id": "mis-3", "title": "New Horizons", "message": "La missione verso Plutone.", "scene": "solar_system", "objectId": "new-horizons" },
+        { "id": "mis-4", "title": "Parker Solar Probe", "message": "Toccare il Sole.", "scene": "solar_system", "objectId": "parker-solar" },
+        { "id": "mis-5", "title": "JWST", "message": "Il telescopio che guarda l'infrarosso profondo.", "scene": "exoplanets", "objectId": "trappist-1e" }
+      ]
+    }
+  ]
+}

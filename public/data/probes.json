@@ -1,0 +1,110 @@
+{
+  "probes": [
+    {
+      "id": "voyager-1",
+      "name": "Voyager 1",
+      "type": "Sonda interplanetaria",
+      "agency": "NASA",
+      "launch": "1977-09-05",
+      "status": "Spazio interstellare",
+      "description": "La sonda umana più distante. Ha attraversato l'eliopausa nel 2012 ed è ora nello spazio interstellare.",
+      "facts": [
+        "Ha inviato la famosa Pale Blue Dot",
+        "Porta il disco d'oro con suoni e immagini della Terra",
+        "Oltre 24 miliardi di km dalla Terra"
+      ],
+      "waypoints": [
+        { "label": "Terra", "pos": [15, 0, 0], "year": 1977 },
+        { "label": "Giove", "pos": [32, 2, 8], "year": 1979 },
+        { "label": "Saturno", "pos": [48, 0, -12], "year": 1980 },
+        { "label": "Eliopausa", "pos": [95, 5, 20], "year": 2012 },
+        { "label": "Interstellare", "pos": [130, 8, 35], "year": 2024 }
+      ],
+      "sources": ["https://voyager.jpl.nasa.gov/"]
+    },
+    {
+      "id": "voyager-2",
+      "name": "Voyager 2",
+      "type": "Sonda interplanetaria",
+      "agency": "NASA",
+      "launch": "1977-08-20",
+      "status": "Spazio interstellare",
+      "description": "Unica sonda ad aver visitato Urano e Nettuno. Ora nello spazio interstellare.",
+      "facts": [
+        "Grand Tour dei pianeti giganti esterni",
+        "Attraversato l'eliopausa nel 2018",
+        "Ancora operativa e in comunicazione"
+      ],
+      "waypoints": [
+        { "label": "Terra", "pos": [15, 0, 0], "year": 1977 },
+        { "label": "Giove", "pos": [32, -3, -6], "year": 1979 },
+        { "label": "Saturno", "pos": [48, 0, 10], "year": 1981 },
+        { "label": "Urano", "pos": [58, 4, -18], "year": 1986 },
+        { "label": "Nettuno", "pos": [68, -2, 22], "year": 1989 },
+        { "label": "Interstellare", "pos": [120, 6, 30], "year": 2024 }
+      ]
+    },
+    {
+      "id": "new-horizons",
+      "name": "New Horizons",
+      "type": "Sonda del Sistema Esterno",
+      "agency": "NASA",
+      "launch": "2006-01-19",
+      "status": "Attiva — fascia di Kuiper",
+      "description": "Prima missione a Plutone (2015) e agli oggetti della fascia di Kuiper.",
+      "facts": [
+        "Volò vicino a Plutone il 14 luglio 2015",
+        "Incontro con Arrokoth (2014 MU69) nel 2019",
+        "Velocità di fuga dalla Terra: ~58.000 km/h"
+      ],
+      "waypoints": [
+        { "label": "Terra", "pos": [15, 0, 0], "year": 2006 },
+        { "label": "Giove (assist)", "pos": [32, 1, 5], "year": 2007 },
+        { "label": "Plutone", "pos": [98, 0, -8], "year": 2015 },
+        { "label": "Arrokoth", "pos": [105, 3, 12], "year": 2019 },
+        { "label": "Kuiper", "pos": [115, 0, 18], "year": 2024 }
+      ]
+    },
+    {
+      "id": "parker-solar",
+      "name": "Parker Solar Probe",
+      "type": "Sonda solare",
+      "agency": "NASA",
+      "launch": "2018-08-12",
+      "status": "Attiva — orbita eliocentrica",
+      "description": "La sonda più vicina al Sole mai lanciata, studia corona e vento solare.",
+      "facts": [
+        "Perihelio a ~6,9 milioni di km dal Sole",
+        "Velocità record: oltre 600.000 km/h",
+        "Scudo termico carbon-carbon"
+      ],
+      "waypoints": [
+        { "label": "Terra", "pos": [15, 0, 0], "year": 2018 },
+        { "label": "Perihelio 1", "pos": [3, 0, 0], "year": 2019 },
+        { "label": "Perihelio 2", "pos": [2.5, 1, 0], "year": 2021 },
+        { "label": "Perihelio 3", "pos": [2, 0, 1], "year": 2024 }
+      ]
+    },
+    {
+      "id": "juno",
+      "name": "Juno",
+      "type": "Orbitatore planetario",
+      "agency": "NASA",
+      "launch": "2011-08-05",
+      "status": "Attiva — orbita gioviana",
+      "description": "Missione in orbita polare attorno a Giove per studiare magnetosfera, composizione e struttura interna.",
+      "facts": [
+        "Arrivo a Giove: 4 luglio 2016",
+        "Orbita polare altamente ellittica",
+        "Studia i poli di Giove e il campo magnetico"
+      ],
+      "waypoints": [
+        { "label": "Terra", "pos": [15, 0, 0], "year": 2011 },
+        { "label": "Assist Terra", "pos": [15, 0, 5], "year": 2013 },
+        { "label": "Giove (inserimento)", "pos": [32, 0, 0], "year": 2016 },
+        { "label": "Orbita polare", "pos": [34, 2, 3], "year": 2020 },
+        { "label": "Orbita estesa", "pos": [33, -1, -2], "year": 2024 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,529 @@
+{
+  "catalog": {
+    "version": "1.1",
+    "notes": "Stelle famose con posizioni 3D schematiche nel disco galattico."
+  },
+  "stars": [
+    {
+      "id": "sun",
+      "name": "Sole",
+      "type": "Stella di sequenza principale (G2V)",
+      "radius": "696.340 km",
+      "mass": "1,99 × 10³⁰ kg",
+      "distance": "0 AU",
+      "temperature": "5.778 K (superficie)",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "La nostra stella, una nana gialla al centro del Sistema Solare. Il Sole converte 600 milioni di tonnellate di idrogeno in elio ogni secondo, liberando energia equivalente a 100 miliardi di bombe all'idrogeno.",
+      "facts": [
+        "Contiene il 99,86% della massa del Sistema Solare",
+        "La luce impiega 8 minuti e 20 secondi per raggiungere la Terra",
+        "Il ciclo solare dura circa 11 anni",
+        "La corona è più calda della superficie — un mistero ancora irrisolto"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000963/GSFC_20171208_Archive_e000963~orig.jpg"
+      ],
+      "sources": [
+        "https://solarsystem.nasa.gov/solar-system/sun/overview/"
+      ]
+    },
+    {
+      "id": "sirius",
+      "name": "Sirio",
+      "type": "Sistema stellare binario (A1V)",
+      "radius": "1,71 R☉",
+      "mass": "2,02 M☉",
+      "distance": "8,6 anni luce",
+      "temperature": "9.940 K",
+      "orbitalPeriod": "50,1 anni (binario)",
+      "orbitalVelocity": "N/A",
+      "description": "La stella più luminosa nel cielo notturno. Sirio A è una stella bianco-azzurra accompagnata da una compagna nana bianca, Sirio B.",
+      "facts": [
+        "È 25 volte più luminosa del Sole",
+        "Gli antichi Egizi basavano il calendario sul suo sorgere eliacale",
+        "Sirio B ha la massa del Sole in un volume grande quanto la Terra",
+        "Fa parte dell'ammasso dell'Orsa Maggiore"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          1,
+          28,
+          -3
+        ],
+        "scale": 6.5,
+        "color": "#cceeff",
+        "spectral": "A"
+      }
+    },
+    {
+      "id": "betelgeuse",
+      "name": "Betelgeuse",
+      "type": "Supergigante rossa (M1-2Ia-Iab)",
+      "radius": "~764 R☉",
+      "mass": "~16 M☉",
+      "distance": "642 anni luce",
+      "temperature": "3.500 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "Una delle stelle più grandi conosciute, situata nella spalla di Orione. Betelgeuse è prossima alla fine della sua vita e esploderà come supernova entro 100.000 anni.",
+      "facts": [
+        "Se fosse al posto del Sole, ingloberebbe Giove",
+        "Il suo diametro varia del 15% in cicli di 400 giorni",
+        "Nel 2019 ha subito un inspiegabile calo di luminosità",
+        "La supernova sarà visibile anche di giorno dalla Terra"
+      ],
+      "nasa_images": [
+        "https://images-assets.nasa.gov/image/PIA23697/PIA23697~orig.jpg"
+      ],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          -41,
+          95,
+          42
+        ],
+        "scale": 9,
+        "color": "#ff6644",
+        "spectral": "M"
+      }
+    },
+    {
+      "id": "proxima_centauri",
+      "name": "Proxima Centauri",
+      "type": "Nana rossa (M5.5Ve)",
+      "radius": "0,15 R☉",
+      "mass": "0,12 M☉",
+      "distance": "4,24 anni luce",
+      "temperature": "3.042 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "La stella più vicina al Sole, componente del sistema Alpha Centauri. Ospita almeno due pianeti, incluso Proxima b nella zona abitabile.",
+      "facts": [
+        "È troppo debole per essere vista ad occhio nudo",
+        "Proxima b potrebbe avere condizioni per l'acqua liquida",
+        "È una stella flare che emette potenti eruzioni",
+        "Un segnale radio misterioso (BLC1) è stato rilevato nel 2019"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://exoplanets.nasa.gov/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          -1,
+          12,
+          -1
+        ],
+        "scale": 6.5,
+        "color": "#ff4422",
+        "spectral": "M"
+      }
+    },
+    {
+      "id": "vega",
+      "name": "Vega",
+      "type": "Stella A0V (sequenza principale)",
+      "radius": "2,36 R☉",
+      "mass": "2,14 M☉",
+      "distance": "25 anni luce",
+      "temperature": "9.602 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "Una delle stelle più brillanti dell'emisfero nord, stella di riferimento della magnitudine apparente. Vega è circondata da un disco di detriti.",
+      "facts": [
+        "Polo della fotometria astronomica (m = 0)",
+        "Ruota rapidamente con disco circumstellare",
+        "Obiettivo del telescopio spaziale Spitzer",
+        "Fa parte del triangolo estivo"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          1,
+          78,
+          -2
+        ],
+        "scale": 6.5,
+        "color": "#ddeeff",
+        "spectral": "A"
+      }
+    },
+    {
+      "id": "rigel",
+      "name": "Rigel",
+      "type": "Supergigante blu (B8Ia)",
+      "radius": "~74 R☉",
+      "mass": "~21 M☉",
+      "distance": "860 anni luce",
+      "temperature": "12.100 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "Stella blu supergigante nel piede di Orione, una delle più luminose conosciute.",
+      "facts": [
+        "Oltre 100.000 volte più luminosa del Sole",
+        "Possibile sistema multiplo a 4 componenti",
+        "Giovane stella di massa elevata",
+        "Visibile ad occhio nudo come stella azzurra"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          -49,
+          -42,
+          86
+        ],
+        "scale": 6.5,
+        "color": "#99ccff",
+        "spectral": "B"
+      }
+    },
+    {
+      "id": "polaris",
+      "name": "Polaris (Stella Polare)",
+      "type": "Supergigante gialla (F7Ib)",
+      "radius": "~37 R☉",
+      "mass": "~5,4 M☉",
+      "distance": "433 anni luce",
+      "temperature": "6.015 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "La stella più vicina al polo nord celeste, usata da secoli per la navigazione.",
+      "facts": [
+        "Sistema triplo con Cepheid variabile",
+        "Indica approssimativamente il nord geografico",
+        "La distanza è stata misurata con precisione da Gaia",
+        "La sua posizione cambia per la precessione terrestre"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          2,
+          195,
+          -7
+        ],
+        "scale": 6.5,
+        "color": "#fff0cc",
+        "spectral": "F"
+      }
+    },
+    {
+      "id": "alpha_centauri",
+      "name": "Alpha Centauri",
+      "type": "Sistema stellare triplo (G2V + K1V)",
+      "radius": "1,22 R☉ (A)",
+      "mass": "1,1 M☉ (A)",
+      "distance": "4,37 anni luce",
+      "temperature": "5.790 K (A)",
+      "orbitalPeriod": "80 anni (binario AB)",
+      "orbitalVelocity": "N/A",
+      "description": "Il sistema stellare più vicino al Sole, composto da Alpha Centauri A, B e Proxima.",
+      "facts": [
+        "Obiettivo del programma Breakthrough Starshot",
+        "Alpha Centauri A è simile al Sole",
+        "Visibile solo da emisfero australe",
+        "Sistema più studiato per esopianeti vicini"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          -1,
+          18,
+          -1
+        ],
+        "scale": 6.5,
+        "color": "#fff5dd",
+        "spectral": "G"
+      }
+    },
+    {
+      "id": "arcturus",
+      "name": "Arcturus",
+      "type": "Gigante arancione (K0III)",
+      "radius": "~25 R☉",
+      "mass": "~1,08 M☉",
+      "distance": "37 anni luce",
+      "temperature": "4.286 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "Stella gigante arancione nella costellazione del Boote, quarta più luminosa del cielo.",
+      "facts": [
+        "Ha un moto proprio elevato attraverso la galassia",
+        "Usata per aprire l'Expo di Chicago 1933 via telefoto",
+        "Probabilmente proveniente da una galassia satellite",
+        "Visibile ad occhio nudo con colore arancione"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          -1,
+          62,
+          -3
+        ],
+        "scale": 6.5,
+        "color": "#ffaa55",
+        "spectral": "K"
+      }
+    },
+    {
+      "id": "antares",
+      "name": "Antares",
+      "type": "Supergigante rossa (M1.5Iab)",
+      "radius": "~680 R☉",
+      "mass": "~12 M☉",
+      "distance": "550 anni luce",
+      "temperature": "3.660 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "Il cuore dello Scorpione, una supergigante rossa rivale di Marte per il colore.",
+      "facts": [
+        "Nome significa 'rivale di Marte'",
+        "Ha una compagna verde smeraldo (Antares B)",
+        "Vento stellare estremamente potente",
+        "Destinata a finire come supernova"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          -27,
+          -55,
+          -41
+        ],
+        "scale": 9,
+        "color": "#ff5533",
+        "spectral": "M"
+      }
+    },
+    {
+      "id": "aldebaran",
+      "name": "Aldebaran",
+      "type": "Gigante arancione (K5III)",
+      "radius": "~44 R☉",
+      "mass": "~1,16 M☉",
+      "distance": "65 anni luce",
+      "temperature": "3.910 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "L'occhio del Toro, gigante arancione che segue le Pleiadi nel cielo.",
+      "facts": [
+        "Fa parte del V-shaped Hyades (visivamente)",
+        "Ha un possibile pianeta gigante in orbita",
+        "Colore arancione intenso ad occhio nudo",
+        "Usata in navigazione e mitologia antica"
+      ],
+      "nasa_images": [],
+      "sources": [
+        "https://science.nasa.gov/universe/stars/"
+      ],
+      "marker": {
+        "scenes": [
+          "milky_way",
+          "local_group"
+        ],
+        "position": [
+          3,
+          48,
+          5
+        ],
+        "scale": 6.5,
+        "color": "#ff8844",
+        "spectral": "K"
+      }
+    },
+    {
+      "id": "deneb",
+      "name": "Deneb",
+      "type": "Supergigante bianca (A2Ia)",
+      "radius": "~203 R☉",
+      "mass": "~19 M☉",
+      "distance": "~2.600 anni luce",
+      "temperature": "8.525 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "Vertice del Triangolo Estivo, una delle stelle più luminose della Via Lattea, distante migliaia di anni luce.",
+      "facts": [
+        "Luminosità ~200.000 volte il Sole",
+        "Punterà il polo nord celeste tra ~10.000 anni",
+        "Supergigante giovane in rapida evoluzione",
+        "Componente del Triangolo Estivo con Vega e Altair"
+      ],
+      "nasa_images": [],
+      "sources": ["https://science.nasa.gov/universe/stars/"],
+      "marker": {
+        "scenes": ["milky_way"],
+        "position": [-25, 55, 70],
+        "scale": 8,
+        "color": "#eef8ff",
+        "spectral": "A"
+      }
+    },
+    {
+      "id": "altair",
+      "name": "Altair",
+      "type": "Stella A7V (sequenza principale)",
+      "radius": "1,79 R☉",
+      "mass": "1,79 M☉",
+      "distance": "16,7 anni luce",
+      "temperature": "7.550 K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "Stella relativamente vicina nel Triangolo Estivo, nota per la rotazione estremamente rapida che la appiattisce.",
+      "facts": [
+        "Ruota in meno di 10 ore",
+        "Una delle stelle più vicine visibili ad occhio nudo",
+        "Ha un debole disco di detriti",
+        "Usata per test di interferometria stellare"
+      ],
+      "nasa_images": [],
+      "sources": ["https://science.nasa.gov/universe/stars/"],
+      "marker": {
+        "scenes": ["milky_way"],
+        "position": [35, 8, 25],
+        "scale": 5.5,
+        "color": "#f0f8ff",
+        "spectral": "A"
+      }
+    },
+    {
+      "id": "spica",
+      "name": "Spica",
+      "type": "Sistema binario B1III-IV",
+      "radius": "~7,4 R☉",
+      "mass": "~11 M☉",
+      "distance": "250 anni luce",
+      "temperature": "22.400 K",
+      "orbitalPeriod": "4 giorni (binario)",
+      "orbitalVelocity": "N/A",
+      "description": "Stella più luminosa della costellazione della Vergine, sistema binario massiccio con pulsazioni.",
+      "facts": [
+        "Colore bianco-blu intenso",
+        "Usata per determinare la distanza della Vergine",
+        "Le due componenti orbitano molto vicine",
+        "Una delle stelle più calde facilmente visibili"
+      ],
+      "nasa_images": [],
+      "sources": ["https://science.nasa.gov/universe/stars/"],
+      "marker": {
+        "scenes": ["milky_way"],
+        "position": [-70, 22, -40],
+        "scale": 6,
+        "color": "#aaccff",
+        "spectral": "B"
+      }
+    },
+    {
+      "id": "albireo",
+      "name": "Albireo",
+      "type": "Sistema binario visivo",
+      "radius": "A: ~5 R☉ · B: ~3 R☉",
+      "mass": "A: ~5 M☉ · B: ~3,2 M☉",
+      "distance": "430 anni luce",
+      "temperature": "A: ~13.200 K · B: ~9.200 K",
+      "orbitalPeriod": "~100.000 anni (binario)",
+      "orbitalVelocity": "N/A",
+      "description": "Famosa coppia colorata nella Cigno: una stella dorata e una blu, spettacolo amato dagli astrofili.",
+      "facts": [
+        "Colori dorato e azzurro visibili al telescopio",
+        "Binario visivo, non fisico confermato in passato",
+        "Punto di riferimento estivo nel cielo boreale",
+        "β Cygni nella coda del Cigno"
+      ],
+      "nasa_images": [],
+      "sources": ["https://science.nasa.gov/universe/stars/"],
+      "marker": {
+        "scenes": ["milky_way"],
+        "position": [15, 40, -95],
+        "scale": 5.8,
+        "color": "#ffdd88",
+        "spectral": "K"
+      }
+    },
+    {
+      "id": "sn-1987a",
+      "name": "SN 1987A",
+      "type": "Resto di supernova",
+      "radius": "Anello ~0,5 al",
+      "mass": "Progenitore ~20 M☉",
+      "distance": "168.000 anni luce",
+      "temperature": "Gas shockato ~10⁶ K",
+      "orbitalPeriod": "N/A",
+      "orbitalVelocity": "N/A",
+      "description": "Supernova esplosa nel Grande Magellano nel 1987, la più vicina osservata nell'era dei telescopi moderni.",
+      "facts": [
+        "Prima supernova visibile ad occhio nudo dal 1604",
+        "Ha prodotto un pulsar o buco nero",
+        "Anelli di emissione osservati da Hubble e JWST",
+        "Ha confermato l'emissione di neutrini dalla fusione del nucleo"
+      ],
+      "nasa_images": ["https://images-assets.nasa.gov/image/PIA03606/PIA03606~orig.jpg"],
+      "sources": ["https://science.nasa.gov/mission/hubble/science/science-highlights/hubble-black-holes/"],
+      "marker": {
+        "scenes": ["milky_way", "local_group"],
+        "position": [-140, -20, 60],
+        "scale": 7,
+        "color": "#ff6644",
+        "spectral": "M"
+      }
+    }
+  ]
+}

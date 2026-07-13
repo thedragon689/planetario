@@ -1,0 +1,287 @@
+/* v2.2 — Glassmorphism 2.0, temi visivi, palette scena, layout responsive */
+
+:root {
+  --vt-primary: var(--energy-cyan);
+  --vt-secondary: var(--quantum-blue);
+  --vt-accent: var(--energy-cyan);
+  --vt-glass-bg: var(--glass-bg);
+  --vt-glass-border: var(--glass-border);
+  --vt-text: var(--cold-white);
+  --vt-text-muted: rgba(234, 246, 255, 0.72);
+  --scene-primary: var(--energy-cyan);
+  --scene-secondary: var(--quantum-blue);
+  --scene-accent: var(--energy-cyan);
+  --scene-glass-bg: var(--glass-bg);
+  --scene-glass-border: var(--glass-border);
+  --effect-glass-blur: 16px;
+  --effect-glass-saturation: 160%;
+  --effect-glow-intensity: 0.45;
+  --effect-bloom-strength: 1;
+  --effect-vignette-intensity: 0.4;
+  --effect-star-brightness: 1;
+  --effect-nebula-opacity: 0.55;
+}
+
+/* Glass 2.0 — pannelli HUD */
+.glass-v22,
+.info-panel,
+.settings-panel,
+.scene-nav,
+.top-bar,
+.hud-chip,
+.overlay-controls,
+.minimap,
+.sidebar,
+.chat-panel {
+  background: var(--scene-glass-bg, var(--vt-glass-bg)) !important;
+  border-color: var(--scene-glass-border, var(--vt-glass-border)) !important;
+  backdrop-filter: blur(var(--effect-glass-blur)) saturate(var(--effect-glass-saturation));
+  -webkit-backdrop-filter: blur(var(--effect-glass-blur)) saturate(var(--effect-glass-saturation));
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 calc(24px * var(--effect-glow-intensity)) color-mix(in srgb, var(--scene-primary) 25%, transparent);
+}
+
+[data-visual-theme='golden-age'] .top-bar-title,
+[data-visual-theme='golden-age'] .hud-scene-label {
+  text-shadow: 0 0 12px color-mix(in srgb, var(--vt-accent) 40%, transparent);
+}
+
+[data-visual-theme='cyberpunk'] .ctrl-btn:hover,
+[data-visual-theme='cyberpunk'] .scene-nav-btn.active {
+  box-shadow: 0 0 14px color-mix(in srgb, var(--vt-primary) 55%, transparent);
+}
+
+[data-visual-theme='star-chart'] {
+  --cold-white: var(--vt-text);
+  color-scheme: light;
+}
+
+[data-visual-theme='star-chart'] .glass-v22,
+[data-visual-theme='star-chart'] .info-panel,
+[data-visual-theme='star-chart'] .settings-panel {
+  color: var(--vt-text);
+}
+
+/* Palette scena — accento dinamico */
+[data-scene-palette='solar_system'] .scene-nav-btn.active { border-color: var(--scene-primary); }
+[data-scene-palette='milky_way'] .minimap-dot.active { background: var(--scene-accent); }
+[data-scene-palette='wormhole'] .warp-indicator { color: var(--scene-primary); }
+
+/* Bussola HUD migliorata */
+.hud-compass-dial {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--scene-glass-border, var(--glass-border));
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.12), transparent 55%),
+    conic-gradient(from 0deg, transparent, color-mix(in srgb, var(--scene-primary) 18%, transparent), transparent);
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.45);
+}
+
+.hud-compass-needle {
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--scene-accent, var(--energy-cyan)) 0%, transparent 48%, #ff4466 52%, transparent 100%);
+  transform-origin: center center;
+  transition: transform 0.15s ease-out;
+}
+
+.hud-compass-n, .hud-compass-e, .hud-compass-s, .hud-compass-w {
+  position: absolute;
+  font-size: 0.55rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+.hud-compass-n { top: 2px; left: 50%; transform: translateX(-50%); }
+.hud-compass-e { right: 3px; top: 50%; transform: translateY(-50%); }
+.hud-compass-s { bottom: 2px; left: 50%; transform: translateX(-50%); }
+.hud-compass-w { left: 3px; top: 50%; transform: translateY(-50%); }
+
+/* Pannello info — animazioni contenuto */
+.info-panel .stats-table tr,
+.info-panel .panel-facts li,
+.info-panel .wiki-block {
+  will-change: transform, opacity;
+}
+
+.info-panel .panel-header-main {
+  border-left: 3px solid var(--scene-primary, var(--energy-cyan));
+  padding-left: 0.65rem;
+}
+
+/* Selettore tema visivo */
+.visual-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.visual-theme-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.55rem;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.visual-theme-card:hover,
+.visual-theme-card:focus-visible {
+  border-color: var(--scene-primary);
+  outline: none;
+}
+
+.visual-theme-card.active {
+  border-color: var(--scene-accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--scene-accent) 35%, transparent);
+}
+
+.visual-theme-swatch {
+  height: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.visual-theme-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Layout responsive */
+.layout-mobile .sidebar { transform: translateX(-100%); }
+.layout-mobile .sidebar.open { transform: translateX(0); }
+.layout-mobile .info-panel { width: 100%; max-height: 72vh; border-left: none; border-top: 1px solid var(--glass-border); }
+.layout-mobile .top-bar { padding: 0.35rem 0.5rem; }
+.layout-mobile .scene-nav { flex-wrap: wrap; max-width: calc(100vw - 1rem); }
+.layout-mobile .hud-compass { scale: 0.9; transform-origin: bottom right; }
+
+.layout-tablet .info-panel { width: min(22rem, 42vw); }
+.layout-tablet .sidebar { width: min(16rem, 28vw); }
+
+/* Hint gesture mobile */
+.gesture-hint {
+  position: fixed;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  background: var(--scene-glass-bg);
+  border: 1px solid var(--scene-glass-border);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  z-index: var(--z-overlay);
+}
+
+.layout-mobile .gesture-hint.visible { opacity: 0.85; }
+
+/* Bottom sheet mobile */
+.layout-mobile .info-panel.mobile-bottom-sheet-active {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  width: 100%;
+  max-height: 72vh;
+  border-radius: 20px 20px 0 0;
+  border-left: none;
+  border-top: 1px solid var(--scene-glass-border, var(--glass-border));
+  transform: translateY(110%);
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.layout-mobile .info-panel.mobile-bottom-sheet-active.visible {
+  transform: translateY(0);
+}
+
+.bottom-sheet-handle {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 6px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.handle-bar {
+  width: 42px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--vt-text-muted, rgba(234, 246, 255, 0.5));
+  opacity: 0.65;
+}
+
+.mobile-context-menu {
+  position: fixed;
+  z-index: calc(var(--z-panel) + 10);
+  min-width: 200px;
+  padding: 6px 0;
+  border-radius: 12px;
+  background: var(--scene-glass-bg, var(--glass-bg));
+  border: 1px solid var(--scene-glass-border, var(--glass-border));
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.mobile-context-menu button {
+  display: block;
+  width: 100%;
+  padding: 11px 16px;
+  border: none;
+  background: none;
+  color: inherit;
+  text-align: left;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.mobile-context-menu button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.glass-v22-enabled .glass-panel::before,
+.glass-v22-enabled .info-panel::before,
+.glass-v22-enabled .settings-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--scene-primary) 0%, transparent 50%, var(--scene-accent) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glass-v22-enabled .info-panel:hover::before,
+.glass-v22-enabled .settings-panel:hover::before {
+  opacity: calc(var(--effect-glow-intensity, 0.45) * 0.55);
+}
+
+.info-panel,
+.settings-panel {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hud-compass-needle { transition: none; }
+  .visual-theme-card { transition: none; }
+  .layout-mobile .info-panel.mobile-bottom-sheet-active { transition: none; }
+}

@@ -1,0 +1,65 @@
+{
+  "events": [
+    {
+      "id": "mercury-transit-2026",
+      "title": "Congiunzione Mercurio–Venere",
+      "date": "2026-07-20",
+      "type": "congiunzione",
+      "description": "Mercurio e Venere appaiono vicini nel cielo serale (visibilità dipende dalla latitudine).",
+      "scene": "solar_system",
+      "objectId": "mercury"
+    },
+    {
+      "id": "perseids-2026",
+      "title": "Pioggia meteorica delle Perseidi",
+      "date": "2026-08-12",
+      "type": "meteore",
+      "description": "Picco atteso intorno al 12 agosto: fino a 100 meteore/ora in cielo buio.",
+      "scene": "earth"
+    },
+    {
+      "id": "saturn-opposition-2026",
+      "title": "Saturno in opposizione",
+      "date": "2026-09-08",
+      "type": "opposizione",
+      "description": "Saturno al massimo splendore e dimensione apparente per osservatori terrestri.",
+      "scene": "solar_system",
+      "objectId": "saturn"
+    },
+    {
+      "id": "lunar-eclipse-2026",
+      "title": "Eclissi lunare parziale",
+      "date": "2026-10-28",
+      "type": "eclissi",
+      "description": "La Luna attraversa parzialmente l'ombra terrestre — visibile da Europa e Africa.",
+      "scene": "solar_system",
+      "objectId": "luna"
+    },
+    {
+      "id": "jupiter-conjunction-2026",
+      "title": "Congiunzione Giove–Saturno",
+      "date": "2026-11-15",
+      "type": "congiunzione",
+      "description": "I due giganti gassosi appaiono ravvicinati nel cielo notturno.",
+      "scene": "solar_system",
+      "objectId": "jupiter"
+    },
+    {
+      "id": "geminids-2026",
+      "title": "Pioggia meteorica delle Geminidi",
+      "date": "2026-12-14",
+      "type": "meteore",
+      "description": "Una delle piogge meteoriche più intense dell'anno, picco a metà dicembre.",
+      "scene": "earth"
+    }
+  ],
+  "timeline": [
+    { "year": 1543, "event": "Copernico pubblica il modello eliocentrico" },
+    { "year": 1609, "event": "Galileo osserva il cielo con il telescopio" },
+    { "year": 1915, "event": "Einstein formula la relatività generale" },
+    { "year": 1969, "event": "Apollo 11: primo uomo sulla Luna" },
+    { "year": 1990, "event": "Lancio del telescopio spaziale Hubble" },
+    { "year": 2015, "event": "LIGO rileva le prime onde gravitazionali" },
+    { "year": 2022, "event": "JWST pubblica le prime immagini scientifiche" }
+  ]
+}
