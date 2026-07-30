@@ -92,12 +92,15 @@ export function createProbes(group, probeData, { getSimulationYear } = {}) {
     setVisible(visible) {
       root.visible = visible;
     },
-    update(_time, _delta) {
+    update(_time, delta = 0.016) {
       probes.forEach((p) => {
         const t = yearToProgress(p.def);
         const pos = interpolateWaypoints(p.def.waypoints, t);
         p.mesh.position.copy(pos);
         p.mesh.lookAt(interpolateWaypoints(p.def.waypoints, Math.min(1, t + 0.02)));
+        const probeMesh = p.mesh.children[0];
+        const dish = probeMesh?.children?.[1];
+        if (dish) dish.rotation.z += delta * 0.35;
       });
     },
   };

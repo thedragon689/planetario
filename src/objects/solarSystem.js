@@ -34,9 +34,16 @@ export function createSolarSystemController(sun, planets, moons, smallBodies = n
       });
       animateMoons(moons.moons, delta);
       animateSaturnRings(planets.planets, time);
+      planets.planets.forEach(({ material }) => {
+        if (material?.uniforms?.uTime) material.uniforms.uTime.value = time;
+      });
+      moons.moons.forEach(({ material }) => {
+        if (material?.uniforms?.uTime) material.uniforms.uTime.value = time;
+      });
       sun.update?.(time);
       planets.updateSunLighting();
       moons.updateSunLighting();
+      moons.updateEffects?.(time);
       smallBodies?.updateSunLighting?.();
       smallBodies?.update?.(time, delta, sun.group);
       probes?.update?.(time, delta);

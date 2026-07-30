@@ -8,7 +8,7 @@ function isPlaceholderKey(key) {
 }
 
 function buildGenerateUrl(model) {
-  if (import.meta.env.DEV) {
+  if (GEMINI.useProxy) {
     return `${GEMINI.proxyRoot}/models/${model}:generateContent`;
   }
 

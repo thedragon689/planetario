@@ -256,6 +256,7 @@ export const GEMINI = {
   apiRoot: 'https://generativelanguage.googleapis.com/v1beta',
   proxyRoot: '/api/gemini',
   apiKey: import.meta.env.VITE_GOOGLE_AI_API_KEY || '',
+  useProxy: import.meta.env.DEV || import.meta.env.VITE_GEMINI_PROXY === 'true',
   maxHistory: 12,
   maxOutputTokens: 2048,
 };

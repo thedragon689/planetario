@@ -14,6 +14,7 @@ export const planetVertex = `
 
 export const planetFragment = `
   uniform sampler2D uMap;
+  uniform float uTime;
   uniform vec3 uSunDirection;
   uniform vec3 uTint;
   uniform float uAmbient;
@@ -35,7 +36,11 @@ export const planetFragment = `
     float NdotL = dot(normal, sunDir);
 
     float dayFactor = smoothstep(-0.15, 0.35, NdotL);
-    vec3 texColor = texture2D(uMap, vUv).rgb * uTint;
+    vec2 sampleUv = vUv;
+    if (uGasBoost > 0.15) {
+      sampleUv.x = fract(vUv.x + uTime * 0.018 * uGasBoost);
+    }
+    vec3 texColor = texture2D(uMap, sampleUv).rgb * uTint;
 
     vec3 ambient = texColor * uAmbient;
     float specPower = mix(32.0, 8.0, uRoughness);

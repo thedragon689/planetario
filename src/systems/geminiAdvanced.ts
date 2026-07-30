@@ -18,7 +18,7 @@ interface GeminiGenerateResponse {
 }
 
 function buildGenerateUrl(model: string) {
-  if (import.meta.env.DEV) {
+  if (GEMINI.useProxy) {
     return `${GEMINI.proxyRoot}/models/${model}:generateContent`;
   }
   return `${GEMINI.apiRoot}/models/${model}:generateContent?key=${encodeURIComponent(GEMINI.apiKey)}`;

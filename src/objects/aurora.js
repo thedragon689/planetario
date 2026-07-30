@@ -11,9 +11,9 @@ export function createAurora(parentGroup) {
 
   for (let i = 0; i < count; i++) {
     const pole = i < count * 0.55 ? 1 : -1;
-    const lat = pole * (0.72 + Math.random() * 0.22);
+    const lat = pole * (0.78 + Math.random() * 0.14);
     const lon = Math.random() * Math.PI * 2;
-    const r = 1.04 + Math.random() * 0.06;
+    const r = 1.02 + Math.random() * 0.03;
     const cosLat = Math.cos(lat);
     positions[i * 3] = r * cosLat * Math.cos(lon);
     positions[i * 3 + 1] = r * Math.sin(lat);

@@ -9,11 +9,11 @@ varying vec3 vColor;
 void main() {
   float wave = sin(uTime * aSpeed + aPhase) * 0.3;
   float wave2 = cos(uTime * aSpeed * 0.7 + aPhase * 1.3) * 0.2;
-  vec3 pos = position + normalize(position) * (wave + wave2) * 0.06;
+  vec3 pos = position + normalize(position) * (wave + wave2) * 0.035;
 
   vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
   gl_Position = projectionMatrix * mvPosition;
-  gl_PointSize = 4.0 * (180.0 / max(-mvPosition.z, 1.0));
+  gl_PointSize = 2.8 * (180.0 / max(-mvPosition.z, 1.0));
 
   // Palette aurora boreale: lime → ciano/teal → viola/magenta
   float heightNorm = abs(position.y);

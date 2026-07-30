@@ -6,7 +6,7 @@ const TTS_MODELS = [
 ];
 
 function buildTtsUrl(model) {
-  if (import.meta.env.DEV) {
+  if (GEMINI.useProxy) {
     return `${GEMINI.proxyRoot}/models/${model}:generateContent`;
   }
 
@@ -261,7 +261,7 @@ export function createGeminiTts({ hasApiKey }) {
   }
 
   function prefetch(text, cacheKey, { priority = false } = {}) {
-    if ((!hasApiKey?.() && !import.meta.env.DEV) || !text?.trim() || !cacheKey) return;
+    if ((!hasApiKey?.() && !GEMINI.useProxy) || !text?.trim() || !cacheKey) return;
     if (bufferCache.has(cacheKey) || rawCache.has(cacheKey)) return;
     if (isPrefetchPaused()) return;
 
@@ -336,7 +336,7 @@ export function createGeminiTts({ hasApiKey }) {
   }
 
   async function synthesize(text, _models, { cacheKey } = {}) {
-    if (!hasApiKey?.() && !import.meta.env.DEV) throw new Error('API_KEY_MISSING');
+    if (!hasApiKey?.() && !GEMINI.useProxy) throw new Error('API_KEY_MISSING');
 
     unlock();
     speaking = true;
@@ -364,7 +364,7 @@ export function createGeminiTts({ hasApiKey }) {
     isReady,
     unlock,
     stop: stopPlayback,
-    isSupported: () => import.meta.env.DEV || Boolean(hasApiKey?.()),
+    isSupported: () => GEMINI.useProxy || Boolean(hasApiKey?.()),
     isSpeaking: () => speaking,
     setSpeaking(value) {
       speaking = Boolean(value);

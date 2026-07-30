@@ -1,11 +1,13 @@
 import * as THREE from 'three';
 import { createMoonOrbit } from './orbit.js';
 import { createLitPlanetMesh, updateSunDirection } from './planetBody.js';
+import { createMoonEffects } from './moonEffects.js';
 
 /** Crea le lune principali orbitanti attorno ai pianeti genitori. */
 export async function createMoons(planetBodyMap, sun, moonData) {
   const { moons: moonList } = moonData;
   const moons = [];
+  const moonEffects = [];
 
   for (const data of moonList) {
     const parent = planetBodyMap.get(data.parentPlanet);
@@ -17,6 +19,8 @@ export async function createMoons(planetBodyMap, sun, moonData) {
     orbitGroup.add(pivot);
 
     const { mesh, material } = await createLitPlanetMesh(data);
+    const effects = createMoonEffects(pivot, data, sun.group);
+    if (effects) moonEffects.push(effects);
 
     mesh.userData = {
       type: 'moon',
@@ -34,6 +38,7 @@ export async function createMoons(planetBodyMap, sun, moonData) {
 
   return {
     moons,
+    moonEffects,
     getMeshes() {
       return moons.map((m) => m.mesh);
     },
@@ -41,6 +46,9 @@ export async function createMoons(planetBodyMap, sun, moonData) {
       moons.forEach(({ mesh, material }) => {
         updateSunDirection(mesh, material, sun.group);
       });
+    },
+    updateEffects(time) {
+      moonEffects.forEach((fx) => fx.update?.(time));
     },
   };
 }

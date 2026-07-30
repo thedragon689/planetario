@@ -132,6 +132,20 @@ export async function loadTextureSafe(url, options = {}) {
   }
 }
 
+/** Try URLs in order; procedural fallback when all fail. */
+export async function loadTextureFirst(urls, options = {}) {
+  const list = (Array.isArray(urls) ? urls : [urls]).filter(Boolean);
+  for (const url of list) {
+    try {
+      return await loadTexture(url, options);
+    } catch {
+      cache.delete(`tex:${url}`);
+    }
+  }
+  if (options.procedural) return createPlanetTexture(options.procedural);
+  return createProceduralTexture(options.fallback || 0x1a4a7a);
+}
+
 export function createProceduralTexture(color = 0x1a4a7a) {
   const size = 512;
   const canvas = document.createElement('canvas');

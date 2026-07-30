@@ -1,4 +1,4 @@
-import { CHAT_VOICE } from '../config.js';
+import { CHAT_VOICE, GEMINI } from '../config.js';
 import { createGeminiTts } from './geminiTts.js';
 import { createBrowserTts } from './browserTts.js';
 
@@ -31,7 +31,7 @@ export function createChatVoice({ onSpeakStart, onSpeakEnd, hasApiKey } = {}) {
 
   function googleAvailable() {
     if (Date.now() < geminiCooldownUntil) return false;
-    return import.meta.env.DEV || geminiTts.isSupported();
+    return GEMINI.useProxy || geminiTts.isSupported();
   }
 
   function browserAvailable() {

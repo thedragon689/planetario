@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { TEXTURES } from '../config.js';
-import { loadTextureSafe, createPlanetTexture } from '../core/loader.js';
+import { loadTextureSafe, loadTextureFirst } from '../core/loader.js';
 import { earthVertex, earthFragment } from '../shaders/earth.js';
 import { planetVertex, planetFragment } from '../shaders/planet.js';
 import sunFragmentShader from '../shaders/sun.glsl?raw';
@@ -102,7 +102,7 @@ function proceduralOptions(id) {
   };
 }
 
-export async function loadBodyMap(id, texturePath) {
+export async function loadBodyMap(id, texturePath, nasaImages = []) {
   if (id === 'earth') {
     return loadTextureSafe(TEXTURES.earth.albedo, {
       fallback: FALLBACK_COLORS.earth,
@@ -111,7 +111,8 @@ export async function loadBodyMap(id, texturePath) {
     });
   }
 
-  return loadTextureSafe(texturePath, {
+  const candidates = [texturePath, ...(nasaImages || [])].filter(Boolean);
+  return loadTextureFirst(candidates, {
     fallback: FALLBACK_COLORS[id] || 0x888888,
     procedural: proceduralOptions(id),
     maxSize: 2048,
@@ -160,17 +161,19 @@ export async function createEarthSolarMesh(data) {
 
 export async function createLitPlanetMesh(data) {
   const id = data.id;
-  const map = await loadBodyMap(id, data.texture);
+  const map = await loadBodyMap(id, data.texture, data.nasa_images);
   map.anisotropy = 4;
 
   const style = PLANET_STYLE[id] || { tint: 0xffffff, ambient: 0.15, rimColor: 0x56ccf2, rimStrength: 0.08 };
   const type = PLANET_TYPES[id] || 'rocky';
+  const isAnimated = type === 'gas' || type === 'ice';
 
   const material = new THREE.ShaderMaterial({
     vertexShader: planetVertex,
     fragmentShader: planetFragment,
     uniforms: {
       uMap: { value: map },
+      uTime: { value: 0 },
       uSunDirection: { value: new THREE.Vector3(1, 0.2, 0).normalize() },
       uTint: { value: new THREE.Color(style.tint) },
       uAmbient: { value: style.ambient },
@@ -191,7 +194,7 @@ export async function createLitPlanetMesh(data) {
   mesh.name = data.name;
   mesh.renderOrder = 10;
   if (data.tilt) mesh.rotation.z = THREE.MathUtils.degToRad(data.tilt);
-  return { mesh, material };
+  return { mesh, material, animated: isAnimated };
 }
 
 /** Anelli procedurali di Saturno con shader dedicato. */

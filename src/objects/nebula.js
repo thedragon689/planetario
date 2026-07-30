@@ -33,6 +33,7 @@ export function createNebulae(group, nebulaEntries = NEBULA_DATA, { qualityLevel
         radius: 52,
         position: cfg.position,
         maxSteps,
+        colors: cfg.colors,
       });
       const mesh = volume.mesh;
       mesh.name = data?.name || 'Nebulosa';
