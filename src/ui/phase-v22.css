@@ -27,11 +27,11 @@
 .info-panel,
 .settings-panel,
 .scene-nav,
-.top-bar,
+.app-topbar,
 .hud-chip,
 .overlay-controls,
 .minimap,
-.sidebar,
+.app-sidebar,
 .chat-panel {
   background: var(--scene-glass-bg, var(--vt-glass-bg)) !important;
   border-color: var(--scene-glass-border, var(--vt-glass-border)) !important;
@@ -43,7 +43,7 @@
     0 0 calc(24px * var(--effect-glow-intensity)) color-mix(in srgb, var(--scene-primary) 25%, transparent);
 }
 
-[data-visual-theme='golden-age'] .top-bar-title,
+[data-visual-theme='golden-age'] .app-topbar .topbar-search,
 [data-visual-theme='golden-age'] .hud-scene-label {
   text-shadow: 0 0 12px color-mix(in srgb, var(--vt-accent) 40%, transparent);
 }
@@ -158,15 +158,15 @@
 }
 
 /* Layout responsive */
-.layout-mobile .sidebar { transform: translateX(-100%); }
-.layout-mobile .sidebar.open { transform: translateX(0); }
-.layout-mobile .info-panel { width: 100%; max-height: 72vh; border-left: none; border-top: 1px solid var(--glass-border); }
-.layout-mobile .top-bar { padding: 0.35rem 0.5rem; }
-.layout-mobile .scene-nav { flex-wrap: wrap; max-width: calc(100vw - 1rem); }
-.layout-mobile .hud-compass { scale: 0.9; transform-origin: bottom right; }
+.layout-mobile .app-sidebar:not(.open) { transform: translateX(calc(-100% - 1rem)); visibility: hidden; }
+.layout-mobile .app-sidebar.open { transform: translateX(0); visibility: visible; }
+.layout-mobile .info-panel { width: 100%; max-height: min(72dvh, calc(100dvh - var(--ui-topbar-h) - var(--safe-top))); border-left: none; border-top: 1px solid var(--glass-border); }
+.layout-mobile .app-topbar { padding: 0.35rem 0.5rem; }
+.layout-mobile .scene-nav { flex-wrap: wrap; max-width: calc(100vw - var(--ui-right-rail-w) - var(--safe-right) - 0.75rem); }
+.layout-mobile .hud-compass { scale: 0.9; transform-origin: top right; }
 
 .layout-tablet .info-panel { width: min(22rem, 42vw); }
-.layout-tablet .sidebar { width: min(16rem, 28vw); }
+.layout-tablet .app-sidebar { width: min(16rem, 28vw); }
 
 /* Hint gesture mobile */
 .gesture-hint {
@@ -196,7 +196,8 @@
   bottom: 0;
   top: auto;
   width: 100%;
-  max-height: 72vh;
+  max-height: min(72dvh, calc(100dvh - var(--safe-top)));
+  padding-bottom: var(--safe-bottom);
   border-radius: 20px 20px 0 0;
   border-left: none;
   border-top: 1px solid var(--scene-glass-border, var(--glass-border));
@@ -276,7 +277,7 @@
 }
 
 .info-panel,
-.settings-panel {
+.settings-panel:not(.settings-panel--anchored) {
   position: relative;
 }
 

@@ -55,23 +55,41 @@ Planetario 3D offre **8 scale cosmiche** navigate con transizioni cinematiche, c
 
 ## Scene e Feature Matrix
 
-Legenda: **●** attivo nella scena · **○** non applicabile · **◐** parziale / toggle
+Legenda: **✅** effetto visibile o strumento attivo nella scena · **❌** non applicabile
 
-| Feature (`FEATURES.*`) | Terra | Solare | Via Lattea | Esopianeti | Estremi | Gruppo | Cosmo | Wormhole |
-|------------------------|:-----:|:------:|:----------:|:----------:|:-------:|:------:|:-----:|:--------:|
-| `visualThemes` / `scenePalettes` / `glassV22` | ● | ● | ● | ● | ● | ● | ● | ● |
-| `compass3d` / `mobileGestures` / `mobileBottomSheet` | ● | ● | ● | ● | ● | ● | ● | ● |
-| `gamification` / `geminiVision` / `userProfile` | ● | ● | ● | ● | ● | ● | ● | ● |
-| `auroraEffect` | ● | ○ | ○ | ○ | ○ | ○ | ○ | ○ |
-| `nebulaRaymarch` / `extendedNebulae` / `dustParticles` | ○ | ○ | ● | ○ | ○ | ○ | ○ | ○ |
-| `blackholeLensing` / `extremeObjects` | ○ | ○ | ○ | ○ | ● | ○ | ○ | ○ |
-| `exoplanets` | ○ | ○ | ○ | ● | ○ | ○ | ○ | ○ |
-| `smallBodies` / `timeSimulation` / `lagrangePoints` / `spaceProbes` | ○ | ● | ○ | ○ | ○ | ○ | ○ | ○ |
-| `spacetimeGrid` | ○ | ● | ○ | ○ | ● | ○ | ○ | ○ |
-| `darkMatterHalo` | ○ | ○ | ● | ○ | ○ | ● | ● | ○ |
-| `largeScaleStructures` | ○ | ○ | ○ | ○ | ○ | ○ | ● | ○ |
-| `proceduralPlanets` / `planetAtmospheres` | ◐ | ● | ○ | ○ | ○ | ○ | ○ | ○ |
-| `webxr` / `scenePlaylists` / `coordinatesHud` | ● | ● | ● | ● | ● | ● | ● | ● |
+| Feature Flag | Terra | Sistema Solare | Via Lattea | Esopianeti | Oggetti Estremi | Gruppo Locale | Universo | Wormhole |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `visualThemes` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `scenePalettes` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `glassV22` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `compass3d` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `mobileGestures` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `mobileBottomSheet` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `gamification` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `geminiVision` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `userProfile` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `coordinatesHud` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `webxr` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `scenePlaylists` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `auroraEffect` | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| `nebulaRaymarch` | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |
+| `extendedNebulae` | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |
+| `dustParticles` | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ |
+| `blackholeLensing` | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| `extremeObjects` | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| `exoplanets` | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| `proceduralPlanets` | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| `planetAtmospheres` | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| `smallBodies` | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| `timeSimulation` | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| `lagrangePoints` | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| `spaceProbes` | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| `spacetimeGrid` | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| `darkMatterHalo` | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ |
+| `largeScaleStructures` | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| `instancedStars` | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+
+> Flag globali UI/AI (prime righe) valgono in tutte le scene. Flag scena-specifici derivano da `sceneAssets.js`, `app.js` e `FEATURES` in `src/config.ts`. `nebulaRaymarch` / `extendedNebulae` compaiono anche in **Gruppo Locale** ed **Esopianeti** come sfondo nebuloso.
 
 ### Contenuto per scena
 

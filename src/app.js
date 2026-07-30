@@ -2,7 +2,7 @@ import './ui/layout.css';
 import { createScene } from './core/scene.js';
 import { createCamera, updateCameraAspect, CAMERA_PRESETS } from './core/camera.js';
 import { createControls, applyControlProfile } from './core/controls.js';
-import { createRenderer, resizeRenderer, usesPostProcessing } from './core/renderer.js';
+import { createRenderer, syncRendererLayout, resetRendererForScreenRender, usesPostProcessing, getPixelRatioCap } from './core/renderer.js';
 import { createLighting } from './core/lighting.js';
 import { createPostProcessing } from './core/postprocessing.js';
 import { loadJSON } from './core/loader.js';
@@ -135,7 +135,7 @@ export class PlanetarioApp {
 
     this.eventBus = createEventBus();
     this.updatables = [];
-    this.qualityLevel = getAppState().quality || 'high';
+    this.qualityLevel = getAppState().quality || 'medium';
     this.planetData = null;
     this._lodUnregister = [];
     this._graticuleOn = true;
@@ -151,6 +151,8 @@ export class PlanetarioApp {
   setQualityLevel(level, source = 'manual') {
     this.qualityLevel = level;
     getAppState().setQuality(level);
+    syncRendererLayout(this.renderer, this.container, this.postFX, level);
+    this._syncShaderPixelRatio();
     this.postFX?.setQuality(level);
     this.postFX?.setSceneProfile(this.navigation?.getCurrent?.() || SCENES.EARTH);
     this.syncQualityUi?.();
@@ -177,7 +179,8 @@ export class PlanetarioApp {
     this.groups = groups;
 
     this.camera = createCamera(this.container);
-    this.renderer = await createRenderer(this.canvas);
+    this.renderer = await createRenderer(this.canvas, this.qualityLevel);
+    syncRendererLayout(this.renderer, this.container, null, this.qualityLevel);
     setTextureRenderer(this.renderer);
     if (FEATURES.ktx2) await initKTX2Loader(this.renderer);
 
@@ -186,6 +189,7 @@ export class PlanetarioApp {
 
     if (usesPostProcessing(this.renderer)) {
       this.postFX = createPostProcessing(this.renderer, this.scene, this.camera);
+      syncRendererLayout(this.renderer, this.container, this.postFX, this.qualityLevel);
       this.postFX.setQuality(this.qualityLevel);
     } else {
       this.postFX = this._createDirectPostFX();
@@ -195,6 +199,7 @@ export class PlanetarioApp {
 
     if (FEATURES.ibl) {
       this.ibl = await loadImageBasedLighting(this.renderer, this.scene);
+      resetRendererForScreenRender(this.renderer);
     }
 
     this.setLoadingProgress(15, 'Caricamento dataset astronomici...');
@@ -303,7 +308,6 @@ export class PlanetarioApp {
         this.raycaster?.clearSelection();
         this.labels?.setSelected(null);
         this.overlays?.setFocusMode(false);
-        this.topBar?.renderBreadcrumb(this.navigation?.getCurrent?.() || SCENES.EARTH, null);
       },
       getCanvas: () => this.canvas,
       getScene: () => this.navigation?.getCurrent?.() || SCENES.EARTH,
@@ -445,7 +449,6 @@ export class PlanetarioApp {
         this.overlays.updateScene(sceneKey, idx);
         this.minimap?.setScene(idx, sceneKey);
         this.sidebar?.setActiveScene(sceneKey);
-        this.topBar?.renderBreadcrumb(sceneKey, this._selectedObject?.name || null);
         this.guidedTour?.reset?.();
         this.hud.update(this.camera, label, sceneKey);
         if (FEATURES.scenePlaylists && this.audio.crossfadeToScene) {
@@ -603,7 +606,6 @@ export class PlanetarioApp {
         this._syncGamificationHud();
       }
       this.labels.setSelected(obj.userData.id);
-      this.topBar?.renderBreadcrumb(this.navigation.getCurrent(), data.name);
       this.companion.announceObject(data);
       this.chat?.notifySelection(data);
       if (FEATURES.sonification) {
@@ -651,6 +653,7 @@ export class PlanetarioApp {
 
     this.setLoadingProgress(95, 'Benchmark grafico...');
     const benchmark = await runRenderBenchmark(() => {
+      resetRendererForScreenRender(this.renderer);
       this.renderer.render(this.scene, this.camera);
     });
     getAppState().setBenchmarkScore(benchmark.avgFps);
@@ -683,9 +686,25 @@ export class PlanetarioApp {
   _initPhaseBUi() {
     this.searchIndex = buildSearchIndex(this._getSearchDatasets());
 
-    this.settingsPanel = createSettingsPanel(this.uiRoot);
     this.bookmarksView = createBookmarksView(this.uiRoot, {
       onSelect: (id) => this.openObjectById(id),
+    });
+
+    this.topBar = createTopBar(this.uiRoot, {
+      onThemeToggle: () => {
+        uiStore.getState().toggleTheme();
+        this.toast.show(
+          uiStore.getState().theme === 'dark' ? 'Tema scuro attivo' : 'Tema chiaro attivo',
+          { type: 'info' }
+        );
+      },
+      onSettingsOpen: () => this.settingsPanel?.toggle(),
+      onSearch: (query, filters) => searchCatalog(this.searchIndex, query, filters || {}),
+      onSearchSelect: (entry) => this.openObjectById(entry.id, entry.scene),
+    });
+
+    this.settingsPanel = createSettingsPanel(this.uiRoot, {
+      anchor: this.topBar.settingsButton,
     });
 
     this.sidebar = createSidebar(this.uiRoot, {
@@ -712,24 +731,6 @@ export class PlanetarioApp {
       onOpenSkillTree: () => this.skillTreePanel?.show(),
     });
 
-    this.topBar = createTopBar(this.uiRoot, {
-      onMenuToggle: () => this.sidebar.toggle(),
-      onThemeToggle: () => {
-        uiStore.getState().toggleTheme();
-        this.toast.show(
-          uiStore.getState().theme === 'dark' ? 'Tema scuro attivo' : 'Tema chiaro attivo',
-          { type: 'info' }
-        );
-      },
-      onSettingsOpen: () => this.settingsPanel.show(),
-      onSearch: (query, filters) => searchCatalog(this.searchIndex, query, filters || {}),
-      onSearchSelect: (entry) => this.openObjectById(entry.id, entry.scene),
-      onBreadcrumbNavigate: (scene) => {
-        if (scene) this.navigation.goTo(scene);
-      },
-    });
-
-    this.topBar.renderBreadcrumb(this.navigation.getCurrent(), null);
     this.sidebar.setActiveScene(this.navigation.getCurrent());
     this.toast.show('Suggerimento: Ctrl+K per cercare oggetti celesti', { type: 'info', duration: 4500 });
   }
@@ -846,7 +847,7 @@ export class PlanetarioApp {
     if (FEATURES.drakeCalculator) this.drakeCalculator = createDrakeCalculator(this.uiRoot);
     if (FEATURES.stellarEvolution) this.stellarEvolution = createStellarEvolutionPanel(this.uiRoot);
     if (FEATURES.coordinatesHud) {
-      this.coordinatesHud = createCoordinatesHud(this.uiRoot);
+      this.coordinatesHud = createCoordinatesHud(this.topBar.coordsHost, { embedded: true });
       this.coordinatesHud.setVisible(true);
     }
     if (FEATURES.spectrumChart) this.spectrumChart = createSpectrumChart(this.uiRoot);
@@ -1207,7 +1208,6 @@ export class PlanetarioApp {
     if (data.id === 'voyager-1' && FEATURES.hiddenAchievements) {
       gamificationStore.getState().recordVoyagerFollow();
     }
-    this.topBar?.renderBreadcrumb(this.navigation.getCurrent(), data.name);
     this.panel.showLoading(data);
     this.overlays?.setFocusMode(true);
 
@@ -1475,17 +1475,21 @@ export class PlanetarioApp {
     }
   }
 
+  _syncShaderPixelRatio() {
+    const pixelRatio = getPixelRatioCap(this.qualityLevel);
+    const galaxy = this.sceneAssets?.getGalaxy?.();
+    const stars = this.sceneAssets?.getStars?.();
+    [galaxy?.points, stars?.points].forEach((object) => {
+      const uniform = object?.material?.uniforms?.uPixelRatio;
+      if (uniform) uniform.value = pixelRatio;
+    });
+  }
+
   setupResize() {
     const apply = () => {
       updateCameraAspect(this.camera, this.container);
-      resizeRenderer(this.renderer, this.container);
-      if (this.postFX?.resize) {
-        this.postFX.resize(
-          this.container.clientWidth,
-          this.container.clientHeight,
-          this.renderer.getPixelRatio()
-        );
-      }
+      syncRendererLayout(this.renderer, this.container, this.postFX, this.qualityLevel);
+      this._syncShaderPixelRatio();
     };
     apply();
     window.addEventListener('resize', apply);
@@ -1544,9 +1548,9 @@ export class PlanetarioApp {
     const target = isMobile ? PERFORMANCE.targetFpsMobile : PERFORMANCE.targetFpsDesktop;
     getAppState().setFps(fps);
 
-    if (fps < target - 10 && this.qualityLevel === 'high') {
+    if (fps < target - 5 && this.qualityLevel === 'high') {
       this.setQualityLevel('medium', 'auto');
-    } else if (fps < target - 15 && this.qualityLevel === 'medium') {
+    } else if (fps < target - 8 && this.qualityLevel === 'medium') {
       this.setQualityLevel('low', 'auto');
     }
   }
@@ -1592,12 +1596,20 @@ export class PlanetarioApp {
       });
 
       this.lodManager?.update();
-      this._updateSunGodRays();
+      if (this.navigation.getCurrent() === SCENES.SOLAR_SYSTEM) {
+        this._updateSunGodRays();
+      }
       this.memoryMonitor?.update();
-      this.minimap?.setCameraYaw(this.controls.getAzimuthalAngle?.() ?? 0);
-      this.compass?.update();
-      this.compass3d?.update(this.camera);
-      this.scaleBar?.update(this.camera.position.length(), this.navigation.getCurrent());
+
+      frameCount++;
+      const throttleUi = frameCount % 3 === 0;
+
+      if (throttleUi) {
+        this.minimap?.setCameraYaw(this.controls.getAzimuthalAngle?.() ?? 0);
+        this.compass?.update();
+        this.compass3d?.update(this.camera);
+        this.scaleBar?.update(this.camera.position.length(), this.navigation.getCurrent());
+      }
 
       if (FEATURES.telemetry) this._sceneTimeAcc = (this._sceneTimeAcc || 0) + delta;
       if (FEATURES.hiddenAchievements && this._selectedObject?.id === 'sun') {
@@ -1642,13 +1654,14 @@ export class PlanetarioApp {
         this.navigation.getCurrent()
       );
 
-      frameCount++;
-      if (frameCount % 120 === 0) this.adaptQuality(fps);
+      if (frameCount % 60 === 0) this.adaptQuality(fps);
 
+      resetRendererForScreenRender(this.renderer);
       if (!usesPostProcessing(this.renderer) || this.postFX.isEarthView()) {
         this.renderer.render(this.scene, this.camera);
       } else {
         this.postFX.composer.render();
+        resetRendererForScreenRender(this.renderer);
       }
     });
   }

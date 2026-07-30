@@ -73,10 +73,8 @@ export function createNavigation(transitions, groups, sceneServices, postFX, sce
 
     if (sceneKey === SCENES.WORMHOLE) {
       getWormhole()?.setVisible(true);
-      postFX?.setBloomStrength(1.5);
     } else {
       getWormhole()?.setVisible(false);
-      postFX?.setBloomStrength(0.8);
     }
   }
 

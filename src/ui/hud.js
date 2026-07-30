@@ -46,6 +46,7 @@ export function createHUD(root) {
   const xpMetric = hud.querySelector('[data-gamification]');
 
   let frameCount = 0;
+  let uiFrame = 0;
   let lastTime = performance.now();
   let fps = 60;
 
@@ -79,6 +80,9 @@ export function createHUD(root) {
     const showFps = getUiState?.()?.showFps ?? true;
     const fpsMetric = hud.querySelector('.metric:first-child');
     if (fpsMetric) fpsMetric.style.display = showFps ? '' : 'none';
+
+    uiFrame++;
+    if (uiFrame % 4 !== 0) return fps;
 
     const dist = camera.position.length();
     scaleEl.textContent = SCALE_LABELS[sceneKey] || sceneLabel || 'Locale';

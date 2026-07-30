@@ -50,7 +50,8 @@ export function createNebulaVolume({
     transparent: true,
     depthWrite: false,
     blending: THREE.AdditiveBlending,
-    side: THREE.BackSide,
+    // FrontSide: camera stays outside nebula bounds in Milky Way / Local Group views.
+    side: THREE.FrontSide,
   });
 
   const mesh = new THREE.Mesh(geometry, material);

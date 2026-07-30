@@ -32,7 +32,7 @@ const initialState: AppState = {
   scene: 'earth',
   sceneLabel: 'Terra',
   sceneIndex: 0,
-  quality: 'high',
+  quality: 'medium',
   audioEnabled: false,
   chatOpen: false,
   voiceEnabled: true,

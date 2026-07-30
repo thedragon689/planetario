@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { slideIn } from '../systems/animations.js';
+import { gsapTargets, slideIn } from '../systems/animations.js';
 import { uiStore } from '../store/uiStore.js';
 import { captureCanvasScreenshot, copyShareLink, shareNative } from './share.js';
 import { fetchApod } from '../systems/apod.js';
@@ -224,13 +224,16 @@ export function createPanel(root, { onClose, getCanvas, getScene, onToast, onScr
     const nextPane = panel.querySelector(`.panel-pane[data-pane="${tabId}"]`);
     if (!uiStore.getState().reducedMotion && prevPane && nextPane && prevPane !== nextPane) {
       gsap.fromTo(nextPane, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.32, ease: 'power2.out' });
-      gsap.from(nextPane.querySelectorAll('.data-row, li, p'), {
-        opacity: 0,
-        x: 14,
-        duration: 0.28,
-        stagger: 0.03,
-        ease: 'power2.out',
-      });
+      const tabStagger = gsapTargets(nextPane.querySelectorAll('.data-row, li, p'));
+      if (tabStagger.length) {
+        gsap.from(tabStagger, {
+          opacity: 0,
+          x: 14,
+          duration: 0.28,
+          stagger: 0.03,
+          ease: 'power2.out',
+        });
+      }
     }
 
     if (tabId === 'news') renderNews();
@@ -434,7 +437,9 @@ export function createPanel(root, { onClose, getCanvas, getScene, onToast, onScr
       { x: '105%', opacity: 0.6 },
       { x: '0%', opacity: 1, duration: 0.42, ease: 'power3.out' }
     );
-    const staggerTargets = panel.querySelectorAll('.stats-table tr, .panel-facts li, .wiki-block, .panel-description');
+    const staggerTargets = gsapTargets(
+      panel.querySelectorAll('.stats-table tr, .panel-facts li, .wiki-block, .panel-description')
+    );
     if (staggerTargets.length) {
       gsap.from(staggerTargets, {
         opacity: 0,
@@ -447,6 +452,10 @@ export function createPanel(root, { onClose, getCanvas, getScene, onToast, onScr
     }
   }
 
+  function setPanelOpen(open) {
+    document.documentElement.classList.toggle('panel-open', open);
+  }
+
   function show(data, extras = {}) {
     if (!data) return hide();
     currentExtras = extras;
@@ -454,6 +463,7 @@ export function createPanel(root, { onClose, getCanvas, getScene, onToast, onScr
     renderContent(data);
     applyExtras();
     panel.classList.add('visible');
+    setPanelOpen(true);
     animatePanelIn();
   }
 
@@ -467,11 +477,13 @@ export function createPanel(root, { onClose, getCanvas, getScene, onToast, onScr
     els.videos.innerHTML = '';
     els.sources.innerHTML = '';
     panel.classList.add('visible');
+    setPanelOpen(true);
     animatePanelIn();
   }
 
   function hide() {
     panel.classList.remove('visible');
+    setPanelOpen(false);
     gsap.killTweensOf(panel);
     gsap.set(panel, { clearProps: 'transform,opacity,x,y' });
     currentData = null;

@@ -153,16 +153,6 @@ export function createSidebar(root: HTMLElement, handlers: SidebarHandlers) {
     launcher.hidden = open;
     launcher.setAttribute('aria-expanded', String(open));
 
-    const menuBtn = root.querySelector('.topbar-menu') as HTMLButtonElement | null;
-    if (menuBtn) {
-      menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.classList.toggle('active', open);
-      menuBtn.setAttribute(
-        'aria-label',
-        open ? 'Chiudi menu esplorazione' : 'Apri menu esplorazione'
-      );
-    }
-
     uiStore.getState().setSidebarOpen(open);
     document.documentElement.classList.toggle('sidebar-open', open);
   }

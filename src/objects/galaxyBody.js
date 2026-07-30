@@ -2,9 +2,9 @@ import * as THREE from 'three';
 import { galaxyVertex, galaxyFragment } from '../shaders/galaxy.js';
 
 const PARTICLE_PRESETS = {
-  high: 220,
-  medium: 120,
-  low: 50,
+  high: 160,
+  medium: 80,
+  low: 40,
 };
 
 function parseColor(hex) {

@@ -1,8 +1,24 @@
+import { PERFORMANCE } from '../config.js';
 import type { QualityLevel } from '../types/catalog.js';
 
 export interface BenchmarkResult {
   avgFps: number;
   suggestedQuality: QualityLevel;
+}
+
+/** Deriva il tier qualità da FPS medi (usato anche nei test). */
+export function suggestQualityFromFps(
+  avgFps: number,
+  { isMobile = false }: { isMobile?: boolean } = {}
+): QualityLevel {
+  let quality: QualityLevel =
+    avgFps >= PERFORMANCE.benchmarkHighFps
+      ? 'high'
+      : avgFps >= PERFORMANCE.benchmarkMediumFps
+        ? 'medium'
+        : 'low';
+  if (isMobile && quality === 'high') quality = 'medium';
+  return quality;
 }
 
 /**
@@ -16,6 +32,7 @@ export function runRenderBenchmark(
     const samples: number[] = [];
     let last = performance.now();
     let elapsed = 0;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
     function frame(now: number) {
       renderFrame();
@@ -30,7 +47,7 @@ export function runRenderBenchmark(
         const avgFps = samples.reduce((a, b) => a + b, 0) / samples.length;
         resolve({
           avgFps,
-          suggestedQuality: avgFps >= 55 ? 'high' : avgFps >= 32 ? 'medium' : 'low',
+          suggestedQuality: suggestQualityFromFps(avgFps, { isMobile }),
         });
       }
     }

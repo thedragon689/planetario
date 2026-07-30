@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { nebulaVertex, nebulaFragment } from '../shaders/nebula.js';
 import { NEBULA_DATA } from '../data/phenomena.js';
-import { FEATURES } from '../config.js';
+import { FEATURES, PERFORMANCE } from '../config.js';
 import { attachHitSphere, disableRaycast } from '../systems/clickTargets.js';
 import { createNebulaVolume } from './nebulaVolume.js';
 
@@ -16,11 +16,14 @@ const NEBULA_CONFIGS = [
   { position: [-40, 55, 130], scale: 0.0075, colors: [0xff4488, 0x4166f5, 0x56ccf2] },
 ];
 
-export function createNebulae(group, nebulaEntries = NEBULA_DATA, { qualityLevel = 'high' } = {}) {
+export function createNebulae(group, nebulaEntries = NEBULA_DATA, { qualityLevel = 'medium' } = {}) {
   const nebulae = [];
-  const entries = FEATURES.extendedNebulae ? nebulaEntries : nebulaEntries.slice(0, 3);
-  const configs = FEATURES.extendedNebulae ? NEBULA_CONFIGS : NEBULA_CONFIGS.slice(0, 3);
-  const maxSteps = qualityLevel === 'low' ? 40 : qualityLevel === 'medium' ? 56 : 72;
+  const maxNebulae = PERFORMANCE.nebulaCount[qualityLevel] ?? PERFORMANCE.nebulaCount.medium;
+  const baseEntries = FEATURES.extendedNebulae ? nebulaEntries : nebulaEntries.slice(0, 3);
+  const baseConfigs = FEATURES.extendedNebulae ? NEBULA_CONFIGS : NEBULA_CONFIGS.slice(0, 3);
+  const entries = baseEntries.slice(0, maxNebulae);
+  const configs = baseConfigs.slice(0, maxNebulae);
+  const maxSteps = PERFORMANCE.nebulaMaxSteps[qualityLevel] ?? PERFORMANCE.nebulaMaxSteps.medium;
 
   configs.forEach((cfg, index) => {
     const data = entries[index] || NEBULA_DATA[index];

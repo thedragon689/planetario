@@ -184,16 +184,19 @@ export function createOverlays(root, navigation, audio, { onMissions, onGraticul
     audioBtn.title = audio.isEnabled?.() ? `In riproduzione: ${label}` : label;
   }
 
-  audioBtn.addEventListener('click', async (e) => {
-    await audio.resume();
-    const on = await audio.toggle();
-    e.target.classList.toggle('active', on);
-    e.target.setAttribute('aria-pressed', String(on));
-    e.target.setAttribute(
-      'aria-label',
-      on ? 'Ferma colonna sonora' : 'Avvia colonna sonora'
-    );
-    syncAudioButtonTitle();
+  audioBtn.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    // toggle() must start in the same user-gesture turn as the click (no await before play()).
+    void audio.resume();
+    void audio.toggle().then((on) => {
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-pressed', String(on));
+      btn.setAttribute(
+        'aria-label',
+        on ? 'Ferma colonna sonora' : 'Avvia colonna sonora'
+      );
+      syncAudioButtonTitle();
+    });
   });
 
   controls.querySelector('[data-action="missions"]').addEventListener('click', () => {

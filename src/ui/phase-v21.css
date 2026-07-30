@@ -1,6 +1,8 @@
 /* Interazione: #ui-root usa pointer-events:none — riabilita layer cliccabili */
 #ui-root .v21-panel:not([hidden]),
 #ui-root .v21-panel:not([hidden]) *,
+#ui-root .topbar-coords:not([hidden]),
+#ui-root .topbar-coords:not([hidden]) *,
 #ui-root .coords-hud:not([hidden]),
 #ui-root .coords-hud:not([hidden]) *,
 #ui-root .break-reminder,

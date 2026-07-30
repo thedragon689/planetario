@@ -157,6 +157,7 @@ export function createChatVoice({ onSpeakStart, onSpeakEnd, hasApiKey } = {}) {
       return enabled;
     },
     warmUp() {
+      geminiTts.unlock?.();
       browserTts.warmUp();
     },
     isEnabled: () => enabled,

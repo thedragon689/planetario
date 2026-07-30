@@ -4,10 +4,16 @@ import { FEATURES } from '../config.js';
 import { listVisualThemes, visualThemeStore } from '../store/visualThemeStore.js';
 import { setVisualTheme } from '../ui/visualTheme.js';
 
-export function createSettingsPanel(root: HTMLElement, { onClose }: { onClose?: () => void } = {}) {
+export function createSettingsPanel(
+  root: HTMLElement,
+  { anchor, onClose }: { anchor?: HTMLElement; onClose?: () => void } = {}
+) {
   const panel = document.createElement('aside');
   panel.className = 'settings-panel';
+  if (anchor) panel.classList.add('settings-panel--anchored');
   panel.setAttribute('aria-label', 'Impostazioni accessibilità');
+  panel.setAttribute('role', 'dialog');
+  panel.setAttribute('aria-modal', 'false');
   panel.hidden = true;
   panel.innerHTML = `
     <div class="settings-header">
@@ -165,19 +171,77 @@ export function createSettingsPanel(root: HTMLElement, { onClose }: { onClose?: 
     });
   });
 
+  closeBtn.addEventListener('click', hide);
+
+  let open = false;
+  let dismissListenerReady = false;
+
+  function positionPanel() {
+    if (!anchor) return;
+    const rect = anchor.getBoundingClientRect();
+    const gap = 6;
+    const width = Math.min(340, window.innerWidth - 16);
+    let left = rect.right - width;
+    left = Math.max(8, Math.min(left, window.innerWidth - width - 8));
+    const maxHeight = window.innerHeight - rect.bottom - gap - 12;
+    panel.style.top = `${rect.bottom + gap}px`;
+    panel.style.left = `${left}px`;
+    panel.style.right = 'auto';
+    panel.style.width = `${width}px`;
+    panel.style.maxHeight = `${Math.max(200, maxHeight)}px`;
+  }
+
+  function onDocumentPointer(e: PointerEvent) {
+    if (!dismissListenerReady) return;
+    const target = e.target as Node;
+    if (panel.contains(target) || anchor?.contains(target)) return;
+    hide();
+  }
+
+  function armDismissListener() {
+    dismissListenerReady = false;
+    document.removeEventListener('pointerdown', onDocumentPointer, true);
+    window.setTimeout(() => {
+      if (!open) return;
+      dismissListenerReady = true;
+      document.addEventListener('pointerdown', onDocumentPointer, true);
+    }, 0);
+  }
+
   function show() {
     syncFromStore();
+    positionPanel();
     panel.hidden = false;
     panel.classList.add('visible');
+    open = true;
+    anchor?.setAttribute('aria-expanded', 'true');
+    anchor?.classList.add('active');
+    armDismissListener();
   }
 
   function hide() {
     panel.hidden = true;
     panel.classList.remove('visible');
+    open = false;
+    dismissListenerReady = false;
+    anchor?.setAttribute('aria-expanded', 'false');
+    anchor?.classList.remove('active');
+    document.removeEventListener('pointerdown', onDocumentPointer, true);
     onClose?.();
   }
 
-  closeBtn.addEventListener('click', hide);
+  function toggle() {
+    if (open) hide();
+    else show();
+  }
 
-  return { show, hide, element: panel };
+  window.addEventListener('resize', () => {
+    if (open) positionPanel();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && open) hide();
+  });
+
+  return { show, hide, toggle, element: panel, isOpen: () => open };
 }

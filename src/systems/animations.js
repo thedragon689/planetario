@@ -1,5 +1,11 @@
 import gsap from 'gsap';
 
+/** Normalize selectors, NodeLists, and arrays into GSAP-safe element arrays. */
+export function gsapTargets(target) {
+  if (!target) return [];
+  return gsap.utils.toArray(target);
+}
+
 export function createAnimationLoop(callback) {
   const callbacks = Array.isArray(callback) ? callback : [callback];
   const clock = { elapsed: 0, delta: 0, last: performance.now() };

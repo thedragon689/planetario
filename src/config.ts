@@ -123,12 +123,25 @@ export const TRANSITION = {
 export const PERFORMANCE = {
   targetFpsDesktop: 60,
   targetFpsMobile: 30,
-  galaxyParticlesDesktop: 200000,
-  galaxyParticlesMobile: 80000,
-  starCountDesktop: 12000,
-  starCountMobile: 5000,
-  instancedStarsDesktop: 12000,
-  instancedStarsMobile: 4000,
+  /** Particelle spirale galattica (Points) */
+  galaxyParticlesDesktop: 100000,
+  galaxyParticlesMobile: 45000,
+  /** Campo stellare di fondo */
+  starCountDesktop: 8000,
+  starCountMobile: 3500,
+  instancedStarsDesktop: 8000,
+  instancedStarsMobile: 3000,
+  /** Raymarch nebulose volumetriche — passi per pixel (impatto GPU alto) */
+  nebulaMaxSteps: { high: 56, medium: 40, low: 28 } as const,
+  /** Numero nebulose raymarched per tier qualità */
+  nebulaCount: { high: 8, medium: 5, low: 3 } as const,
+  /** Polvere ambientale (Milky Way / Local Group) */
+  dustCount: { high: 2200, medium: 1200, low: 600 } as const,
+  /** Cap devicePixelRatio per tier (riduce fill-rate) */
+  pixelRatioCap: { high: 2, medium: 1.5, low: 1 } as const,
+  /** Soglie benchmark iniziale (FPS medi ~3s) */
+  benchmarkHighFps: 52,
+  benchmarkMediumFps: 36,
 };
 
 export const FEATURES = {

@@ -48,10 +48,26 @@ export function initVisualThemes() {
   visualThemeStore.subscribe(() => applyThemeToRoot());
 }
 
+const COSMIC_OVERVIEW_SCENES = new Set([
+  'local_group',
+  'observable',
+  'milky_way',
+  'exoplanets',
+  'extreme_objects',
+]);
+
 export function syncVisualThemePostFX(postFX: { setBloomStrength?: (n: number) => void; passes?: { vignettePass?: { uniforms: { darkness: { value: number } } } } } | null, sceneKey?: string) {
   if (!postFX?.setBloomStrength) return;
   if (sceneKey === 'wormhole') return;
   const theme = getVisualTheme(visualThemeStore.getState().themeId);
+  const isCosmicOverview = sceneKey ? COSMIC_OVERVIEW_SCENES.has(sceneKey) : false;
+
+  if (isCosmicOverview) {
+    // Cosmic scenes need strong bloom; allow themes to boost, not dim below the scene profile.
+    postFX.setBloomStrength(1.25 * Math.max(1, theme.effects.bloomStrength));
+    return;
+  }
+
   postFX.setBloomStrength(theme.effects.bloomStrength);
   if (postFX.passes?.vignettePass) {
     postFX.passes.vignettePass.uniforms.darkness.value = 0.65 + theme.effects.vignetteIntensity * 0.85;

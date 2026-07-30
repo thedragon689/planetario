@@ -199,14 +199,9 @@ export function createRaycaster(
       return;
     }
 
-    const targets = collectRaycastTargets(selectableObjects());
     const picked = pickHit(getIntersects(event));
-    if (isDev()) {
-      if (picked) {
-        debugLog('selezionato', picked.object.userData?.id ?? picked.object.name);
-      } else if (targets.length) {
-        debugLog('nessun hit — clicca sul disco del pianeta, non sullo sfondo');
-      }
+    if (isDev() && picked) {
+      debugLog('selezionato', picked.object.userData?.id ?? picked.object.name);
     }
 
     if (picked) {

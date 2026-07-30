@@ -20,11 +20,46 @@ function sameTrackSrc(a, b) {
   return na && nb && na === nb;
 }
 
+function isBenignAudioError(err) {
+  if (!err) return false;
+  if (err.name === 'AbortError') return true;
+  const message = String(err.message || err);
+  return message.includes('aborted') || message.includes('interrupted');
+}
+
+function waitForCanPlay(el) {
+  const minReady =
+    typeof HTMLMediaElement !== 'undefined' ? HTMLMediaElement.HAVE_FUTURE_DATA : 3;
+  if (el.readyState >= minReady) {
+    return Promise.resolve();
+  }
+
+  return new Promise((resolve, reject) => {
+    const onReady = () => {
+      cleanup();
+      resolve();
+    };
+    const onError = () => {
+      cleanup();
+      reject(el.error || new Error('Caricamento audio non riuscito'));
+    };
+    const cleanup = () => {
+      el.removeEventListener('canplay', onReady);
+      el.removeEventListener('error', onError);
+    };
+
+    el.addEventListener('canplay', onReady, { once: true });
+    el.addEventListener('error', onError, { once: true });
+    el.load();
+  });
+}
+
 export function createAudio() {
   let trackA = null;
   let trackB = null;
   let activeTrack = 'a';
   let crossfadeTimer = null;
+  let crossfadeGeneration = 0;
   let warpCtx = null;
   let spatialCtx = null;
   let spatialGain = null;
@@ -63,9 +98,37 @@ export function createAudio() {
     return playlist.volume ?? AUDIO.soundtrack.volume;
   }
 
+  function clearCrossfadeTimer() {
+    if (crossfadeTimer) {
+      clearInterval(crossfadeTimer);
+      crossfadeTimer = null;
+    }
+  }
+
+  function cancelCrossfade() {
+    crossfadeGeneration += 1;
+    clearCrossfadeTimer();
+  }
+
+  async function prepareTrack(el, src) {
+    if (!src) return;
+
+    const needsNewSrc = !el.src || !sameTrackSrc(el.src, src);
+    if (needsNewSrc) {
+      el.pause();
+      el.src = src;
+      el.currentTime = 0;
+    }
+
+    await waitForCanPlay(el);
+  }
+
   async function resume() {
     initTracks();
-    if (warpCtx?.state === 'suspended') await warpCtx.resume();
+    const resumes = [];
+    if (warpCtx?.state === 'suspended') resumes.push(warpCtx.resume());
+    if (spatialCtx?.state === 'suspended') resumes.push(spatialCtx.resume());
+    if (resumes.length) await Promise.all(resumes);
   }
 
   function ensureWarpContext() {
@@ -126,16 +189,31 @@ export function createAudio() {
       return;
     }
 
-    to.src = src;
-    to.volume = 0;
-    to.currentTime = 0;
+    const generation = ++crossfadeGeneration;
+    clearCrossfadeTimer();
 
-    if (enabled) {
-      try {
-        await to.play();
-      } catch {
-        return;
-      }
+    try {
+      await prepareTrack(to, src);
+    } catch (err) {
+      if (isBenignAudioError(err)) return;
+      throw err;
+    }
+
+    if (generation !== crossfadeGeneration) return;
+
+    to.volume = 0;
+    if (!enabled) return;
+
+    try {
+      await to.play();
+    } catch (err) {
+      if (isBenignAudioError(err)) return;
+      throw err;
+    }
+
+    if (generation !== crossfadeGeneration) {
+      to.pause();
+      return;
     }
 
     const duration = AUDIO.crossfadeMs || 4000;
@@ -143,14 +221,19 @@ export function createAudio() {
     const fromStart = from.paused ? 0 : from.volume;
     let step = 0;
 
-    clearInterval(crossfadeTimer);
+    clearCrossfadeTimer();
     crossfadeTimer = setInterval(() => {
+      if (generation !== crossfadeGeneration) {
+        clearCrossfadeTimer();
+        return;
+      }
+
       step += 1;
       const t = easeInOutQuad(Math.min(1, step / steps));
       if (!from.paused) from.volume = fromStart * (1 - t);
       to.volume = targetVolume * t;
       if (step >= steps) {
-        clearInterval(crossfadeTimer);
+        clearCrossfadeTimer();
         from.pause();
         activeTrack = activeTrack === 'a' ? 'b' : 'a';
         getActive().volume = targetVolume;
@@ -171,11 +254,16 @@ export function createAudio() {
   /** Primo avvio: Cosmos (Vangelis); crossfade alla scena solo in navigazione */
   async function playIntroIfNeeded() {
     if (introPlayed || !AUDIO.playlists) return;
-    introPlayed = true;
-    enabled = true;
 
     const intro = AUDIO.soundtrack;
-    await crossfadeTo(intro.src, playlistVolume(intro));
+    enabled = true;
+    try {
+      await crossfadeTo(intro.src, playlistVolume(intro));
+      introPlayed = true;
+    } catch (err) {
+      enabled = false;
+      throw err;
+    }
   }
 
   function setSceneVolume(sceneKey) {
@@ -185,41 +273,50 @@ export function createAudio() {
     const track = getActive();
     const vol = playlistVolume(playlist);
     if (!track.src || !sameTrackSrc(track.src, playlist.src)) {
+      track.pause();
       track.src = playlist.src;
       track.currentTime = 0;
     }
     track.volume = vol;
     if (enabled && track.paused && track.src) {
-      track.play().catch(() => {});
+      prepareTrack(track, playlist.src)
+        .then(() => track.play())
+        .catch((err) => {
+          if (!isBenignAudioError(err)) {
+            console.warn('Riproduzione audio bloccata dal browser:', err);
+          }
+        });
     }
   }
 
   async function toggle() {
-    const track = initTracks();
-    if (!track.src) {
-      const playlist = getPlaylist(currentScene);
-      track.src = playlist.src;
-      track.volume = playlistVolume(playlist);
-    }
+    initTracks();
+    const active = getActive();
 
-    if (track.paused) {
+    if (active.paused) {
       try {
         if (!introPlayed) {
           await playIntroIfNeeded();
         } else {
-          await track.play();
+          enabled = true;
+          const playlist = getPlaylist(currentScene);
+          await prepareTrack(active, playlist.src);
+          active.volume = playlistVolume(playlist);
+          await active.play();
         }
-        enabled = true;
       } catch (err) {
-        console.warn('Riproduzione audio bloccata dal browser:', err);
+        if (!isBenignAudioError(err)) {
+          console.warn('Riproduzione audio bloccata dal browser:', err);
+        }
         enabled = false;
       }
     } else {
+      cancelCrossfade();
       trackA?.pause();
       trackB?.pause();
       enabled = false;
     }
-    return enabled;
+    return isEnabled();
   }
 
   function playWarp() {
@@ -245,8 +342,8 @@ export function createAudio() {
   }
 
   function isEnabled() {
-    const track = getActive();
-    return enabled && track && !track.paused;
+    initTracks();
+    return enabled && Boolean((trackA && !trackA.paused) || (trackB && !trackB.paused));
   }
 
   function duck(factor = AUDIO.duckFactor ?? 0.28) {

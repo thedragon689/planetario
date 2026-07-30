@@ -133,15 +133,31 @@ function wait(ms) {
 
 export function createGeminiTts({ hasApiKey }) {
   let audioCtx = null;
+  let userUnlocked = false;
   let currentSource = null;
   let speaking = false;
   let prefetchChain = Promise.resolve();
   let prefetchPausedUntil = 0;
   const rawCache = new Map();
   const bufferCache = new Map();
+  const deferredDecode = new Map();
   const MAX_CACHE = 80;
 
+  function unlock() {
+    userUnlocked = true;
+    if (!audioCtx && typeof AudioContext !== 'undefined') {
+      audioCtx = new AudioContext();
+    }
+    if (audioCtx?.state === 'suspended') {
+      void audioCtx.resume();
+    }
+    for (const cacheKey of [...deferredDecode.keys()]) {
+      decodeDeferred(cacheKey);
+    }
+  }
+
   function ensureAudioContext() {
+    if (!userUnlocked) return null;
     if (!audioCtx && typeof AudioContext !== 'undefined') {
       audioCtx = new AudioContext();
     }
@@ -153,6 +169,7 @@ export function createGeminiTts({ hasApiKey }) {
       const oldest = bufferCache.keys().next().value;
       bufferCache.delete(oldest);
       rawCache.delete(oldest);
+      deferredDecode.delete(oldest);
     }
   }
 
@@ -191,12 +208,31 @@ export function createGeminiTts({ hasApiKey }) {
   }
 
   async function decodeAndCache(cacheKey, audio) {
-    const ctx = ensureAudioContext();
     const sampleRate = parseSampleRate(audio.mimeType);
     const bytes = decodeBase64ToBytes(audio.data);
     if (bytes.byteLength < 200) throw new Error('Gemini TTS: audio troppo corto');
+
+    const ctx = ensureAudioContext();
+    if (!ctx) {
+      deferredDecode.set(cacheKey, { bytes, sampleRate });
+      return null;
+    }
+
     const buffer = pcm16ToAudioBuffer(ctx, bytes, sampleRate);
     bufferCache.set(cacheKey, buffer);
+    deferredDecode.delete(cacheKey);
+    trimCache();
+    return buffer;
+  }
+
+  function decodeDeferred(cacheKey) {
+    const pending = deferredDecode.get(cacheKey);
+    if (!pending) return null;
+    const ctx = ensureAudioContext();
+    if (!ctx) return null;
+    const buffer = pcm16ToAudioBuffer(ctx, pending.bytes, pending.sampleRate);
+    bufferCache.set(cacheKey, buffer);
+    deferredDecode.delete(cacheKey);
     trimCache();
     return buffer;
   }
@@ -231,7 +267,14 @@ export function createGeminiTts({ hasApiKey }) {
 
     const job = async () => {
       const audio = await fetchAudio(text);
-      await decodeAndCache(cacheKey, audio);
+      if (userUnlocked) {
+        await decodeAndCache(cacheKey, audio);
+      } else {
+        const sampleRate = parseSampleRate(audio.mimeType);
+        const bytes = decodeBase64ToBytes(audio.data);
+        if (bytes.byteLength < 200) throw new Error('Gemini TTS: audio troppo corto');
+        deferredDecode.set(cacheKey, { bytes, sampleRate });
+      }
       return audio;
     };
 
@@ -254,7 +297,7 @@ export function createGeminiTts({ hasApiKey }) {
   }
 
   function isReady(cacheKey) {
-    return Boolean(cacheKey && bufferCache.has(cacheKey));
+    return Boolean(cacheKey && (bufferCache.has(cacheKey) || deferredDecode.has(cacheKey)));
   }
 
   async function ensureBuffer(text, cacheKey) {
@@ -262,10 +305,17 @@ export function createGeminiTts({ hasApiKey }) {
       return bufferCache.get(cacheKey);
     }
 
+    if (cacheKey) {
+      const deferred = decodeDeferred(cacheKey);
+      if (deferred) return deferred;
+    }
+
     if (cacheKey && rawCache.has(cacheKey)) {
       try {
         await rawCache.get(cacheKey);
         if (bufferCache.has(cacheKey)) return bufferCache.get(cacheKey);
+        const deferred = decodeDeferred(cacheKey);
+        if (deferred) return deferred;
       } catch {
         rawCache.delete(cacheKey);
       }
@@ -274,21 +324,26 @@ export function createGeminiTts({ hasApiKey }) {
     const audio = await fetchAudio(text);
     if (!cacheKey) {
       const ctx = ensureAudioContext();
+      if (!ctx) throw new Error('Web Audio API non disponibile');
       const sampleRate = parseSampleRate(audio.mimeType);
       const bytes = decodeBase64ToBytes(audio.data);
       return pcm16ToAudioBuffer(ctx, bytes, sampleRate);
     }
 
-    return decodeAndCache(cacheKey, audio);
+    const buffer = await decodeAndCache(cacheKey, audio);
+    if (buffer) return buffer;
+    return decodeDeferred(cacheKey);
   }
 
   async function synthesize(text, _models, { cacheKey } = {}) {
     if (!hasApiKey?.() && !import.meta.env.DEV) throw new Error('API_KEY_MISSING');
 
+    unlock();
     speaking = true;
     try {
       const ctx = ensureAudioContext();
-      if (ctx?.state === 'suspended') await ctx.resume();
+      if (!ctx) throw new Error('Web Audio API non disponibile');
+      if (ctx.state === 'suspended') await ctx.resume();
 
       if (cacheKey && bufferCache.has(cacheKey)) {
         await playBuffer(bufferCache.get(cacheKey));
@@ -296,6 +351,7 @@ export function createGeminiTts({ hasApiKey }) {
       }
 
       const buffer = await ensureBuffer(text, cacheKey);
+      if (!buffer) throw new Error('Gemini TTS: decodifica audio non disponibile');
       await playBuffer(buffer);
     } finally {
       speaking = false;
@@ -306,6 +362,7 @@ export function createGeminiTts({ hasApiKey }) {
     synthesize,
     prefetch,
     isReady,
+    unlock,
     stop: stopPlayback,
     isSupported: () => import.meta.env.DEV || Boolean(hasApiKey?.()),
     isSpeaking: () => speaking,

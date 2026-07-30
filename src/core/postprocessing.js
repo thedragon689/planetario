@@ -138,7 +138,10 @@ const GodRaysShader = {
 
 export function createPostProcessing(renderer, scene, camera) {
   const size = renderer.getSize(new THREE.Vector2());
+  const pixelRatio = renderer.getPixelRatio();
   const composer = new EffectComposer(renderer);
+  composer.setPixelRatio(pixelRatio);
+  composer.setSize(size.x, size.y);
 
   const renderPass = new RenderPass(scene, camera);
   composer.addPass(renderPass);
@@ -147,7 +150,7 @@ export function createPostProcessing(renderer, scene, camera) {
   fxaaPass.material.uniforms.resolution.value.set(1 / size.x, 1 / size.y);
   composer.addPass(fxaaPass);
 
-  const smaaPass = new SMAAPass(size.x * renderer.getPixelRatio(), size.y * renderer.getPixelRatio());
+  const smaaPass = new SMAAPass();
   composer.addPass(smaaPass);
 
   const bokehPass = new BokehPass(scene, camera, {
@@ -206,7 +209,7 @@ export function createPostProcessing(renderer, scene, camera) {
       chromaPass.enabled = !isDirect || isWormhole;
       filmPass.enabled = (!isDirect && !isCosmicOverview) || isWormhole;
       bloomPass.enabled = sceneKey !== 'earth';
-      godRaysPass.enabled = sceneKey === 'solar_system';
+      godRaysPass.enabled = sceneKey === 'solar_system' && state.qualityLevel === 'high';
       smaaPass.enabled = !isDirect;
       fxaaPass.enabled = isDirect;
       vignettePass.enabled = (!isDirect && !isCosmicOverview) || isWormhole;
@@ -229,24 +232,38 @@ export function createPostProcessing(renderer, scene, camera) {
     isEarthView() {
       if (state.sceneKey === 'earth' || state.sceneKey === 'solar_system') return true;
       if (state.qualityLevel === 'low') return true;
+      const isCosmicOverview =
+        state.sceneKey === 'local_group'
+        || state.sceneKey === 'observable'
+        || state.sceneKey === 'milky_way'
+        || state.sceneKey === 'exoplanets'
+        || state.sceneKey === 'extreme_objects';
+      // Scene cosmiche pesanti: salta il composer su medium (nebula raymarch + bloom = costoso)
+      if (state.qualityLevel === 'medium' && isCosmicOverview) return true;
       return false;
     },
     setQuality(level) {
       state.qualityLevel = level;
       const presets = {
         high: { bloom: 0.9, film: 0.15, dof: 0.01, smaa: true, fxaa: false, chroma: 0.0015 },
-        medium: { bloom: 0.6, film: 0.1, dof: 0.006, smaa: true, fxaa: false, chroma: 0.001 },
+        medium: { bloom: 0.55, film: 0.08, dof: 0.004, smaa: false, fxaa: true, chroma: 0.0008 },
         low: { bloom: 0.35, film: 0, dof: 0, smaa: false, fxaa: true, chroma: 0 },
       };
       const settings = presets[level] || presets.medium;
 
-      bloomPass.strength = settings.bloom * (state.sceneKey === 'local_group' || state.sceneKey === 'observable' || state.sceneKey === 'milky_way' || state.sceneKey === 'exoplanets' || state.sceneKey === 'extreme_objects' ? 1.35 : 1);
+      const isCosmicOverview = state.sceneKey === 'local_group' || state.sceneKey === 'observable' || state.sceneKey === 'milky_way' || state.sceneKey === 'exoplanets' || state.sceneKey === 'extreme_objects';
+      const isWormhole = state.sceneKey === 'wormhole';
+      bloomPass.strength = settings.bloom * (isCosmicOverview ? 1.35 : 1);
       bokehPass.enabled = level !== 'low' && state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system'
-        && state.sceneKey !== 'local_group' && state.sceneKey !== 'observable' && state.sceneKey !== 'milky_way' && state.sceneKey !== 'exoplanets' && state.sceneKey !== 'extreme_objects';
-      filmPass.enabled = level !== 'low' && state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system';
-      chromaPass.enabled = level !== 'low' && state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system';
-      motionBlurPass.enabled = level !== 'low' && state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system';
-      vignettePass.enabled = level !== 'low' && state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system';
+        && !isCosmicOverview;
+      filmPass.enabled = level !== 'low' && state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system'
+        && !isCosmicOverview && !isWormhole;
+      chromaPass.enabled = level !== 'low' && (state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system' || isWormhole)
+        && !isCosmicOverview;
+      motionBlurPass.enabled = level !== 'low' && (state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system' || isWormhole)
+        && !isCosmicOverview;
+      vignettePass.enabled = level !== 'low' && (state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system' || isWormhole)
+        && !isCosmicOverview;
       smaaPass.enabled = settings.smaa && state.sceneKey !== 'earth' && state.sceneKey !== 'solar_system';
       fxaaPass.enabled = settings.fxaa || state.sceneKey === 'earth' || state.sceneKey === 'solar_system';
 
@@ -276,9 +293,9 @@ export function createPostProcessing(renderer, scene, camera) {
       if (maxblur !== undefined) bokehPass.uniforms.maxblur.value = maxblur;
     },
     resize(width, height, pixelRatio) {
+      composer.setPixelRatio(pixelRatio);
       composer.setSize(width, height);
       fxaaPass.material.uniforms.resolution.value.set(1 / width, 1 / height);
-      smaaPass.setSize(width * pixelRatio, height * pixelRatio);
       bloomPass.resolution.set(width, height);
     },
   };

@@ -32,7 +32,7 @@ export function createAurora(parentGroup) {
     fragmentShader: auroraFragment,
     uniforms: {
       uTime: { value: 0 },
-      uIntensity: { value: 0.85 },
+      uIntensity: { value: 1.0 },
     },
     transparent: true,
     depthWrite: false,

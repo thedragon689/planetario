@@ -1,1 +1,9 @@
-export { createRenderer, createWebGLRenderer, resizeRenderer, usesPostProcessing } from './rendererFactory.js';
+export {
+  createRenderer,
+  createWebGLRenderer,
+  getPixelRatioCap,
+  resizeRenderer,
+  resetRendererForScreenRender,
+  syncRendererLayout,
+  usesPostProcessing,
+} from './rendererFactory.js';

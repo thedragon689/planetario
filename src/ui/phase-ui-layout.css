@@ -4,21 +4,27 @@
  */
 
 :root {
-  --ui-topbar-h: 3.25rem;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --ui-topbar-h: 3.5rem;
   --ui-side-inset: 0.75rem;
   --ui-bottom-inset: 0.75rem;
   --ui-scene-nav-h: 4.75rem;
   --ui-right-rail-w: 6.75rem;
   --ui-left-rail-w: 20rem;
-  --ui-bottom-rail: calc(var(--ui-scene-nav-h) + var(--ui-bottom-inset) + 0.5rem);
-  --ui-top-rail: calc(var(--ui-topbar-h) + 0.35rem);
+  --ui-bottom-rail: calc(var(--ui-scene-nav-h) + var(--ui-bottom-inset) + 0.5rem + var(--safe-bottom));
+  --ui-top-rail: calc(var(--ui-topbar-h) + var(--safe-top) + 0.35rem);
 }
 
 .layout-mobile {
   --ui-scene-nav-h: 3.75rem;
-  --ui-right-rail-w: 3.5rem;
+  --ui-right-rail-w: 3.75rem;
   --ui-left-rail-w: 0.5rem;
-  --ui-bottom-inset: 0.5rem;
+  --ui-bottom-inset: calc(0.5rem + var(--safe-bottom));
+  --ui-topbar-h: 3.25rem;
+  --ui-side-inset: calc(0.5rem + var(--safe-left));
 }
 
 .layout-tablet {
@@ -28,9 +34,9 @@
 
 /* —— Top: metriche compatte a destra —— */
 .hud {
-  top: var(--ui-topbar-h);
+  top: var(--ui-top-rail);
   left: auto;
-  right: 0;
+  right: var(--safe-right);
   width: auto;
   max-width: min(100vw - 12rem, 28rem);
   padding: 0.35rem var(--ui-side-inset);
@@ -74,19 +80,19 @@
 }
 
 /* —— Colonna sinistra —— */
-.coords-hud {
+.coords-hud:not(.topbar-coords) {
   top: var(--ui-top-rail);
   left: var(--ui-side-inset);
   max-width: min(18rem, calc(100vw - var(--ui-right-rail-w) - 3rem));
 }
 
 .time-controls {
-  top: calc(var(--ui-top-rail) + 2.65rem);
+  top: calc(var(--ui-top-rail) + 0.35rem);
   left: var(--ui-side-inset);
   max-width: min(320px, calc(100vw - var(--ui-right-rail-w) - 2.5rem));
 }
 
-html.sidebar-open .coords-hud,
+html.sidebar-open .coords-hud:not(.topbar-coords),
 html.sidebar-open .time-controls {
   left: min(calc(280px + var(--ui-side-inset)), calc(86vw + var(--ui-side-inset)));
   max-width: min(16rem, calc(100vw - min(280px, 86vw) - var(--ui-right-rail-w) - 2rem));
@@ -221,13 +227,33 @@ html.chat-open .gesture-hint.visible {
   bottom: calc(var(--ui-bottom-inset) + var(--ui-scene-nav-h) + 0.25rem);
 }
 
+/* —— Info panel: sotto topbar, non copre ricerca/coords —— */
+.info-panel:not(.mobile-bottom-sheet-active) {
+  top: calc(var(--ui-topbar-h) + var(--safe-top));
+  height: calc(100% - var(--ui-topbar-h) - var(--safe-top));
+  max-height: calc(100dvh - var(--ui-topbar-h) - var(--safe-top));
+}
+
+html.panel-open .search-results {
+  display: none !important;
+}
+
 /* —— Pannelli top-right: sotto minimappa —— */
 .v21-panel,
-.settings-panel,
 .bookmarks-panel {
   top: calc(var(--ui-topbar-h) + 6.5rem);
   right: var(--ui-side-inset);
   max-height: calc(100vh - var(--ui-topbar-h) - 7.5rem);
+}
+
+.settings-panel--anchored {
+  position: fixed;
+  top: auto;
+  right: auto;
+  left: auto;
+  z-index: calc(var(--z-topbar) + 8);
+  max-height: min(70vh, calc(100vh - var(--ui-topbar-h) - 1rem));
+  overflow-y: auto;
 }
 
 /* —— Dev monitor —— */
@@ -237,8 +263,36 @@ html.chat-open .gesture-hint.visible {
 }
 
 /* —— Mobile —— */
+.layout-mobile .topbar-coords-host {
+  display: none;
+}
+
+.layout-mobile .app-topbar {
+  top: var(--safe-top);
+  padding-left: calc(0.4rem + var(--safe-left));
+  padding-right: calc(0.4rem + var(--safe-right));
+}
+
+.layout-mobile .topbar-search-wrap {
+  min-width: 0;
+}
+
+.layout-mobile .topbar-search {
+  font-size: 16px; /* evita zoom automatico iOS su focus */
+}
+
+.layout-mobile .topbar-search-filter {
+  max-width: 5rem;
+}
+
+.layout-mobile .topbar-btn {
+  min-width: 44px;
+  min-height: 44px;
+}
+
 .layout-mobile .hud {
-  max-width: calc(100vw - var(--ui-right-rail-w) - 1rem);
+  top: var(--ui-top-rail);
+  max-width: calc(100vw - var(--ui-right-rail-w) - var(--safe-right) - 1rem);
 }
 
 .layout-mobile .hud-metrics .metric:nth-child(n+4) {
@@ -246,16 +300,19 @@ html.chat-open .gesture-hint.visible {
 }
 
 .layout-mobile .cosmic-minimap {
-  top: calc(var(--ui-topbar-h) + 2.35rem);
-  transform: scale(0.88);
-  transform-origin: top right;
+  display: none;
+}
+
+.layout-mobile .hud-compass {
+  top: calc(var(--ui-top-rail) + 0.35rem);
+  right: calc(var(--ui-side-inset) + var(--safe-right));
 }
 
 .layout-mobile .hud-scale-bar {
   display: none;
 }
 
-.layout-mobile .coords-hud {
+.layout-mobile .coords-hud:not(.topbar-coords) {
   top: calc(var(--ui-topbar-h) + 0.2rem);
   left: 0.35rem;
   font-size: 0.68rem;
@@ -263,7 +320,7 @@ html.chat-open .gesture-hint.visible {
 }
 
 .layout-mobile .time-controls {
-  top: calc(var(--ui-topbar-h) + 2.1rem);
+  top: calc(var(--ui-top-rail) + 0.25rem);
   left: 0.35rem;
   padding: 0.45rem 0.55rem;
   font-size: 0.72rem;
@@ -314,6 +371,41 @@ html.sidebar-open.layout-mobile .companion-bar {
 
 .layout-mobile .toast-host {
   bottom: calc(var(--ui-bottom-inset) + var(--ui-scene-nav-h) + 0.2rem);
+}
+
+.layout-mobile .ctrl-btn,
+.layout-mobile .overlay-tools-toggle,
+.layout-mobile .nav-step,
+.layout-mobile .sidebar-launcher,
+.layout-mobile .sidebar-close,
+.layout-mobile .nav-prev,
+.layout-mobile .nav-next {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.layout-mobile .scene-nav {
+  left: 50%;
+  right: auto;
+  padding-bottom: calc(0.65rem + var(--safe-bottom));
+}
+
+.layout-tablet .app-topbar {
+  top: var(--safe-top);
+}
+
+.layout-tablet .topbar-search-filter {
+  max-width: 7rem;
+}
+
+@media (max-width: 380px) {
+  .layout-mobile .topbar-search-filter {
+    display: none;
+  }
+
+  .layout-mobile .hud-metrics .metric:nth-child(n+3) {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

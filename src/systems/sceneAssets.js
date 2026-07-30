@@ -28,12 +28,12 @@ export function getParticleCounts(qualityLevel) {
   const isMobile = window.innerWidth < 768;
   const presets = {
     high: {
-      galaxy: isMobile ? 100000 : PERFORMANCE.galaxyParticlesDesktop,
-      stars: isMobile ? 8000 : PERFORMANCE.starCountDesktop,
+      galaxy: isMobile ? 60000 : PERFORMANCE.galaxyParticlesDesktop,
+      stars: isMobile ? 5000 : PERFORMANCE.starCountDesktop,
     },
     medium: {
-      galaxy: isMobile ? 50000 : 120000,
-      stars: isMobile ? 4000 : 10000,
+      galaxy: isMobile ? 35000 : 80000,
+      stars: isMobile ? 3000 : 6000,
     },
     low: {
       galaxy: PERFORMANCE.galaxyParticlesMobile,
@@ -176,7 +176,9 @@ export function createSceneAssetManager({ groups, scene, updatables, getQualityL
 
       if (FEATURES.dustParticles && !dust && (sceneKey === SCENES.MILKY_WAY || sceneKey === SCENES.LOCAL_GROUP)) {
         const { createDustParticles } = await import('../objects/dustParticles.js');
-        dust = createDustParticles(getQualityLevel() === 'low' ? 1400 : 2800);
+        const dustPresets = PERFORMANCE.dustCount;
+        const dustCount = dustPresets[getQualityLevel()] ?? dustPresets.medium;
+        dust = createDustParticles(dustCount);
         groups.milkyWay.add(dust.mesh);
         updatables.push(dust);
       }

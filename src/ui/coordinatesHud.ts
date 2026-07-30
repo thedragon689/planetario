@@ -2,9 +2,9 @@ import { mockEquatorialCoords } from '../utils/science.js';
 
 export type CoordSystem = 'equatorial' | 'ecliptic' | 'galactic' | 'altaz';
 
-export function createCoordinatesHud(root: HTMLElement) {
+export function createCoordinatesHud(root: HTMLElement, { embedded = false } = {}) {
   const hud = document.createElement('div');
-  hud.className = 'coords-hud';
+  hud.className = embedded ? 'topbar-coords' : 'coords-hud';
   hud.hidden = true;
   hud.innerHTML = `
     <select class="coords-system" aria-label="Sistema coordinate">
