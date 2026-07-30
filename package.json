@@ -17,7 +17,8 @@
     "test:watch": "vitest",
     "prepare": "husky",
     "lhci": "lhci autorun",
-    "convert-assets": "node scripts/convert-assets.mjs"
+    "convert-assets": "node scripts/convert-assets.mjs",
+    "capture-screenshots": "node scripts/capture-screenshots.mjs"
   },
   "lint-staged": {
     "src/**/*.js": [

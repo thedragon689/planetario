@@ -1,12 +1,21 @@
 # Screenshot documentazione
 
-Genera le immagini per il README:
+Immagini usate nel README (galleria 2×4 e hero).
 
-1. `npm run dev` → `http://127.0.0.1:5174`
-2. Naviga alla scena desiderata (es. Terra).
-3. Cattura viewport (~1920×1080 o 1280×720).
-4. Salva come:
-   - `terra.png` — scena Terra (usata nel README)
-   - `solar-system.png`, `milky-way.png`, … (opzionale)
+| File | Scena |
+|------|-------|
+| `terra.png` | Terra |
+| `solar-system.png` | Sistema Solare |
+| `milky-way.png` | Via Lattea |
+| `exoplanets.png` | Esopianeti |
+| `extreme-objects.png` | Oggetti Estremi |
+| `local-group.png` | Gruppo Locale |
+| `observable-universe.png` | Universo Osservabile |
+| `wormhole.png` | Wormhole |
 
-Formato consigliato: PNG, senza barra browser.
+## Rigenerare
+
+1. Avvia il dev server: `npm run dev -- --host 127.0.0.1 --port 5175`
+2. Cattura automatica: `npm run capture-screenshots`
+
+Formato: PNG canvas 1280×720, senza barra browser.
