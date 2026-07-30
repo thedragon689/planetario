@@ -54,10 +54,43 @@ function pickVoice(voices) {
   return [...pool].sort((a, b) => scoreVoice(b) - scoreVoice(a))[0] || null;
 }
 
+function splitSpeechChunks(text, maxLen = 320) {
+  const normalized = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!normalized) return [];
+  if (normalized.length <= maxLen) return [normalized];
+
+  const sentences = normalized.match(/[^.!?…]+[.!?…]+|[^.!?…]+$/g) || [normalized];
+  const chunks = [];
+  let current = '';
+
+  for (const sentence of sentences) {
+    const part = sentence.trim();
+    if (!part) continue;
+    const next = current ? `${current} ${part}` : part;
+    if (next.length <= maxLen) {
+      current = next;
+      continue;
+    }
+    if (current) chunks.push(current);
+    if (part.length <= maxLen) {
+      current = part;
+    } else {
+      for (let i = 0; i < part.length; i += maxLen) {
+        chunks.push(part.slice(i, i + maxLen));
+      }
+      current = '';
+    }
+  }
+
+  if (current) chunks.push(current);
+  return chunks;
+}
+
 export function createBrowserTts() {
   let utterance = null;
   let speaking = false;
   let selectedVoice = null;
+  let speakToken = 0;
 
   function isSupported() {
     return typeof window !== 'undefined' && 'speechSynthesis' in window;
@@ -77,6 +110,7 @@ export function createBrowserTts() {
 
   function stop() {
     if (!isSupported()) return;
+    speakToken += 1;
     window.speechSynthesis.cancel();
     utterance = null;
     speaking = false;
@@ -99,18 +133,9 @@ export function createBrowserTts() {
     window.speechSynthesis.cancel();
   }
 
-  async function synthesize(text) {
-    if (!isSupported()) throw new Error('BROWSER_TTS_UNSUPPORTED');
-
-    const plain = String(text || '').trim();
-    if (!plain) return;
-
-    stop();
-    refreshVoices();
-    speaking = true;
-
+  function speakChunk(text) {
     return new Promise((resolve, reject) => {
-      const next = new SpeechSynthesisUtterance(plain);
+      const next = new SpeechSynthesisUtterance(text);
       if (selectedVoice) next.voice = selectedVoice;
       next.lang = FALLBACK.lang || CHAT_VOICE.lang;
       next.rate = FALLBACK.rate ?? CHAT_VOICE.rate;
@@ -118,12 +143,10 @@ export function createBrowserTts() {
       next.volume = FALLBACK.volume ?? CHAT_VOICE.volume;
 
       next.onend = () => {
-        speaking = false;
         utterance = null;
         resolve();
       };
       next.onerror = (event) => {
-        speaking = false;
         utterance = null;
         reject(new Error(event.error || 'BROWSER_TTS_ERROR'));
       };
@@ -131,6 +154,30 @@ export function createBrowserTts() {
       utterance = next;
       window.speechSynthesis.speak(next);
     });
+  }
+
+  async function synthesize(text) {
+    if (!isSupported()) throw new Error('BROWSER_TTS_UNSUPPORTED');
+
+    const chunks = splitSpeechChunks(text);
+    if (!chunks.length) return;
+
+    stop();
+    refreshVoices();
+    speaking = true;
+    const token = ++speakToken;
+
+    try {
+      for (const chunk of chunks) {
+        if (token !== speakToken) return;
+        await speakChunk(chunk);
+      }
+    } finally {
+      if (token === speakToken) {
+        speaking = false;
+        utterance = null;
+      }
+    }
   }
 
   return {
@@ -141,5 +188,6 @@ export function createBrowserTts() {
     isSpeaking: () => speaking,
     getVoiceName,
     getVoiceLabel,
+    splitSpeechChunks,
   };
 }

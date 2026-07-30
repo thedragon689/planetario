@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { flattenExoplanetForPanel } from '../data/exoplanetCatalog.js';
 import { FEATURES } from '../config.js';
 import { createProceduralPlanetMaterial, updateProceduralPlanetMaterial } from './proceduralPlanet.js';
+import { attachHitSphere, disableRaycast } from '../systems/clickTargets.js';
 
 const CLASS_COLORS = {
   rocky: 0x8b7355,
@@ -143,6 +144,8 @@ export function createExoplanetSystems(group, exoplanetData) {
         data: panelData,
         orbit: { radius: orbitR, phase, speed: 0.12 / Math.sqrt(Math.max(au, 0.02)) },
       };
+      disableRaycast(planetMesh);
+      attachHitSphere(planetMesh, Math.max(radius * 1.35, 0.55));
       sysGroup.add(planetMesh);
       markers.push({ mesh: planetMesh, data: panelData, systemGroup: sysGroup });
     });

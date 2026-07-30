@@ -34,6 +34,8 @@ import { createLabels } from './systems/labels.js';
 import { createAudio } from './systems/audio.js';
 import { createNasaClient } from './systems/nasa.js';
 import { createWikipediaClient } from './systems/wikipedia.js';
+import { createWikidataClient } from './systems/wikidata.js';
+import { enrichObjectData } from './systems/catalogEnrichment.js';
 import { createSceneAssetManager } from './systems/sceneAssets.js';
 import { collectDataPositions, computeFraming } from './systems/sceneCamera.js';
 import { NEBULA_DATA, WORMHOLE_DATA } from './data/phenomena.js';
@@ -219,6 +221,7 @@ export class PlanetarioApp {
     this.nasaData = await loadJSON('/data/nasa.json');
     this.nasa = createNasaClient();
     this.wikipedia = createWikipediaClient();
+    this.wikidata = createWikidataClient();
 
     const sunRich = this.starData?.stars?.find((s) => s.id === 'sun');
     const knowledgeCatalog = buildKnowledgeCatalog({
@@ -629,7 +632,7 @@ export class PlanetarioApp {
       }[obj.userData.type] ?? 3;
       this.transitions.focusOnObject(obj, focusDistance);
 
-      const [nasaResults, wikiResult] = await Promise.all([
+      const [nasaResults, wikiResult, enrichedData] = await Promise.all([
         withFallback(
           () => this.nasa.searchForObject(data.id, data.name),
           null,
@@ -643,9 +646,16 @@ export class PlanetarioApp {
           null,
           { label: 'Wikipedia', eventBus: this.eventBus }
         ),
+        withFallback(
+          () => enrichObjectData(data, { wikipedia: this.wikipedia, wikidata: this.wikidata }),
+          data,
+          { label: 'Wikidata', eventBus: this.eventBus }
+        ),
       ]);
 
-      this.panel.show(data, { nasaResults, searchUrl, wikiResult });
+      this._selectedObject = enrichedData;
+      getAppState().selectObject(enrichedData);
+      this.panel.show(enrichedData, { nasaResults, searchUrl, wikiResult });
     });
 
     this.setupResize();
@@ -1212,7 +1222,7 @@ export class PlanetarioApp {
     this.overlays?.setFocusMode(true);
 
     const searchUrl = this.nasa.getSearchUrl(this.nasa.getQueryForObject(data.id, data.name));
-    const [nasaResults, wikiResult] = await Promise.all([
+    const [nasaResults, wikiResult, enrichedData] = await Promise.all([
       withFallback(() => this.nasa.searchForObject(data.id, data.name), null, { label: 'NASA', eventBus: this.eventBus }),
       withFallback(
         () => this.wikipedia.getSummaryForObject(data.id, data.name, {
@@ -1222,8 +1232,15 @@ export class PlanetarioApp {
         null,
         { label: 'Wikipedia', eventBus: this.eventBus }
       ),
+      withFallback(
+        () => enrichObjectData(data, { wikipedia: this.wikipedia, wikidata: this.wikidata }),
+        data,
+        { label: 'Wikidata', eventBus: this.eventBus }
+      ),
     ]);
-    this.panel.show(data, { nasaResults, searchUrl, wikiResult });
+    this._selectedObject = enrichedData;
+    getAppState().selectObject(enrichedData);
+    this.panel.show(enrichedData, { nasaResults, searchUrl, wikiResult });
   }
 
   async _applyShareHash() {

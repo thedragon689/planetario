@@ -6,8 +6,10 @@ import {
   createSaturnRings,
   updateSunDirection,
   FALLBACK_COLORS,
+  VISUAL_RADIUS_SCALE,
 } from './planetBody.js';
 import { createPlanetAtmosphere, hasAtmosphere } from './planetAtmosphere.js';
+import { attachHitSphere, disableRaycast } from '../systems/clickTargets.js';
 
 /** Costruisce il sistema planetario completo (Terra inclusa per la vista solare). */
 export async function createPlanets(group, sun, planetData) {
@@ -53,6 +55,8 @@ export async function createPlanets(group, sun, planetData) {
         data,
         selectable: true,
       };
+      disableRaycast(mesh);
+      attachHitSphere(mesh, data.radius * VISUAL_RADIUS_SCALE * 1.15);
 
       group.add(createOrbit(data.distanceFromSun, FALLBACK_COLORS[data.id] || 0x56ccf2));
       group.add(orbitGroup);

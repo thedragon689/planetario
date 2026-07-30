@@ -129,6 +129,7 @@ export function updateSunDirection(mesh, material, sunGroup) {
 }
 
 const VISUAL_RADIUS_SCALE = 2.2;
+export { VISUAL_RADIUS_SCALE };
 
 export async function createEarthSolarMesh(data) {
   const [dayMap, nightMap, specularMap] = await Promise.all([

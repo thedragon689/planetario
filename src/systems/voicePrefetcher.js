@@ -6,7 +6,7 @@ export function createVoicePrefetcher({ voice, getSession, getDatasets }) {
   let sceneToken = 0;
 
   function prefetchObject(data, { priority = false, compact = true } = {}) {
-    if (!data || !voice?.isEnabled?.()) return;
+    if (!data || !voice?.isEnabled?.() || !voice?.isGoogleAvailable?.()) return;
     const narration = buildNarrationForObject(data, getSession?.() || {}, { compact });
     if (!narration) return;
     voice.prefetchGoogle(narration, data.id || data.name, { priority });

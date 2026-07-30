@@ -4,7 +4,7 @@
       "id": "earth",
       "name": "Terra",
       "radius": 0.32,
-      "diameter": "12.742 km",
+      "diameter": "12.746 km (medio)",
       "mass": "5,97 × 10²⁴ kg",
       "temperature": "15°C (media)",
       "distance": "149,6 milioni km (1 UA)",
@@ -18,7 +18,10 @@
       "description": "Il nostro pianeta natale, l'unico conosciuto ad ospitare vita.",
       "facts": ["71% superficie coperta da acqua", "Campo magnetico protettivo", "Atmosfera ricca di ossigeno"],
       "nasa_images": ["https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001718/GSFC_20171208_Archive_e001718~orig.jpg"],
-      "sources": ["https://science.nasa.gov/earth/facts/"]
+      "sources": [
+        "https://science.nasa.gov/earth/facts/",
+        "https://it.wikipedia.org/wiki/Terra"
+      ]
     },
     {
       "id": "mercury",

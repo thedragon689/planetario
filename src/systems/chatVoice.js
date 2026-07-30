@@ -1,17 +1,20 @@
 import { CHAT_VOICE, GEMINI } from '../config.js';
 import { createGeminiTts } from './geminiTts.js';
 import { createBrowserTts } from './browserTts.js';
+import { formatTextForSpeech } from './speechFormatting.js';
 
 function stripForSpeech(text) {
-  return String(text)
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/`([^`]+)`/g, '$1')
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\*([^*]+)\*/g, '$1')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/^#+\s+/gm, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+  return formatTextForSpeech(
+    String(text)
+      .replace(/```[\s\S]*?```/g, '')
+      .replace(/`([^`]+)`/g, '$1')
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/\*([^*]+)\*/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/^#+\s+/gm, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+  );
 }
 
 export function createChatVoice({ onSpeakStart, onSpeakEnd, hasApiKey } = {}) {
@@ -27,6 +30,20 @@ export function createChatVoice({ onSpeakStart, onSpeakEnd, hasApiKey } = {}) {
 
   function markGeminiCooldown(ms = 60_000) {
     geminiCooldownUntil = Math.max(geminiCooldownUntil, Date.now() + ms);
+    try {
+      globalThis.sessionStorage?.setItem('planetario-gemini-tts-until', String(geminiCooldownUntil));
+    } catch {
+      // ignore private mode
+    }
+  }
+
+  try {
+    const storedUntil = Number(globalThis.sessionStorage?.getItem('planetario-gemini-tts-until'));
+    if (Number.isFinite(storedUntil) && storedUntil > Date.now()) {
+      geminiCooldownUntil = storedUntil;
+    }
+  } catch {
+    // ignore
   }
 
   function googleAvailable() {
@@ -85,11 +102,12 @@ export function createChatVoice({ onSpeakStart, onSpeakEnd, hasApiKey } = {}) {
     await browserTts.synthesize(text);
   }
 
-  async function speakGoogle(text, { cacheKey, allowFallback = true } = {}) {
+  async function speakGoogle(text, { cacheKey, allowFallback = true, fallbackText } = {}) {
     if (!enabled) return;
 
     const plain = stripForSpeech(text);
-    if (!plain) return;
+    const fallbackPlain = stripForSpeech(fallbackText || text);
+    if (!plain && !fallbackPlain) return;
 
     const token = ++queueToken;
     stop();
@@ -102,7 +120,7 @@ export function createChatVoice({ onSpeakStart, onSpeakEnd, hasApiKey } = {}) {
     if (!cached) onSpeakStart?.();
 
     try {
-      if (googleAvailable()) {
+      if (googleAvailable() && plain) {
         try {
           await geminiTts.synthesize(plain, null, { cacheKey });
           activeProvider = 'google';
@@ -123,7 +141,7 @@ export function createChatVoice({ onSpeakStart, onSpeakEnd, hasApiKey } = {}) {
       }
 
       if (token !== queueToken) return;
-      await speakBrowserInternal(plain);
+      await speakBrowserInternal(fallbackPlain || plain);
     } finally {
       if (token === queueToken) {
         speaking = false;

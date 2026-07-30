@@ -3,6 +3,7 @@ import {
   createSunMaterial,
   createCoronaMesh,
 } from './planetBody.js';
+import { attachHitSphere, disableRaycast } from '../systems/clickTargets.js';
 
 /** Sole volumetrico stile Interstellar con corona e alone. */
 export async function createSun(group, sunData) {
@@ -20,11 +21,15 @@ export async function createSun(group, sunData) {
     selectable: true,
     data: sunConfig,
   };
+  disableRaycast(sun);
+  attachHitSphere(sun, radius * 1.05);
 
   const coronaScale = params.coronaScale ?? 2.5;
   const haloScale = params.haloScale ?? 3.2;
   const corona = createCoronaMesh(radius * coronaScale, params.coronaColor || '#ff6600', 0.14);
   const halo = createCoronaMesh(radius * haloScale, params.midColor || '#ffaa44', 0.06);
+  corona.raycast = () => {};
+  halo.raycast = () => {};
 
   const sunGroup = new THREE.Group();
   sunGroup.add(sun, corona, halo);

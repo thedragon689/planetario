@@ -1,5 +1,6 @@
 import { WIKIPEDIA_API, SCENES } from '../config.js';
 import { fetchJson } from '../core/apiClient.js';
+import { parseInfoboxStats } from './catalogEnrichment.js';
 
 /** Titoli articolo Wikipedia in italiano per oggetti del catalogo. */
 const OBJECT_TITLES = {
@@ -241,6 +242,55 @@ export function createWikipediaClient() {
     return null;
   }
 
+  async function getWikitext(title) {
+    if (!title) return null;
+
+    const cacheKey = `wikitext:${title}`;
+    if (cache.has(cacheKey)) return cache.get(cacheKey);
+
+    const promise = (async () => {
+      const url = new URL(WIKIPEDIA_API.apiRoot);
+      url.searchParams.set('action', 'parse');
+      url.searchParams.set('page', title);
+      url.searchParams.set('prop', 'wikitext');
+      url.searchParams.set('format', 'json');
+      url.searchParams.set('origin', '*');
+
+      const json = await fetchJson(url.toString(), { ttlMs: 60 * 60 * 1000 });
+      return json?.parse?.wikitext?.['*'] || null;
+    })();
+
+    cache.set(cacheKey, promise);
+    return promise;
+  }
+
+  async function getInfoboxStatsForObject(id, name, meta = {}) {
+    const queries = buildSearchQueries(id, name, meta);
+
+    for (const query of queries) {
+      let title = OBJECT_TITLES[id] || query;
+      let wikitext = await getWikitext(title);
+      if (!wikitext) {
+        const found = await searchTitle(query);
+        if (!found) continue;
+        title = found;
+        wikitext = await getWikitext(title);
+      }
+      if (!wikitext) continue;
+
+      const stats = parseInfoboxStats(wikitext);
+      if (!Object.keys(stats).length) continue;
+
+      return {
+        title,
+        pageUrl: getArticleUrl(title),
+        stats,
+      };
+    }
+
+    return null;
+  }
+
   async function getSummaryForObject(id, name, meta = {}) {
     const queries = buildSearchQueries(id, name, meta);
     return resolveSummary(queries);
@@ -269,6 +319,8 @@ export function createWikipediaClient() {
   return {
     getSummary,
     getSummaryForObject,
+    getInfoboxStatsForObject,
+    getWikitext,
     getSummaryForScene,
     getSummaryForCluster,
     getArticleUrl,

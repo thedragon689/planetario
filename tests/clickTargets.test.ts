@@ -44,4 +44,19 @@ describe('clickTargets', () => {
     expect(targets).toContain(visible);
     expect(targets).not.toContain(blocked);
   });
+
+  it('attachHitSphere su mesh con raycastDisabled espone solo la hitbox', () => {
+    const mesh = new THREE.Mesh(
+      new THREE.SphereGeometry(0.5),
+      new THREE.MeshBasicMaterial()
+    );
+    mesh.userData = { selectable: true, id: 'mercury', data: { name: 'Mercurio' } };
+    disableRaycast(mesh);
+    attachHitSphere(mesh, 0.7);
+
+    const targets = collectRaycastTargets([mesh]);
+    expect(targets).toHaveLength(1);
+    expect(targets[0].name).toBe('hit');
+    expect(resolveSelectableTarget(targets[0])?.userData.id).toBe('mercury');
+  });
 });

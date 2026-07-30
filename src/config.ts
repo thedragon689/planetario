@@ -250,6 +250,11 @@ export const WIKIPEDIA_API = {
   apiRoot: 'https://it.wikipedia.org/w/api.php',
 };
 
+export const WIKIDATA_API = {
+  entityRoot: 'https://www.wikidata.org/wiki/Special:EntityData',
+  pageRoot: 'https://www.wikidata.org/wiki',
+};
+
 export const GEMINI = {
   model: 'gemini-2.5-flash',
   fallbackModels: ['gemini-3.5-flash', 'gemini-2.0-flash'],

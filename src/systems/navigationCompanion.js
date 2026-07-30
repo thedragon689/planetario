@@ -71,8 +71,10 @@ export function createNavigationCompanion({ voice, getSession, root }) {
       return;
     }
 
-    const narration = buildNarrationForObject(data, getSession?.() || {}, { compact: true });
-    if (!narration) return;
+    const session = getSession?.() || {};
+    const previewNarration = buildNarrationForObject(data, session, { compact: true });
+    const speechNarration = buildNarrationForObject(data, session, { compact: false });
+    if (!speechNarration) return;
 
     const cacheKey = data.id || data.name;
     const googleReady = voice?.isGoogleAvailable?.();
@@ -80,7 +82,7 @@ export function createNavigationCompanion({ voice, getSession, root }) {
     const token = ++announceToken;
 
     lastData = data;
-    lastNarration = narration;
+    lastNarration = speechNarration;
     currentId = cacheKey;
     bar.classList.add('companion-bar--active');
     bar.classList.remove('companion-bar--error', 'companion-bar--fallback');
@@ -89,19 +91,23 @@ export function createNavigationCompanion({ voice, getSession, root }) {
     bar.classList.toggle('companion-bar--fallback', !googleReady);
     labelEl.textContent = voiceStatusLabel();
     objectEl.textContent = data.name;
-    textEl.textContent = narration;
+    textEl.textContent = previewNarration || speechNarration;
 
     if (!voice?.isEnabled()) {
       bar.classList.remove('companion-bar--loading');
       return;
     }
 
-    if (googleReady && !cached) {
-      voice.prefetchGoogle(narration, cacheKey, { priority: true });
+    if (googleReady && !cached && previewNarration) {
+      voice.prefetchGoogle(previewNarration, cacheKey, { priority: true });
     }
 
     try {
-      await voice.speakGoogle(narration, { cacheKey, allowFallback: true });
+      await voice.speakGoogle(previewNarration || speechNarration, {
+        cacheKey,
+        allowFallback: true,
+        fallbackText: speechNarration,
+      });
       if (token !== announceToken) return;
 
       bar.classList.remove('companion-bar--loading', 'companion-bar--error');
@@ -110,7 +116,7 @@ export function createNavigationCompanion({ voice, getSession, root }) {
       labelEl.textContent = voiceStatusLabel();
 
       if (voice.usesFallbackVoice?.() && googleReady) {
-        textEl.textContent = `${narration} (voce di sistema attiva: Google non disponibile al momento.)`;
+        textEl.textContent = `${speechNarration} (voce di sistema attiva: Google non disponibile al momento.)`;
       }
     } catch (err) {
       if (token !== announceToken) return;

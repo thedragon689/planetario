@@ -31,6 +31,14 @@ function isExternalUrl(url) {
   return /^https?:\/\//i.test(url);
 }
 
+/** NASA/CDN non pubblicano varianti .ktx2: evita richieste 403 in console. */
+function canTryKtx2Variant(url) {
+  if (!url || typeof url !== 'string') return false;
+  if (/\.ktx2(\?|$)/i.test(url)) return true;
+  if (isExternalUrl(url)) return false;
+  return url.startsWith('/');
+}
+
 function loadTextureFromBlob(objectUrl, options = {}) {
   return new Promise((resolve, reject) => {
     textureLoader.load(
@@ -104,10 +112,11 @@ export function loadTexture(url, options = {}) {
   if (cache.has(key)) return cache.get(key);
 
   const promise = (async () => {
-    if (FEATURES.ktx2 && options.tryKtx2 !== false) {
+    if (FEATURES.ktx2 && options.tryKtx2 !== false && canTryKtx2Variant(url)) {
       const renderer = options.renderer || sharedRenderer;
       if (renderer) {
-        const ktx2 = await loadKTX2Texture(renderer, toKtx2Url(url));
+        const ktx2Url = /\.ktx2(\?|$)/i.test(url) ? url : toKtx2Url(url);
+        const ktx2 = await loadKTX2Texture(renderer, resolveProxiedUrl(ktx2Url));
         if (ktx2) return ktx2;
       }
     }

@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { FEATURES } from '../config.js';
+import { attachHitSphere, disableRaycast } from '../systems/clickTargets.js';
 
 function parseColor(hex) {
   return new THREE.Color(hex || '#eaf6ff');
@@ -158,15 +159,9 @@ export function createStarMarkers(group, starData, sceneKey, { qualityLevel = 'm
     rays.raycast = () => {};
     body.add(rays);
 
-    const hit = new THREE.Mesh(
-      new THREE.SphereGeometry(Math.max(scale * 1.4, 24), 10, 10),
-      new THREE.MeshBasicMaterial({ visible: false })
-    );
-    hit.name = 'hit';
-    body.add(hit);
-
     core.raycast = () => {};
     rays.raycast = () => {};
+    disableRaycast(core);
 
     body.userData = {
       type: 'star',
@@ -174,6 +169,7 @@ export function createStarMarkers(group, starData, sceneKey, { qualityLevel = 'm
       selectable: true,
       data: { ...data, category: data.type },
     };
+    attachHitSphere(body, Math.max(scale * 1.4, 24));
 
     group.add(body);
     markers.push({ mesh: body, core, corona, rays, data, style });

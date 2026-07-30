@@ -14,6 +14,7 @@ import {
 import { formatExtremeObjectForPanel } from '../data/extremeObjectCatalog.js';
 import { FEATURES } from '../config.js';
 import { createBlackholeLens } from './blackholeLens.js';
+import { attachHitSphere, disableRaycast } from '../systems/clickTargets.js';
 
 function createAccretionDisk(visual, scale) {
   const inner = (visual.diskInner ?? 0.35) * scale;
@@ -233,18 +234,20 @@ function createPulsarLike(obj, { isMagnetar = false } = {}) {
   }
 
   const panelData = formatExtremeObjectForPanel(obj);
-  star.userData = {
+  group.userData = {
     type: isMagnetar ? 'magnetar' : 'pulsar',
     id: obj.id,
     selectable: true,
     data: panelData,
   };
+  disableRaycast(star);
+  attachHitSphere(group, Math.max(scale * 0.85, 6));
 
   const spinRate = visual.spinRate ?? 10;
 
   return {
     group,
-    mesh: star,
+    mesh: group,
     data: panelData,
     update(time) {
       beamMat.uniforms.uTime.value = time;

@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { createMoonOrbit } from './orbit.js';
-import { createLitPlanetMesh, updateSunDirection } from './planetBody.js';
+import { createLitPlanetMesh, updateSunDirection, VISUAL_RADIUS_SCALE } from './planetBody.js';
 import { createMoonEffects } from './moonEffects.js';
+import { attachHitSphere, disableRaycast } from '../systems/clickTargets.js';
 
 /** Crea le lune principali orbitanti attorno ai pianeti genitori. */
 export async function createMoons(planetBodyMap, sun, moonData) {
@@ -28,6 +29,8 @@ export async function createMoons(planetBodyMap, sun, moonData) {
       data,
       selectable: true,
     };
+    disableRaycast(mesh);
+    attachHitSphere(mesh, Math.max(data.radius * VISUAL_RADIUS_SCALE * 1.2, 0.28));
 
     pivot.add(mesh);
     parent.pivot.add(createMoonOrbit(data.distanceFromPlanet));
