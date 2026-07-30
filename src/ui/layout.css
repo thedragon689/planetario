@@ -4,6 +4,8 @@
 @import './phase-ui-layout.css';
 
 :root {
+  --touch-target-min: 48px;
+  --touch-target-mobile: 48px;
   --cosmic-black: #03050A;
   --quantum-blue: #1A2A6C;
   --nebula-violet: #5A2D82;
@@ -28,6 +30,12 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
 
 html, body {
   width: 100%;
@@ -1065,14 +1073,14 @@ html, body {
   .metric-value { font-size: 0.65rem; }
   .hud-top { flex-direction: row; align-items: flex-start; justify-content: flex-end; gap: 0.35rem; }
   .scene-nav { padding: 0.5rem 0.5rem 0.85rem; gap: 0.35rem; bottom: 0.5rem; max-width: calc(100vw - 5.5rem); }
-  .nav-step { min-width: 2.75rem; min-height: 44px; }
+  .nav-step { min-width: 2.75rem; min-height: var(--touch-target-mobile, 48px); }
   .nav-step-label, .nav-step-scale { display: none; }
   .nav-step.active .nav-step-label { display: block; }
   .nav-connector { width: 6px; }
   .nav-shortcuts { display: none; }
   .nav-hint { font-size: 0.65rem; }
   .overlay-controls { gap: 0.35rem; }
-  .ctrl-btn { width: 44px; height: 44px; font-size: 0.85rem; }
+  .ctrl-btn { width: var(--touch-target-mobile, 48px); height: var(--touch-target-mobile, 48px); font-size: 0.85rem; }
   .info-panel { width: 100%; max-height: 70vh; }
 }
 
@@ -1407,8 +1415,8 @@ html.sidebar-open .companion-bar {
   .overlay-tools-drawer .ctrl-btn,
   .overlay-controls-primary .ctrl-btn,
   .overlay-tools-toggle {
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target-mobile, 48px);
+    height: var(--touch-target-mobile, 48px);
   }
 
   .companion-bar {
