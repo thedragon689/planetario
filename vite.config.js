@@ -1,3 +1,4 @@
+import './polyfills/node20.js';
 import { defineConfig } from 'vite';
 import glsl from 'vite-plugin-glsl';
 import { geminiProxy } from './vite-plugin-gemini-proxy.js';
@@ -23,7 +24,7 @@ export default defineConfig(({ mode }) => {
     open: true,
     hmr: {
       host: '127.0.0.1',
-      port: 5174,
+      // Port omitted: HMR follows server.port (also when using CLI --port).
     },
     proxy: nasaProxy,
   },

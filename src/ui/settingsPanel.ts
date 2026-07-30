@@ -178,9 +178,24 @@ export function createSettingsPanel(
 
   function positionPanel() {
     if (!anchor) return;
-    const rect = anchor.getBoundingClientRect();
     const gap = 6;
     const width = Math.min(340, window.innerWidth - 16);
+    const layout = document.documentElement.dataset.layout;
+    const desktopLike = layout === 'desktop' || layout === 'tablet';
+
+    if (desktopLike && window.innerWidth >= 1024) {
+      panel.style.top = '50%';
+      panel.style.left = '50%';
+      panel.style.right = 'auto';
+      panel.style.transform = 'translate(-50%, -50%)';
+      panel.style.width = `${Math.min(400, window.innerWidth - 48)}px`;
+      panel.style.maxHeight = 'min(62vh, calc(100vh - var(--ui-topbar-h, 3.5rem) - var(--ui-bottom-rail, 5.5rem) - 1.5rem))';
+      return;
+    }
+
+    panel.style.transform = '';
+
+    const rect = anchor.getBoundingClientRect();
     let left = rect.right - width;
     left = Math.max(8, Math.min(left, window.innerWidth - width - 8));
     const maxHeight = window.innerHeight - rect.bottom - gap - 12;
@@ -222,6 +237,7 @@ export function createSettingsPanel(
   function hide() {
     panel.hidden = true;
     panel.classList.remove('visible');
+    panel.style.transform = '';
     open = false;
     dismissListenerReady = false;
     anchor?.setAttribute('aria-expanded', 'false');

@@ -18,7 +18,9 @@
     "prepare": "husky",
     "lhci": "lhci autorun",
     "convert-assets": "node scripts/convert-assets.mjs",
-    "capture-screenshots": "node scripts/capture-screenshots.mjs"
+    "capture-screenshots": "node scripts/capture-screenshots.mjs",
+    "audit:responsive": "node scripts/audit-responsive.mjs",
+    "audit:desktop": "node scripts/audit-desktop.mjs"
   },
   "lint-staged": {
     "src/**/*.js": [

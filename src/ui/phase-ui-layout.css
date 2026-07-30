@@ -32,6 +32,112 @@
   --ui-right-rail-w: 5.5rem;
 }
 
+/* —— Desktop & tablet: colonne laterali senza sovrapposizioni —— */
+.layout-desktop,
+.layout-tablet {
+  --ui-right-rail-w: 12.5rem;
+  --ui-left-rail-w: 1rem;
+}
+
+.layout-desktop .hud,
+.layout-tablet .hud {
+  top: var(--ui-top-rail);
+  right: calc(var(--ui-right-rail-w) + var(--safe-right) + 0.35rem);
+  left: auto;
+  max-width: calc(100vw - var(--ui-right-rail-w) - var(--ui-left-rail-w) - 2.5rem);
+}
+
+.layout-desktop .cosmic-minimap,
+.layout-tablet .cosmic-minimap {
+  top: calc(var(--ui-top-rail) + 4.85rem);
+  right: calc(var(--ui-side-inset) + var(--safe-right));
+}
+
+.layout-desktop .hud-compass,
+.layout-tablet .hud-compass {
+  top: calc(var(--ui-top-rail) + 11.75rem);
+  right: calc(var(--ui-side-inset) + var(--safe-right));
+}
+
+.layout-desktop .hud-scale-bar,
+.layout-tablet .hud-scale-bar {
+  bottom: calc(var(--ui-bottom-rail) + 5.85rem);
+  left: var(--ui-side-inset);
+}
+
+.layout-desktop .companion-bar,
+.layout-tablet .companion-bar {
+  bottom: var(--ui-bottom-rail);
+  left: var(--ui-side-inset);
+  width: min(300px, calc(100vw - var(--ui-left-rail-w) - var(--ui-right-rail-w) - 3rem));
+  max-width: min(300px, calc(50vw - var(--ui-right-rail-w) - 2rem));
+}
+
+.layout-desktop .overlay-controls,
+.layout-tablet .overlay-controls {
+  bottom: var(--ui-bottom-rail);
+  right: calc(var(--ui-side-inset) + var(--safe-right));
+}
+
+.layout-desktop .scene-nav,
+.layout-tablet .scene-nav {
+  max-width: min(860px, calc(100vw - var(--ui-left-rail-w) - var(--ui-right-rail-w) - 2 * var(--ui-side-inset)));
+}
+
+.layout-desktop .info-panel:not(.mobile-bottom-sheet-active),
+.layout-tablet .info-panel:not(.mobile-bottom-sheet-active) {
+  position: fixed;
+  right: 0;
+  top: calc(var(--ui-topbar-h) + var(--safe-top));
+  width: min(380px, 28vw, calc(100vw - 0.5rem));
+  height: calc(100dvh - var(--ui-topbar-h) - var(--safe-top));
+  max-height: calc(100dvh - var(--ui-topbar-h) - var(--safe-top));
+  z-index: var(--z-panel);
+}
+
+.layout-desktop .bottom-sheet-handle,
+.layout-tablet .bottom-sheet-handle {
+  display: none;
+}
+
+html.sidebar-open.layout-desktop .companion-bar,
+html.sidebar-open.layout-tablet .companion-bar {
+  left: min(calc(280px + var(--ui-side-inset)), calc(86vw + var(--ui-side-inset)));
+  width: min(280px, calc(100vw - min(280px, 86vw) - var(--ui-right-rail-w) - 2rem));
+}
+
+html.sidebar-open.layout-desktop .hud-scale-bar,
+html.sidebar-open.layout-tablet .hud-scale-bar {
+  left: min(calc(280px + var(--ui-side-inset)), calc(86vw + var(--ui-side-inset)));
+}
+
+.layout-desktop .chat-widget,
+.layout-tablet .chat-widget {
+  right: calc(var(--ui-side-inset) + var(--ui-right-rail-w) + 0.35rem);
+  width: min(360px, calc(100vw - var(--ui-left-rail-w) - var(--ui-right-rail-w) - 2.5rem));
+}
+
+html.panel-open .scene-nav {
+  max-width: min(
+    860px,
+    calc(100vw - var(--ui-left-rail-w) - var(--ui-right-rail-w) - min(380px, 28vw) - 2 * var(--ui-side-inset))
+  );
+}
+
+html.sidebar-open.layout-desktop .hud,
+html.sidebar-open.layout-tablet .hud {
+  max-width: calc(100vw - min(280px, 86vw) - var(--ui-right-rail-w) - 1.5rem);
+}
+
+.layout-desktop .settings-panel:not(.settings-panel--anchored),
+.layout-tablet .settings-panel:not(.settings-panel--anchored) {
+  position: fixed;
+  top: calc(var(--ui-top-rail) + 16rem);
+  right: calc(var(--ui-side-inset) + var(--safe-right));
+  max-height: min(50vh, calc(100vh - var(--ui-topbar-h) - 17rem));
+  z-index: calc(var(--z-topbar) + 10);
+}
+
 /* —— Top: metriche compatte a destra —— */
 .hud {
   top: var(--ui-top-rail);
